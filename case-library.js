@@ -10,6 +10,34 @@ import {clamp,voxelToLPS,lpsToVoxel,planeSpec,planeToVoxel,voxelToPlane,huAt,sli
   decodeVolume,trianglePlaneSegments,fetchJSON,fetchGzip} from './case-library-core.js';
 
 const $=id=>document.getElementById(id),fmt=n=>new Intl.NumberFormat('zh-CN').format(n);
+const preferCtFirst=()=>{
+  try{
+    const ua=navigator.userAgent||'';
+    if(/MicroMessenger|QQ\//i.test(ua))return true;
+    const touch=(navigator.maxTouchPoints||0)>0;
+    const narrow=typeof matchMedia==='function'&&matchMedia('(max-width:700px)').matches;
+    return touch&&narrow;
+  }catch{}
+  return false;
+};
+function setModelEmpty(text,opts={}){
+  const box=$('model-empty'),label=$('model-empty-text'),btn=$('load-model-btn');
+  if(!box)return;
+  box.hidden=false;
+  if(label)label.textContent=text;
+  else box.textContent=text;
+  box.classList.toggle('interactive',Boolean(opts.action||opts.busy));
+  if(btn){
+    btn.hidden=!opts.action&&!opts.busy;
+    btn.disabled=Boolean(opts.busy);
+    btn.textContent=opts.busy?text:opts.action||'加载三维重建';
+  }
+}
+function hideModelEmpty(){
+  const box=$('model-empty'),btn=$('load-model-btn');
+  if(box){box.hidden=true;box.classList.remove('interactive');}
+  if(btn){btn.hidden=true;btn.disabled=false;}
+}
 const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const GROUPS={nodule:'结节标注',artery:'肺动脉',vein:'肺静脉',airway:'支气管',lobe:'肺叶',segment:'肺段 / 亚段',planning:'源规划标注',annotation:'其他源标注 · 待核对'};
 const GROUP_COLORS={nodule:'#ffc857',artery:'#e55361',vein:'#4d98ec',airway:'#edddba',lobe:'#91b8ba',segment:'#7fc8b4',planning:'#b697f5',annotation:'#cc9be5'};
@@ -51,12 +79,15 @@ function ensureViews(){
   if(viewsReady)return Boolean(view3D||viewDetail);
   viewsReady=true;
   try {
-    view3D=createView($('real-model'),34);viewDetail=createView($('real-detail'),40);
+    view3D=createView($('real-model'),34);
     view3D?.camera.layers.enable(1);
-    if(viewDetail)detailCamera=new DetailCamera(viewDetail,updateDetailUI);
-    else updateDetailUI();
+    if(!preferCtFirst()){
+      viewDetail=createView($('real-detail'),40);
+      if(viewDetail)detailCamera=new DetailCamera(viewDetail,updateDetailUI);
+      else updateDetailUI();
+    } else updateDetailUI();
   } catch(error) {
-    webglError=error;$('model-empty').textContent='此设备无法启用三维显示；真实 CT 可继续浏览。';
+    webglError=error;setModelEmpty('此设备无法启用三维显示；真实 CT 可继续浏览。');
     updateDetailUI();
   }
   return Boolean(view3D||viewDetail);
@@ -140,8 +171,8 @@ async function loadCase(id){
   renderCatalog();$('structure-groups').replaceChildren();$('target-select').replaceChildren();$('structure-count').textContent='';
   if(!$('case-list').querySelector(`[data-id="${id}"]`)){$('case-filter').value='all';renderCatalog();}
   $('selection-title').textContent='正在载入';$('selection-position').textContent='';$('selection-dot').style.background='#617a87';
-  $('ct-empty').hidden=false;$('ct-empty').textContent='正在载入真实 CT…';$('model-empty').hidden=false;
-  $('model-empty').textContent=webglError?'此设备无法启用三维显示；真实 CT 可继续浏览。':'正在载入重建模型';
+  $('ct-empty').hidden=false;$('ct-empty').textContent='正在载入真实 CT…';
+  setModelEmpty(webglError?'此设备无法启用三维显示；真实 CT 可继续浏览。':'先载入真实 CT，三维稍后准备');
   const entry=catalog.cases.find(c=>c.id===id);$('case-title').textContent=`${id} · ${entry.title}`;
   $('case-kicker').textContent='REAL CT / PATIENT-SPECIFIC RECONSTRUCTION';
   $('case-metadata').textContent=`${entry.slices} 层真实 CT · ${entry.structures} 个源重建结构 · 按需载入 ${(entry.downloadBytes/1e6).toFixed(1)} MB`;
@@ -154,17 +185,21 @@ async function loadCase(id){
     caseData=m;voxel=m.ct.dimensions.map(n=>(n-1)/2);voxel[2]=m.ct.initialSlice;plane='axial';zoom=1;
     setPlaneButtons();setWindow('lung');$('ct-resolution').textContent=`${m.ct.dimensions[0]} × ${m.ct.dimensions[1]} · 像素 ${m.ct.spacing[0].toFixed(2)} mm · 层间距 ${m.ct.spacing[2].toFixed(2)} mm`;
     $('case-metadata').textContent=`${entry.slices} 层真实 CT · ${entry.structures} 个源重建结构 · ${fmt(m.geometry.triangles)} 个三角面`;
-    let ctProgress=0,modelProgress=0;
+    const phone=preferCtFirst();
+    let ctProgress=0,modelProgress=0,geomBuffer=null,geometryApplied=false;
+    const ctMeta=phone?{...m.ct,skipIntegrity:true}:m.ct;
+    const geomMeta=phone?{...m.geometry,skipIntegrity:true}:m.geometry;
     const progress=()=>{
       if(epoch!==loadEpoch)return;
-      showStatus(`载入真实资料：CT ${Math.round(ctProgress*100)}% · 三维重建 ${Math.round(modelProgress*100)}%`);
+      showStatus(`载入真实资料：CT ${Math.round(ctProgress*100)}%`+(phone?'':` · 三维重建 ${Math.round(modelProgress*100)}%`));
       if(!volume)$('ct-empty').textContent=`正在载入真实 CT ${Math.round(ctProgress*100)}%`;
+      if(phone&&!geometryApplied)setModelEmpty(`真实 CT ${Math.round(ctProgress*100)}%。三维需单独加载。`);
     };
     const base=`./real-cases/${id}/`;
-    let geomBuffer=null,geometryApplied=false;
     const applyGeometry=buffer=>{
       if(epoch!==loadEpoch||geometryApplied)return;
       geometryApplied=true;
+      setModelEmpty('正在生成三维网格…');
       buildGeometry(buffer,m);reconstruction?.bind(id,meshes);setupTargets();setDefaultLayers(false);
       ensureViews();
       if(!webglError){
@@ -173,32 +208,43 @@ async function loadCase(id){
         fitDetailOverview(true);
       } else if(m.targets.length)focusTarget(0,false);
       else selectStructure(m.structures.find(s=>s.group==='airway')?.id,false);
-      $('model-empty').hidden=!webglError;renderLayers();dirty=true;
+      if(webglError)setModelEmpty('此设备无法启用三维显示；真实 CT 可继续浏览。');
+      else hideModelEmpty();
+      renderLayers();dirty=true;
     };
-    const ctTask=fetchGzip(base+m.ct.asset,m.ct,signal,(n,total)=>{ctProgress=n/total;progress();}).then(buffer=>{
+    const ctTask=fetchGzip(base+m.ct.asset,ctMeta,signal,(n,total)=>{ctProgress=n/total;progress();}).then(buffer=>{
       if(epoch!==loadEpoch)return;volume=decodeVolume(buffer,m.ct);$('ct-empty').hidden=true;$('ct-preview').hidden=true;invalidateCT();
+      document.querySelector('.ct-panel')?.scrollIntoView({block:'nearest',inline:'nearest'});
       if(geomBuffer)applyGeometry(geomBuffer);
     });
-    const modelTask=fetchGzip(base+m.geometry.asset,m.geometry,signal,(n,total)=>{modelProgress=n/total;progress();}).then(buffer=>{
+    const startModel=()=>fetchGzip(base+m.geometry.asset,geomMeta,signal,(n,total)=>{modelProgress=n/total;progress();if(phone)setModelEmpty(`正在载入三维 ${Math.round(modelProgress*100)}%`,{busy:true});}).then(buffer=>{
       if(epoch!==loadEpoch)return;geomBuffer=buffer;if(volume)applyGeometry(buffer);
     }).catch(error=>{
       if(epoch!==loadEpoch||error.name==='AbortError')return;
-      $('model-empty').hidden=false;$('model-empty').textContent='三维重建暂不可用，CT 仍可阅片。';
+      setModelEmpty('三维重建暂不可用，CT 仍可阅片。');
     });
     await ctTask;
     if(epoch!==loadEpoch)return;
-    showStatus(volume?'真实 CT 已载入，正在准备三维重建…':'CT 载入未完成，请重试',!volume);
-    await modelTask;
+    if(!volume)throw new Error('CT 载入未完成，请重试');
+    showStatus('真实 CT 已载入');
+    if(phone){
+      setModelEmpty('真实 CT 已可阅片。三维网格较大，手机上请点按钮加载。',{action:'加载三维重建'});
+      const btn=$('load-model-btn');
+      if(btn)btn.onclick=()=>{if(epoch!==loadEpoch)return;setModelEmpty('正在载入三维…',{busy:true});startModel();};
+    } else {
+      setModelEmpty('正在载入重建模型');
+      await startModel();
+    }
     if(epoch!==loadEpoch)return;
     const ratio=m.validation.verticesWithinCTExtentFraction;
     $('alignment-note').textContent=`已核对 CT 序列引用与源模型坐标；${(ratio*100).toFixed(2)}% 网格顶点落在 CT 范围内。肺段标注的作者审核已记录。`;
-    showStatus(webglError||!geometryApplied?'真实 CT 已载入；此设备三维显示不可用。':'真实 CT 与三维重建已载入 · 点击模型可定位 CT · 细小分支几何已保留',Boolean(webglError||!geometryApplied));
+    if(!phone||geometryApplied)showStatus(webglError||!geometryApplied?'真实 CT 已载入；此设备三维显示不可用。':'真实 CT 与三维重建已载入 · 点击模型可定位 CT · 细小分支几何已保留',Boolean(webglError||(!phone&&!geometryApplied)));
     $('selection-title').textContent=meshes.get(selectedId)?.meta.name||'尚未选择';
     updatePointDisplay();resize();
     await study?.loadCase(m,signal);
     if(epoch!==loadEpoch)return;
     loadingDetail=false;
-    if(detailFraming==='overview'&&m.targets.length)focusTarget(0,false);
+    if(detailFraming==='overview'&&m.targets.length&&geometryApplied)focusTarget(0,false);
     if(detailFraming==='overview'&&detailCamera?.ready&&Math.abs(detailCamera.percent-100)<.1&&detailCamera.view.controls.target.distanceTo(detailCamera.anchor)<.01)fitDetailOverview();
     try{history.replaceState(null,'',`#${id}`);}catch{}
   }catch(error){if(epoch!==loadEpoch||error.name==='AbortError')return;loadingDetail=false;showStatus(error.message||'病例载入失败',true);$('ct-empty').textContent=volume?'':'CT 载入未完成，请点「重新载入」或换 Safari / Chrome 打开';$('ct-empty').hidden=Boolean(volume);}

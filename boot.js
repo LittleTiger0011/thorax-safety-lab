@@ -5,7 +5,7 @@ const wechat=/MicroMessenger|QQ\//i.test(navigator.userAgent);
 if(empty)empty.textContent='正在载入真实 CT…';
 if(status)status.textContent='正在载入页面…';
 if(wechat&&tip)tip.hidden=false;
-import('./case-library.js').catch(()=>{
+import('./case-library.js?v=ct2').catch(()=>{
   const msg=wechat
     ?'当前窗口无法载入 CT。请点右上角 ···，选择“在 Safari / 浏览器中打开”。'
     :'页面脚本载入失败。请刷新，或换手机自带 Safari / Chrome 打开。';

@@ -60,7 +60,7 @@
     <section class="image-panel anatomy-panel" aria-labelledby="model-title">
      <header class="panel-header"><div><span class="panel-number">02</span><h3 id="model-title">三维解剖重建</h3></div><button class="expand-btn" data-expand="anatomy-panel" aria-label="放大三维重建">⤢</button></header>
      <div class="camera-presets" role="group" aria-label="三维观察方向"><button data-camera="anterior" aria-pressed="true">前方</button><button data-camera="posterior" aria-pressed="false">后方</button><button data-camera="right" aria-pressed="false">右侧</button><button data-camera="left" aria-pressed="false">左侧</button></div>
-     <div class="model-stage"><canvas id="real-model" tabindex="0" aria-label="真实三维肺结构，拖动旋转，滚轮缩放，点击结构定位CT"></canvas><span class="model-hint">拖动旋转 · 滚轮缩放 · 点击定位</span><span class="coordinate-label">DICOM LPS / mm</span><div class="canvas-empty" id="model-empty">正在准备三维结构</div></div>
+     <div class="model-stage"><canvas id="real-model" tabindex="0" aria-label="真实三维肺结构，拖动旋转，滚轮缩放，点击结构定位CT"></canvas><span class="model-hint">拖动旋转 · 滚轮缩放 · 点击定位</span><span class="coordinate-label">DICOM LPS / mm</span><div class="canvas-empty" id="model-empty"><span id="model-empty-text">正在准备三维结构</span><button type="button" id="load-model-btn" hidden>加载三维重建</button></div></div>
      <div class="model-controls"><label>全部肺叶不透明度<input id="lobe-opacity" type="range" min="0" max="100" value="9"><output id="opacity-label">9%</output></label><label class="inline-check"><input id="show-ct-plane" type="checkbox" checked>显示 CT 平面</label></div>
      <div id="reconstruction-controls" class="reconstruction-controls" role="group" aria-label="肺叶与肺段独立染色">
       <div class="reconstruction-heading"><strong>肺叶 / 肺段染色</strong><button id="reconstruction-reset" class="quiet">恢复本例</button></div>
@@ -125,6 +125,6 @@
  </div>
  <dialog id="case-dialog"><button id="close-dialog" class="dialog-close" aria-label="关闭说明">×</button><div id="dialog-content"></div></dialog>
  <dialog id="segment-source-dialog"><button id="segment-source-close" class="dialog-close" aria-label="关闭参考资料">×</button><div id="segment-source-content"></div></dialog>
- <script type="module" src="./boot.js"></script>
+ <script type="module" src="./boot.js?v=ct2"></script>
 </body>
 </html>

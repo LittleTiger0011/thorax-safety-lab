@@ -1,130 +1,17 @@
-<!doctype html>
-<html lang="zh-CN">
-<head>
- <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
- <meta name="theme-color" content="#0b151e">
- <meta name="description" content="胸外科安全实训：以真实 CT 与三维重建学习肺段解剖，连接术野辨识、安全判断与学习测评。">
- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'self'">
- <title>肺段解剖与影像对照｜胸外科安全实训</title>
- <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./case-library.css">
- <link rel="stylesheet" href="./case-library-detail.css">
- <link rel="stylesheet" href="./segment-course.css">
- <link rel="stylesheet" href="./segment-supplement.css">
- <link rel="stylesheet" href="./reconstruction-controls.css">
- <link rel="stylesheet" href="./knowledge-nav.css">
-</head>
-<body>
- <a class="skip" href="#case-workspace">跳到病例影像</a>
- <header class="library-header">
-  <a class="library-brand" href="./index.html"><span class="brand-symbol" aria-hidden="true">◈</span><span><strong>胸外科安全实训</strong><small>CT · ANATOMY · SAFETY</small></span></a>
-  <nav class="workspace-nav" aria-label="学习导航"><a class="active" href="#imaging-anchor">影像对照</a><a href="#segment-course">肺段解剖</a><a href="./or-field.html">术野辨识</a><a href="./safety-training.html?route=training">安全训练</a><a href="./safety-training.html?route=knowledge" class="knowledge-nav-link">知识图谱</a><a href="./safety-training.html?route=assessment">学习测评</a></nav>
-  <div class="header-links"><button id="case-sidebar-toggle" class="quiet" aria-expanded="true" aria-controls="case-catalog">病例目录</button><button id="about-btn" class="quiet">资料说明</button></div>
- </header>
- <div class="library-layout">
-  <aside class="case-sidebar" id="case-catalog" aria-label="病例目录">
-   <div class="sidebar-heading"><p class="eyebrow">CASE COLLECTION</p><h1>真实病例</h1><p id="catalog-summary">正在读取病例目录</p></div>
-   <label class="filter-label" for="case-filter">筛选病例</label><select id="case-filter"><option value="all">全部病例</option></select>
-   <div id="case-list" class="case-list" role="list" aria-label="选择匿名病例"></div>
-   <p class="sidebar-foot">仅载入当前病例<br>真实 CT 数值与原重建网格随包提供</p>
-  </aside>
-  <main id="case-workspace" tabindex="-1">
-   <section class="home-intro"><img class="lab-scene-photo" src="./assets/scene/briefing.webp" alt="" width="1600" height="901" decoding="async"><div><p class="eyebrow">REAL CT · SEGMENTAL ANATOMY</p><h1>读懂真实 CT，<br class="mobile-break">看清肺段空间解剖。</h1><p>影像对照 · 解剖辨识 · 安全判断</p></div><div class="intro-data"><strong>15<span>真实病例</span></strong><strong>2,043<span>CT 层面</span></strong><a href="#segment-course">开始肺段学习 ↗</a></div></section>
-   <div class="case-heading" id="imaging-anchor"><div><p class="eyebrow" id="case-kicker">REAL CT / RECONSTRUCTED ANATOMY</p><h2 id="case-title">打开一个真实病例</h2><p id="case-metadata">CT、三维结构与局部视角共用该病例的空间坐标</p></div><div class="heading-actions"><button id="reset-all" class="outline">恢复总览</button><button id="case-info" class="outline">病例资料 <span aria-hidden="true">ⓘ</span></button></div></div>
-   <div id="case-message" class="case-message" role="status" aria-live="polite"><span class="status-dot"></span><span id="load-status">正在准备病例库</span><button id="retry-load" hidden>重新载入</button></div>
-   <p id="browser-tip" class="browser-tip" hidden>若 CT 一直空白：请用 Safari 或 Chrome 打开。微信请点右上角 ··· → 在浏览器中打开。</p>
-   <section class="segment-workbench" aria-label="动态肺段对照">
-    <div class="segment-toolbar"><div class="segment-picker"><label for="segment-select">选择要学习的肺段</label><select id="segment-select" aria-label="按肺叶选择肺段"></select><button id="segment-focus" class="accent-button">定位此段</button></div><a href="#segment-course" class="tutorial-shortcut">打开逐段讲解 ↓</a></div>
-    <div class="overlay-controls" role="group" aria-label="独立控制肺段、段名与病灶红圈">
-     <label>肺段显示<select id="segment-annotation-source"><option value="review" selected>全部已标注肺段</option><option value="source">仅原有肺段</option></select></label>
-     <label>肺段覆盖<select id="segment-overlay"><option value="fill">淡色填充</option><option value="outline">仅轮廓</option><option value="off">隐藏覆盖</option></select></label>
-     <label class="opacity-control">浓度<input id="segment-opacity" type="range" min="8" max="65" value="20"><output id="segment-opacity-value">20%</output></label>
-     <label class="annotation-switch"><input type="checkbox" id="segment-labels" checked>段名 <small>中文＋段号</small></label>
-     <label class="annotation-switch lesion-switch"><input type="checkbox" id="show-lesion-outline" checked><i aria-hidden="true"></i>病灶红圈</label>
-     <label class="annotation-switch"><input type="checkbox" id="segment-only">只看所选段</label>
-    </div>
-    <details id="case-segment-coverage" class="case-segment-coverage"><summary id="case-coverage-title">肺段目录</summary><div id="case-coverage-grid"></div></details>
-   </section>
-   <div class="imaging-grid">
-    <section class="image-panel ct-panel" aria-labelledby="ct-title">
-     <header class="panel-header"><div><span class="panel-number">01</span><h3 id="ct-title">真实 CT</h3></div><button class="expand-btn" data-expand="ct-panel" aria-label="放大真实 CT">⤢</button></header>
-     <div class="plane-tabs" role="group" aria-label="CT 观察平面"><button data-plane="axial" aria-pressed="true">轴位</button><button data-plane="coronal" aria-pressed="false">冠状位</button><button data-plane="sagittal" aria-pressed="false">矢状位</button></div>
-     <div class="ct-view-tools"><button id="ct-pan-mode" aria-pressed="false">✥ 移动</button><button id="ct-zoom-out" aria-label="缩小 CT">−</button><output id="ct-zoom-value">100%</output><button id="ct-zoom-in" aria-label="放大 CT">＋</button><span>滚轮逐层 · 拖动可移动</span></div><div class="ct-stage"><canvas id="real-ct" tabindex="0" aria-label="真实CT，滚轮或方向键逐层浏览，点击设置三维定位点"></canvas><img id="ct-preview" alt="当前匿名病例的真实CT预览" hidden><div class="canvas-empty" id="ct-empty">正在载入真实 CT…</div><span class="ct-plane-label" id="ct-plane-label">AXIAL</span><span class="ct-value" id="ct-value"></span></div>
-     <div class="slice-control"><button id="slice-prev" aria-label="上一层">‹</button><input id="real-slice" type="range" min="0" max="1" value="0" aria-label="CT 层面"><button id="slice-next" aria-label="下一层">›</button><output id="real-slice-label">— / —</output></div>
-     <div class="cine-controls"><button id="segment-cine" aria-pressed="false">▶ 连续播放</button><select id="cine-speed" aria-label="播放速度"><option value="2">2 层/秒</option><option value="4" selected>4 层/秒</option><option value="8">8 层/秒</option><option value="12">12 层/秒</option></select><select id="cine-direction" aria-label="播放方向"><option value="backward">层号递减</option><option value="forward">层号递增</option></select><label><input id="segment-range-only" type="checkbox" checked>所选段范围</label></div>
-     <div class="slice-segment-summary"><div><strong>本层肺段</strong><span id="current-segment-count">—</span></div><p id="slice-label-status" class="slice-label-status"></p><div id="current-segments"></div><p id="segment-point">点击 CT 查看定位点所属的源标注</p></div>
-     <div class="window-controls"><label>窗型<select id="window-preset"><option value="lung">肺窗</option><option value="mediastinum">纵隔窗</option><option value="bone">骨窗</option><option value="custom">自定义</option></select></label><label>窗宽<input id="window-width" type="number" value="1500" min="2" max="12000" step="50"></label><label>窗位<input id="window-center" type="number" value="-600" min="-1500" max="4000" step="50"></label></div>
-     <div class="ct-options"><label><input id="show-contour" type="checkbox" checked>所选结构轮廓</label><button id="measure-btn" class="quiet" aria-pressed="false">↔ 测距</button><button id="ct-zoom-reset" class="quiet">适合窗口</button></div>
-     <div class="lesion-controls"><label><input id="ct-segment-overlay" type="checkbox" checked>肺段覆盖</label><label><input id="ct-segment-labels" type="checkbox" checked>段名</label><label><input id="ct-lesion-outline" type="checkbox" checked><i aria-hidden="true"></i>病灶红圈</label><button id="locate-lesion" class="quiet">定位病灶</button><span id="lesion-readout">病灶边界外留白，圈内保留灰阶</span></div>
-     <p class="panel-foot" id="ct-resolution">原病例包重采样 CT · 保留数值，可调窗</p>
-    </section>
-    <section class="image-panel anatomy-panel" aria-labelledby="model-title">
-     <header class="panel-header"><div><span class="panel-number">02</span><h3 id="model-title">三维解剖重建</h3></div><button class="expand-btn" data-expand="anatomy-panel" aria-label="放大三维重建">⤢</button></header>
-     <div class="camera-presets" role="group" aria-label="三维观察方向"><button data-camera="anterior" aria-pressed="true">前方</button><button data-camera="posterior" aria-pressed="false">后方</button><button data-camera="right" aria-pressed="false">右侧</button><button data-camera="left" aria-pressed="false">左侧</button></div>
-     <div class="model-stage"><canvas id="real-model" tabindex="0" aria-label="真实三维肺结构，拖动旋转，滚轮缩放，点击结构定位CT"></canvas><span class="model-hint">拖动旋转 · 滚轮缩放 · 点击定位</span><span class="coordinate-label">DICOM LPS / mm</span><div class="canvas-empty" id="model-empty">正在准备三维结构</div></div>
-     <div class="model-controls"><label>全部肺叶不透明度<input id="lobe-opacity" type="range" min="0" max="100" value="9"><output id="opacity-label">9%</output></label><label class="inline-check"><input id="show-ct-plane" type="checkbox" checked>显示 CT 平面</label></div>
-     <div id="reconstruction-controls" class="reconstruction-controls" role="group" aria-label="肺叶与肺段独立染色">
-      <div class="reconstruction-heading"><strong>肺叶 / 肺段染色</strong><button id="reconstruction-reset" class="quiet">恢复本例</button></div>
-      <div class="reconstruction-target-row"><select id="reconstruction-target" aria-label="选择要调整的肺叶、肺段或亚段" disabled></select><button id="reconstruction-locate" disabled>定位</button></div>
-      <div class="reconstruction-actions"><button data-surface-action="solid" aria-pressed="false" disabled>实性</button><button data-surface-action="translucent" aria-pressed="false" disabled>半透明</button><button data-surface-action="clear-color" aria-pressed="false" disabled>去除染色</button></div>
-      <div class="reconstruction-color-row"><label>变色<input id="reconstruction-color" type="color" value="#91b8ba" aria-label="所选肺叶或肺段颜色" disabled></label><button data-surface-action="source-color" class="quiet" disabled>恢复原色</button><label class="surface-visible"><input id="reconstruction-visible" type="checkbox" disabled>显示</label></div>
-      <label class="reconstruction-opacity-row">不透明度<input id="reconstruction-opacity" type="range" min="0" max="100" value="9" aria-label="所选结构不透明度，0为完全透明，100为实性" disabled><output id="reconstruction-opacity-value">9%</output></label>
-      <p id="reconstruction-state" role="status" aria-live="polite">等待重建模型</p>
-      <p id="reconstruction-coverage"></p><p>段汇总仅包含已提供的源模型。去除染色保留灰白轮廓；取消“显示”可隐藏结构。</p>
-     </div>
-     <div class="model-legend"><span><i class="artery"></i>肺动脉</span><span><i class="vein"></i>肺静脉</span><span><i class="airway"></i>支气管</span><span><i class="nodule"></i>结节标注</span></div>
-     <p class="panel-foot">保留源重建的几何和分支 · 颜色用于区分结构</p>
-    </section>
-    <section class="image-panel detail-panel" aria-labelledby="detail-title">
-     <header class="panel-header"><div><span class="panel-number">03</span><h3 id="detail-title">局部三维观察</h3></div><button class="expand-btn detail-expand" data-expand="detail-panel" data-expanded-label="退出大屏" data-collapsed-label="大屏观察" aria-label="打开局部观察大屏" aria-expanded="false">大屏观察 ⤢</button></header>
-     <div class="detail-workspace">
-      <div class="detail-stage" data-drag-mode="rotate">
-       <canvas id="real-detail" tabindex="0" aria-label="局部三维观察。可切换旋转和移动，使用加减按钮缩放；方向键移动，Home键居中。" aria-describedby="detail-help"></canvas>
-       <div class="detail-reticle" aria-hidden="true"></div>
-       <div class="detail-hud"><span id="detail-focus-label">正在准备观察目标</span><span id="detail-zoom-badge">100%</span></div>
-       <div class="detail-nudge" role="group" aria-label="将模型移到所需位置">
-        <button data-detail-pan="0,-1" class="nudge-up" aria-label="模型向上移动" title="模型向上移动">↑</button>
-        <button data-detail-pan="-1,0" class="nudge-left" aria-label="模型向左移动" title="模型向左移动">←</button>
-        <button id="detail-center" class="nudge-center" aria-label="将模型移到画面中央" title="模型居中，保留当前缩放">居中</button>
-        <button data-detail-pan="1,0" class="nudge-right" aria-label="模型向右移动" title="模型向右移动">→</button>
-        <button data-detail-pan="0,1" class="nudge-down" aria-label="模型向下移动" title="模型向下移动">↓</button>
-       </div>
-       <span class="detail-canvas-hint" id="detail-drag-hint">拖动旋转 · 滚轮缩放</span>
-      </div>
-      <div class="detail-tools" aria-label="局部观察工具">
-       <fieldset class="detail-structure-controls"><legend>结构显隐</legend><div class="detail-structure-options">
-        <label><input id="detail-show-airway" data-detail-group="airway" type="checkbox" disabled><i class="airway" aria-hidden="true"></i><span>支气管</span><small data-detail-group-state="airway">等待模型</small></label>
-        <label><input id="detail-show-artery" data-detail-group="artery" type="checkbox" disabled><i class="artery" aria-hidden="true"></i><span>动脉</span><small data-detail-group-state="artery">等待模型</small></label>
-        <label><input id="detail-show-vein" data-detail-group="vein" type="checkbox" disabled><i class="vein" aria-hidden="true"></i><span>静脉</span><small data-detail-group-state="vein">等待模型</small></label>
-       </div><p>勾选显示，取消隐藏；与三维重建、结构目录同步。</p></fieldset>
-       <div class="detail-target-controls"><label for="target-select">观察目标</label><select id="target-select"><option>等待标注区域</option></select><div class="detail-target-actions"><button id="focus-target" class="outline">定位标注</button><button id="focus-selection" class="outline">观察所选结构</button></div></div>
-       <div class="detail-mode-controls"><span class="detail-tool-label">拖动方式</span><div class="detail-mode-buttons" role="group" aria-label="选择拖动操作"><button data-detail-mode="rotate" aria-pressed="true">↻ 旋转</button><button data-detail-mode="pan" aria-pressed="false">✥ 移动</button></div></div>
-       <div class="detail-zoom-controls"><label for="detail-zoom">缩放 <output id="detail-zoom-value">100%</output></label><div class="detail-zoom-row"><button id="detail-zoom-out" aria-label="缩小模型" title="缩小模型">−</button><input id="detail-zoom" type="range" min="1" max="800" value="100" step="0.1" aria-label="模型显示比例，以适合窗口为百分之百"><button id="detail-zoom-in" aria-label="放大模型" title="放大模型">＋</button></div><small id="detail-zoom-reference">1%—800% · 100% 为完整模型适配</small></div>
-       <div class="detail-view-actions"><button id="detail-fit" class="outline">适合窗口</button><button id="detail-reset" class="outline">复位视角</button></div>
-       <p id="detail-help" class="detail-help">初始居中显示完整模型。拖动旋转，滚轮缩放；“适合窗口”恢复完整视野，“居中”保留缩放，双击结构可将该点居中。</p>
-      </div>
-     </div>
-     <p class="detail-note">同一病例重建模型的局部视角 · 非术中腔镜影像</p>
-     <p class="panel-foot">标注区域为网格分区，不等于临床结节计数</p>
-    </section>
-   </div>
-   <div class="selection-strip"><div><span class="selection-dot" id="selection-dot"></span><span>当前结构</span><strong id="selection-title">尚未选择</strong></div><p id="selection-position">在三维模型或结构目录中选择，可对照 CT 切面轮廓。</p><button id="clear-selection" class="quiet">清除</button></div>
-   <div class="segment-timeline"><div><strong>所选段的轴位覆盖</strong><span id="segment-timeline-caption">点击跳转到相应层面</span><div class="segment-bookmarks"><button data-segment-position="first">首层</button><button data-segment-position="peak">最大截面</button><button data-segment-position="last">末层</button></div></div><div id="segment-slice-strip" class="slice-bars" aria-label="肺段轴位覆盖时间轴"></div></div>
-   <section id="segment-course" class="segment-course" aria-labelledby="segment-course-title">
-    <header class="course-heading"><div><p class="eyebrow">LEARN EACH SEGMENT IN ITS CT VOLUME</p><h2 id="segment-course-title">肺段解剖 · 逐层解读</h2><p id="segment-count-total">真实病例图解、空间定位与逐段讲解</p></div><button id="segment-source-btn" class="outline">参考资料与 12 篇原文链接 ↗</button></header>
-    <div id="segment-navigation" class="segment-navigation" aria-label="肺叶与肺段教程目录"></div>
-    <div id="segment-lesson" class="segment-lesson"></div>
-    <div class="lesson-pager"><button id="segment-previous" class="outline">← 上一专题</button><a href="#imaging-anchor">回到影像对照 ↑</a><button id="segment-next" class="outline">下一专题 →</button></div>
-    <div class="fundamentals-heading"><p class="eyebrow">METHOD BEFORE MEMORIZATION</p><h3>读懂结构，理解空间关系</h3><p>8 个基础单元：方位、层级、分支、变异、覆盖图、三平面、对照练习与资料范围。</p></div><div id="fundamentals" class="fundamentals"></div>
-   </section>
-   <div class="lower-grid">
-    <section class="study-notes"><p class="eyebrow">READ THE SAME ANATOMY</p><h3>同一病例，逐层对照</h3><ol><li><span>01</span><p>选择标注区域，定位真实 CT 层面。</p></li><li><span>02</span><p>切换肺窗与纵隔窗，观察与相邻结构的关系。</p></li><li><span>03</span><p>按需显示肺段、血管与支气管，从不同方向复核。</p></li></ol><p class="alignment-note" id="alignment-note">影像与重建坐标核对结果将在病例载入后显示。</p></section>
-    <section class="structure-section"><div class="structure-heading"><div><p class="eyebrow">RECONSTRUCTION LAYERS</p><h3>结构目录 <span id="structure-count"></span></h3></div><div class="layer-presets"><button id="layers-core" class="quiet">肺门结构</button><button id="layers-segments" class="quiet">显示肺段</button><button id="layers-reset" class="quiet">默认图层</button></div></div><div id="structure-groups" class="structure-groups"></div><p class="layer-note">切缘球单独归入源规划标注，默认关闭；不能据此确定手术切除范围。</p></section>
-   </div>
-   <footer class="library-footer"><span>《外科学》 · 胸外科安全实训</span><span>影像解剖与安全认知</span><a href="./safety-training.html?route=assessment">进入课程与测评 →</a></footer>
-  </main>
- </div>
- <dialog id="case-dialog"><button id="close-dialog" class="dialog-close" aria-label="关闭说明">×</button><div id="dialog-content"></div></dialog>
- <dialog id="segment-source-dialog"><button id="segment-source-close" class="dialog-close" aria-label="关闭参考资料">×</button><div id="segment-source-content"></div></dialog>
- <script type="module" src="./boot.js"></script>
-</body>
-</html>
+const empty=document.getElementById('ct-empty');
+const status=document.getElementById('load-status');
+const tip=document.getElementById('browser-tip');
+const wechat=/MicroMessenger|QQ\//i.test(navigator.userAgent);
+if(empty)empty.textContent='正在载入真实 CT…';
+if(status)status.textContent='正在载入页面…';
+if(wechat&&tip)tip.hidden=false;
+import('./case-library.js?v=ct2').catch(()=>{
+  const msg=wechat
+    ?'当前窗口无法载入 CT。请点右上角 ···，选择“在 Safari / 浏览器中打开”。'
+    :'页面脚本载入失败。请刷新，或换手机自带 Safari / Chrome 打开。';
+  if(empty){empty.hidden=false;empty.textContent=msg;}
+  if(status)status.textContent=msg;
+  document.getElementById('case-message')?.classList.add('error');
+  const retry=document.getElementById('retry-load');
+  if(retry){retry.hidden=false;retry.onclick=()=>location.reload();}
+});

@@ -100,7 +100,7 @@ export async function materializeGzip(raw,meta={}) {
   const bytes=raw instanceof Uint8Array?raw:new Uint8Array(raw);
   if(isGzipMagic(bytes)) {
     if(meta.compressedBytes&&bytes.byteLength!==meta.compressedBytes)throw new Error('下载长度校验失败，请重新加载');
-    if(meta.sha256) {
+    if(meta.sha256&&!meta.skipIntegrity) {
       const hash=await sha256Hex(bytes);
       if(hash&&hash!==meta.sha256)throw new Error('影像完整性校验失败，请重新加载');
     }
