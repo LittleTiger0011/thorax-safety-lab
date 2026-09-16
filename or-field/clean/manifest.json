@@ -1,0 +1,53 @@
+{
+  "version": "2026.09.13-clean-2",
+  "processing": "Keep original 1280x572 / 1280x720 framing so hotspot coordinates stay valid. Yang clips: inpaint static Bilibili TV-icon strokes; fill right/left letterbox with black (wordmark sat on the bar); strip audio. Gong clip: rebuild from source at t=8.0s for 62s, inpaint the static title/name overlay (单操作孔RS8切除术 / 人名 / 医院), strip audio. No edge crop.",
+  "scoringCoordinates": "original full-frame normalized coordinates",
+  "videos": [
+    {
+      "file": "video/step01_hilar_expose.mp4",
+      "size": [
+        1280,
+        572
+      ],
+      "audio": false
+    },
+    {
+      "file": "video/step02_pa_isolation.mp4",
+      "size": [
+        1280,
+        572
+      ],
+      "audio": false
+    },
+    {
+      "file": "video/step03_stapler.mp4",
+      "size": [
+        1280,
+        572
+      ],
+      "audio": false
+    },
+    {
+      "file": "video/step04_circular_optics.mp4",
+      "size": [
+        1280,
+        720
+      ],
+      "audio": false
+    }
+  ],
+  "webDelivery": {
+    "updated": "2026-09-15",
+    "file": "video/step04_circular_optics.mp4",
+    "codec": "H.264",
+    "sizeBytes": 22896528,
+    "sha256": "5fd2d027d63c5a1e33ec5bdab007b591ea387f8520baa7cc786d5cf0ffacec84",
+    "dimensions": [
+      1280,
+      720
+    ],
+    "durationSeconds": 62,
+    "frames": 1860,
+    "note": "Web encoding; identical frame dimensions, duration and frame count. No crop or timing changes."
+  }
+}

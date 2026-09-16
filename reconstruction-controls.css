@@ -1,0 +1,11 @@
+.reconstruction-controls{border-top:1px solid var(--line);padding:12px;display:grid;gap:9px;background:#10232d;font-size:14px;flex:none}
+.reconstruction-heading{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.reconstruction-heading strong{font-weight:600}.reconstruction-heading button{font-size:14px;padding:4px 0}
+.reconstruction-target-row{display:flex;align-items:center;gap:6px}.reconstruction-target-row select{width:100%;flex:1;min-width:0;height:36px}.reconstruction-target-row button{white-space:nowrap;padding:6px 9px}
+.reconstruction-actions{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:6px}.reconstruction-actions button{padding:7px 3px;min-height:36px}
+.reconstruction-actions [aria-pressed=true]{background:#24534b;border-color:#69baa7;color:#e4fff6}
+.reconstruction-color-row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}.reconstruction-color-row label{display:flex;align-items:center;gap:6px}.reconstruction-color-row input[type=color]{width:34px;height:29px;padding:2px;border:1px solid #50717e;border-radius:4px;background:#10202b;cursor:pointer}.reconstruction-color-row button{padding:5px 7px}.reconstruction-color-row .surface-visible{margin-left:auto}
+.reconstruction-opacity-row{display:flex;align-items:center;gap:7px}.reconstruction-opacity-row input{width:100%;flex:1}.reconstruction-opacity-row output{min-width:42px;text-align:right;font:13px var(--mono)}
+.reconstruction-controls p{margin:0;font-size:13px;line-height:1.65;color:#9fb8c5;overflow-wrap:anywhere}.reconstruction-controls #reconstruction-state{color:#d2e8e7;min-height:22px}
+.anatomy-panel .model-controls{height:auto;min-height:52px}.anatomy-panel.expanded{overflow:auto}.anatomy-panel.expanded .model-stage{min-height:220px;flex:1 0 35vh}.anatomy-panel.expanded .reconstruction-controls{width:100%;max-width:780px;align-self:center}
+@media(max-width:640px){.anatomy-panel .model-controls{flex-wrap:wrap}.anatomy-panel.expanded .model-stage{flex-basis:30vh;min-height:160px}}

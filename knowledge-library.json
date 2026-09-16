@@ -1,0 +1,1985 @@
+{
+  "version": "THORAX-LIBRARY-2026.09.15-2",
+  "checked": "2026-09-15",
+  "sources": [
+    {
+      "id": "kg-dicom-directions",
+      "title": "DICOM PS3.3 2026c：Patient Orientation（C.7.6.1.1.1）",
+      "url": "https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.html",
+      "year": 2026,
+      "type": "官方标准",
+      "checked": "2026-09-15",
+      "supports": "患者方向字母的含义，以及方向标签与影像方向信息应保持一致。",
+      "access": "已取得官方章节正文",
+      "accessNote": "已取得官方章节正文"
+    },
+    {
+      "id": "kg-dicom-plane",
+      "title": "DICOM PS3.3 2026c：Image Plane Module（C.7.6.2）",
+      "url": "https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_C.7.6.2.html",
+      "year": 2026,
+      "type": "官方标准",
+      "checked": "2026-09-15",
+      "supports": "影像位置、行列方向、像素间距共同描述患者坐标中的影像平面；层厚和相邻层中心间距是不同属性。",
+      "access": "已取得官方章节正文",
+      "accessNote": "已取得官方章节正文"
+    },
+    {
+      "id": "kg-dicom-view",
+      "title": "DICOM PS3.18 2026c：MPR / 3D Orientation（8.3.5.3.4）",
+      "url": "https://dicom.nema.org/medical/dicom/current/output/chtml/part18/sect_8.3.5.3.4.html",
+      "year": 2026,
+      "type": "官方标准",
+      "checked": "2026-09-15",
+      "supports": "三维和多平面视图方向以患者为参照，观察视点与观察方向属于显示视图信息。",
+      "access": "已取得官方章节正文",
+      "accessNote": "已取得官方章节正文"
+    },
+    {
+      "id": "kg-dicom-spacing",
+      "title": "DICOM PS3.3 2026c：Basic Pixel Spacing Calibration Macro（10.7）",
+      "url": "https://dicom.nema.org/medical/dicom/current/output/chtml/part03/sect_10.7.html",
+      "year": 2026,
+      "type": "官方标准",
+      "checked": "2026-09-15",
+      "supports": "像素间距表达相邻像素中心之间的物理距离，数值顺序为行间距、列间距。",
+      "access": "已取得官方章节正文",
+      "accessNote": "已取得官方章节正文"
+    },
+    {
+      "id": "kg-bronchial-text",
+      "title": "Anatomy, Thorax, Bronchial · StatPearls / NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK537353/",
+      "year": 2023,
+      "type": "NCBI 教材",
+      "checked": "2026-09-15",
+      "supports": "主支气管、叶支气管、段支气管的层级；支气管负责气体传导；右肺通常十段，左肺段数随合并命名方式改变。",
+      "access": "已取得教材正文；采用页面 Last Update 2023-08-08，而非站点通用版权年份",
+      "accessNote": "已取得教材正文；采用页面 Last Update 2023-08-08，而非站点通用版权年份"
+    },
+    {
+      "id": "kg-lobectomy-anatomy",
+      "title": "Lobectomy：Anatomy and Physiology · StatPearls / NCBI Bookshelf",
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK553123/",
+      "year": 2025,
+      "type": "NCBI 教材",
+      "checked": "2026-09-15",
+      "supports": "肺叶肺段的 S 编号、B 支气管编号；右上叶、右中叶和左舌段命名；中间支气管与右中下叶通路。仅引用解剖章节，不引用其治疗推荐。",
+      "access": "已取得教材正文；页面 Last Update 2025-09-26",
+      "accessNote": "已取得教材正文；页面 Last Update 2025-09-26"
+    },
+    {
+      "id": "kg-lul-ct-2022",
+      "title": "Anatomical variation analysis of left upper pulmonary blood vessels and bronchi based on three-dimensional reconstruction of chest CT",
+      "url": "https://www.frontiersin.org/journals/oncology/articles/10.3389/fonc.2022.1028467/full",
+      "year": 2022,
+      "type": "原始 CT 研究",
+      "checked": "2026-09-15",
+      "supports": "103 例左上叶病变病例的三维 CT 分析记录了多种血管和支气管分支、共干关系；可用于说明个体变异及分别追踪的必要性。",
+      "access": "已取得论文全文；使用方法、结果及研究局限范围内的信息",
+      "accessNote": "已取得论文全文；使用方法、结果及研究局限范围内的信息"
+    },
+    {
+      "id": "kg-basal-ct-2023",
+      "title": "Multi-slice computed tomographic analysis and identification of remarkable anatomical types of segmental bronchi in bilateral inferior lobes: based on extensive data",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38106334/",
+      "year": 2023,
+      "type": "原始 CT 研究",
+      "checked": "2026-09-15",
+      "supports": "回顾性 10,000 例 CT 研究在双下叶记录不同支气管分支和共干形式；左下叶可存在 B7+8 等形式。",
+      "access": "已取得 PubMed 摘要及图注；未声称取得期刊全文",
+      "accessNote": "已取得 PubMed 摘要及图注；未声称取得期刊全文"
+    },
+    {
+      "id": "kg-rml-ct-2025",
+      "title": "Observation of bronchial anatomy and variation of the middle lobe of the right lung based on three-dimensional reconstruction of lung CT",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11963428/",
+      "year": 2025,
+      "type": "原始 CT 研究",
+      "checked": "2026-09-15",
+      "supports": "541 例回顾性 CT 分析记录右中叶支气管的分支及空间走向变异；研究以二维 CT 与三维重建相互核对。",
+      "access": "已取得论文全文；不复制论文图像，不采用正文中可疑或不必要的精细比例",
+      "accessNote": "已取得论文全文；不复制论文图像，不采用正文中可疑或不必要的精细比例"
+    },
+    {
+      "id": "kg-ests-segment-2023",
+      "title": "ESTS expert consensus recommendations on technical standards of segmentectomy for primary lung cancer",
+      "url": "https://academic.oup.com/ejcts/article/63/6/ezad224/7189738",
+      "year": 2023,
+      "type": "学会专家共识",
+      "checked": "2026-09-15",
+      "supports": "可检索的推荐第 5 项将术前三维重建用于帮助明确病灶位置、血管变异和特定段切方案的切缘可行性。",
+      "access": "已核实期刊条目和可检索推荐文字；期刊全文直开受阻，未取得全文",
+      "accessNote": "已核实期刊条目和可检索推荐文字；期刊全文直开受阻，未取得全文"
+    },
+    {
+      "id": "kg-airway-kink-2021",
+      "title": "Intermediate bronchial kinking after right upper lobectomy for lung cancer",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32955915/",
+      "year": 2021,
+      "type": "原始临床研究",
+      "checked": "2026-09-15",
+      "supports": "100 例右上叶切除病例的回顾性研究观察到中间支气管成角与术后呼吸症状的关联；不证明单个病例病因，也不作为操作方案。",
+      "access": "已取得 PubMed 摘要；采用期刊正式出版年 2021，非在线发表年 2020",
+      "accessNote": "已取得 PubMed 摘要；采用期刊正式出版年 2021，非在线发表年 2020"
+    },
+    {
+      "id": "kg-who-checklist",
+      "title": "WHO：Safe surgery — Tool and Resources",
+      "url": "https://www.who.int/teams/integrated-health-services/patient-safety/research/safe-surgery/tool-and-resources",
+      "year": 2009,
+      "type": "官方安全框架",
+      "checked": "2026-09-15",
+      "supports": "手术安全核查重视团队暂停、共同核查与沟通；用于课程中的暂停复核及明确表达疑虑。",
+      "access": "已取得 WHO 官方说明页及其清单说明；不声称该页面提供胸外科专用气道处理步骤",
+      "accessNote": "已取得 WHO 官方说明页及其清单说明；不声称该页面提供胸外科专用气道处理步骤"
+    },
+    {
+      "id": "kg-local-course",
+      "title": "本站肺段课程、影像题库与源覆盖目录",
+      "url": "./index.html",
+      "year": 2026,
+      "type": "本站教学资料",
+      "checked": "2026-09-15",
+      "supports": "本站轴位默认显示方向、源肺段标注、B/A/V 整树资料范围、病例覆盖、已裁剪重采样数据及学习交互。",
+      "access": "只读核对 dist/segment-course-data.js、assessment-data.js、anatomy-data.js、segment-atlas/catalog.json",
+      "accessNote": "只读核对 dist/segment-course-data.js、assessment-data.js、anatomy-data.js、segment-atlas/catalog.json"
+    },
+    {
+      "id": "phys-circulation-2022",
+      "title": "OpenStax《Anatomy and Physiology 2e》20.5 Circulatory Pathways",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/20-5-circulatory-pathways",
+      "year": 2022,
+      "type": "教材",
+      "checked": "2026-09-15",
+      "access": "已核对开放教材正文的 Pulmonary Circulation 部分",
+      "supports": "肺循环由右心室经肺动脉、毛细血管和肺静脉返回左心房；用于通路方向的基础解释。",
+      "accessNote": "已核对开放教材正文的 Pulmonary Circulation 部分"
+    },
+    {
+      "id": "phys-gas-2022",
+      "title": "OpenStax《Anatomy and Physiology 2e》22.4 Gas Exchange",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/22-4-gas-exchange",
+      "year": 2022,
+      "type": "教材",
+      "checked": "2026-09-15",
+      "access": "已核对开放教材正文的 Ventilation and Perfusion 部分",
+      "supports": "通气和灌注的定义与二者配合；不用于推算个体氧合或时间进程。",
+      "accessNote": "已核对开放教材正文的 Ventilation and Perfusion 部分"
+    },
+    {
+      "id": "phys-capillary-2022",
+      "title": "OpenStax《Anatomy and Physiology 2e》20.3 Capillary Exchange",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/20-3-capillary-exchange",
+      "year": 2022,
+      "type": "教材",
+      "checked": "2026-09-15",
+      "access": "已核对开放教材正文",
+      "supports": "毛细血管静水压与液体外滤的关系；文中静脉受阻风险为据此作出的定性教学推理，未套用体循环数值。",
+      "accessNote": "已核对开放教材正文"
+    },
+    {
+      "id": "rml-vein-2025",
+      "title": "Hao 等：Anatomical Classification and Clinical Significance of Right Middle Lobe Vein Confluence Variations in Right Upper Lobectomy: A Three-Dimensional Reconstruction Study",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/40692133/",
+      "year": 2025,
+      "type": "原始研究 · 回顾性三维解剖研究",
+      "checked": "2026-09-15",
+      "access": "已核对 PubMed 摘要，未取得出版社全文",
+      "supports": "右中叶静脉存在跨水平裂及多种汇流变异；需关注拟保留中叶的引流关系，不将研究分类或频率机械套用本站病例。",
+      "accessNote": "已核对 PubMed 摘要，未取得出版社全文"
+    },
+    {
+      "id": "pv-atlas-2020",
+      "title": "Polaczek 等：Pulmonary veins variations with potential impact in thoracic surgery: a computed-tomography-based atlas",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/32274104/",
+      "year": 2020,
+      "type": "原始研究 · CT 解剖图谱",
+      "checked": "2026-09-15",
+      "access": "已核对 PubMed 摘要及开放图注，未以全文阅读作声明",
+      "supports": "肺静脉变异涉及走行、心房汇入口和引流区域；中叶可有直接或分流汇入等模式，支持术前逐例影像评估。",
+      "accessNote": "已核对 PubMed 摘要及开放图注，未以全文阅读作声明"
+    },
+    {
+      "id": "who-checklist-2009",
+      "title": "WHO：Implementation Manual — WHO Surgical Safety Checklist 2009",
+      "url": "https://www.who.int/docs/default-source/patient-safety/9789241598590-eng.pdf",
+      "year": 2009,
+      "type": "WHO 官方实施手册",
+      "checked": "2026-09-15",
+      "access": "已取得 WHO 官方 20 页 PDF，核对三个时点及团队沟通条目",
+      "supports": "麻醉诱导前、切皮前、离室前核查；患者和术式部位确认、关键风险沟通、影像可用及离室交接。",
+      "accessNote": "已取得 WHO 官方 20 页 PDF，核对三个时点及团队沟通条目"
+    },
+    {
+      "id": "who-team-2021",
+      "title": "WHO：Course 04 — Being an effective team player",
+      "url": "https://www.who.int/publications/m/item/course-04-being-an-effective-team-player",
+      "year": 2021,
+      "type": "WHO 官方患者安全教学资料",
+      "checked": "2026-09-15",
+      "access": "已取得官网链接的 5 页讲义；官网发布日期为 2021，讲义版权标注 2012",
+      "documentUrl": "https://cdn.who.int/media/docs/default-source/patient-safety/curriculum-guide/resources/ps-curr-handouts/course04_handout_being-an-effective-team-player-.pdf?download=true&sfvrsn=50aecf5a_9",
+      "supports": "明确角色、使用客观语言、向具体成员分配任务、复述闭环沟通、事前简报与事后复盘。",
+      "accessNote": "已取得官网链接的 5 页讲义；官网发布日期为 2021，讲义版权标注 2012"
+    },
+    {
+      "id": "haynes-checklist-2009",
+      "title": "Haynes 等：A surgical safety checklist to reduce morbidity and mortality in a global population",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/19144931/",
+      "year": 2009,
+      "type": "原始研究 · 多中心实施前后比较",
+      "checked": "2026-09-15",
+      "access": "已核对 PubMed 摘要",
+      "supports": "核查表项目实施与观察到的结局变化有关联；研究设计不是本站教学效果的验证，本文不复述效应数值。",
+      "accessNote": "已核对 PubMed 摘要"
+    },
+    {
+      "id": "ests-complications-2015",
+      "title": "Decaluwe 等／ESTS MITIG：Major intraoperative complications during video-assisted thoracoscopic anatomical lung resections: an intention-to-treat analysis",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/26385060/",
+      "year": 2015,
+      "type": "原始研究 · 欧洲多中心研究",
+      "checked": "2026-09-15",
+      "access": "已核对 PubMed 摘要；未取得全文",
+      "supports": "重大事件包括支气管血管结构误离断及计划外扩大手术；作者强调持续警觉与结构化行动计划，不能仅凭经验排除风险。",
+      "accessNote": "已核对 PubMed 摘要；未取得全文"
+    },
+    {
+      "id": "vats-bleeding-2019",
+      "title": "Liu 等：International expert consensus on the management of bleeding during VATS lung surgery",
+      "url": "https://atm.amegroups.org/article/view/33255/html",
+      "year": 2019,
+      "type": "国际专家共识 · 原始共识文件",
+      "checked": "2026-09-15",
+      "access": "已核对期刊全文的出血控制、转换入路及证据方法部分",
+      "supports": "优先控制出血、避免盲目夹持；结合视野、患者状态和团队资源及时升级，转换入路不应视为失败。该共识主要依据病例系列和专家经验，不是随机试验。",
+      "accessNote": "已核对期刊全文的出血控制、转换入路及证据方法部分"
+    },
+    {
+      "id": "course-clinical",
+      "title": "本站课程：切除范围、术前功能与淋巴结分期",
+      "url": "./safety-training.html?route=assessment",
+      "year": 2026,
+      "type": "课程",
+      "checked": "2026-09-15",
+      "supports": "decision、fitness、staging 六类能力及原创病例推理；对应本地 assessment-data.js。",
+      "accessNote": "已读取本地课程与题库。"
+    },
+    {
+      "id": "calgb-140503",
+      "title": "CALGB 140503：Lobar or Sublobar Resection for Peripheral Stage IA NSCLC",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/36780674/",
+      "year": 2023,
+      "type": "随机试验 · NEJM",
+      "checked": "2026-09-15",
+      "supports": "CT实性成分≤2 cm、病灶中心位于肺外1/3及术中确认肺门与纵隔淋巴结阴性等入组条件；亚肺叶切除的无病生存非劣效结果。",
+      "accessNote": "核对 PubMed 原始论文摘要及 NEJM 可检索入组条款；未声称阅读全文。"
+    },
+    {
+      "id": "jcog-0802",
+      "title": "JCOG0802/WJOG4607L：Segmentectomy versus lobectomy in small peripheral NSCLC",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/35461558/",
+      "year": 2022,
+      "type": "随机试验 · Lancet",
+      "checked": "2026-09-15",
+      "supports": "临床IA期、≤2 cm、CTR>0.5；段切与叶切的总生存、局部复发及功能终点。",
+      "accessNote": "核对原始论文摘要；不使用未取得全文的亚组细节。"
+    },
+    {
+      "id": "ests-segment-2023",
+      "title": "ESTS：原发性肺癌肺段切除技术标准专家共识",
+      "url": "https://academic.oup.com/ejcts/article/63/6/ezad224/7189738",
+      "year": 2023,
+      "type": "学会专家共识",
+      "checked": "2026-09-15",
+      "supports": "解剖性段切定义、三维规划的局限、切缘与淋巴结质量要求。",
+      "accessNote": "核对学术出版社可检索全文的术前规划、段间平面及淋巴结管理段落。"
+    },
+    {
+      "id": "fitness-2025",
+      "title": "ERS / ESTS：肺癌根治性治疗适应能力评估指南",
+      "url": "https://academic.oup.com/ejcts/article/67/11/ezaf329/8321918",
+      "year": 2025,
+      "type": "学会临床指南",
+      "checked": "2026-09-15",
+      "supports": "常规FEV₁与DLCO、ppoDLCO三档风险、整体状态与个体化评估。",
+      "accessNote": "核对出版社索引中的推荐及说明；ppoDLCO引用PICO 2b推荐段，未混用证据讨论中的另一组分界。"
+    },
+    {
+      "id": "dlco-standard-2017",
+      "title": "ERS / ATS：单次呼吸法一氧化碳弥散能力测定标准",
+      "url": "https://doi.org/10.1183/13993003.00016-2016",
+      "year": 2017,
+      "type": "官方技术标准",
+      "checked": "2026-09-15",
+      "supports": "DLCO测量意义、血红蛋白及检查状态对结果的影响、标准化要求。",
+      "accessNote": "核对学会发布的标准摘要及患者条件段落。"
+    },
+    {
+      "id": "spirometry-standard-2019",
+      "title": "ATS / ERS：肺量计检查标准化更新",
+      "url": "https://www.atsjournals.org/doi/10.1164/rccm.201908-1590ST",
+      "year": 2019,
+      "type": "官方技术标准",
+      "checked": "2026-09-15",
+      "supports": "FEV₁定义、可接受性与可重复性对肺量计解释的重要性。",
+      "accessNote": "核对官方技术标准索引与公开PDF摘要。"
+    },
+    {
+      "id": "dlco-cohort-2006",
+      "title": "Carbon monoxide lung diffusion capacity improves risk stratification in patients without airflow limitation",
+      "url": "https://academic.oup.com/ejcts/article/29/4/567/478970",
+      "year": 2006,
+      "type": "原始队列研究",
+      "checked": "2026-09-15",
+      "supports": "通气指标正常的人群仍可能存在弥散能力降低，二者不能互相替代。",
+      "accessNote": "核对研究结果段；仅作概念证据，不把历史队列发生率当作当前个体风险。"
+    },
+    {
+      "id": "accp-physiology-2013",
+      "title": "ACCP：拟行肺癌切除患者的术前生理评估",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/23649437/",
+      "year": 2013,
+      "type": "学会临床指南",
+      "checked": "2026-09-15",
+      "supports": "心血管、通气、弥散、预计术后功能与运动能力组成连续评估路径。",
+      "accessNote": "核对原始指南摘要；不以2013阈值覆盖2025更新。"
+    },
+    {
+      "id": "prehab-rct-2017",
+      "title": "Short-Term Preoperative High-Intensity Interval Training in Patients Awaiting Lung Cancer Surgery",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/27771425/",
+      "year": 2017,
+      "type": "随机试验 · JTO",
+      "checked": "2026-09-15",
+      "supports": "术前康复可改善运动指标，但本试验主要复合终点未显示统计学显著差异。",
+      "accessNote": "核对原始论文摘要。"
+    },
+    {
+      "id": "staging-2026",
+      "title": "ERS / ESGE / ESTS：肺癌诊断与分期内镜超声指南",
+      "url": "https://publications.ersnet.org/lookup/doi/10.1183/13993003.00097-2026",
+      "year": 2026,
+      "type": "学会临床指南",
+      "checked": "2026-09-15",
+      "supports": "内镜超声优先、系统性取样、EBUS与EUS互补、阴性系统分期后的纵隔镜更新。",
+      "accessNote": "核对学会发布全文可检索的推荐、PICO 2/3及新旧指南比较框。"
+    },
+    {
+      "id": "score-2019",
+      "title": "SCORE：Systematic and combined endosonographic staging of lung cancer",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/30578389/",
+      "year": 2019,
+      "type": "前瞻性多中心研究",
+      "checked": "2026-09-15",
+      "supports": "229例研究中系统性EBUS与EUS-B增加分期信息；靶向取样不能等同系统评估。",
+      "accessNote": "核对原始论文摘要；数字只描述该研究。"
+    },
+    {
+      "id": "media-st-2023",
+      "title": "MEDIASTrial：Endosonography With or Without Confirmatory Mediastinoscopy for Resectable Lung Cancer",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/37018653/",
+      "year": 2023,
+      "type": "随机试验 · JCO",
+      "checked": "2026-09-15",
+      "supports": "阴性系统性内镜分期后追加纵隔镜的研究；未预见N2仍可能发生。",
+      "accessNote": "核对原始论文摘要、360例样本及主要非劣效终点。"
+    },
+    {
+      "id": "tnm9-stage-2024",
+      "title": "IASLC：第9版肺癌TNM分期组合修订的原始研究",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/38447919/",
+      "year": 2024,
+      "type": "IASLC原始分期研究",
+      "checked": "2026-09-15",
+      "supports": "N2a为单个同侧纵隔或隆突下站受累；N2b为多个N2站受累。",
+      "accessNote": "核对原始研究摘要，分期组合仅作权威原文链接。"
+    },
+    {
+      "id": "iaslc-tnm9-official",
+      "title": "IASLC Staging Project：第9版分期官方资源",
+      "url": "https://www.iaslc.org/science-research/scientific-projects/iaslc-staging-project-lung-cancer-thymic-tumors-and",
+      "year": 2025,
+      "type": "学会官方标准资源",
+      "checked": "2026-09-15",
+      "supports": "第9版修订已获AJCC采纳及官方分期卡入口。",
+      "accessNote": "已核对官方页面；未将无法完整加载的16MB分期卡声称为已读全文。"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "orientation-side",
+      "title": "患者侧别识读",
+      "summary": "一次可靠的肺段判断，从说清“这是谁的左右”开始。把屏幕当成可以旋转的窗口，把患者当成方向的参照。先读标记、再解释位置，之后才能把 CT、三维模型与病例记录连成同一个空间故事。",
+      "sections": [
+        {
+          "title": "方向字母怎样读",
+          "sources": [
+            "kg-dicom-directions"
+          ],
+          "points": [
+            "在人类影像中，R、L 指患者右、左，A、P 指前、后；H、F 表示头侧、足侧。它们描述解剖方向，而不是鼠标所在的位置。",
+            "读图时先说“患者右侧”，不要只说“左边那一块”。完整表达把参照对象说出来，能减少同学之间的镜像误解。",
+            "注意 S 的使用场景：方向轴旁的 S 常用于头侧提示，RS2 中的 S 则代表肺段。先看标签的位置和上下文，再解释字母。"
+          ]
+        },
+        {
+          "title": "固定患者，改变视角",
+          "sources": [
+            "kg-dicom-view",
+            "kg-local-course"
+          ],
+          "points": [
+            "本站默认轴位按从足端向头侧观察，屏幕左侧标 R；这是一种当前显示方式，切换其他视角后仍要重新查看方向提示。",
+            "把三维模型转到患者后方，屏幕上的左右关系可能改变；模型旋转不会让患者的右肺变成左肺。可用方向轴验证这一点。",
+            "本课建议先关闭彩色覆盖完成一次侧别描述，再打开覆盖核对。这样能检查自己是在读方向，还是记住了某个颜色的位置。"
+          ]
+        },
+        {
+          "title": "让判断可以被复核",
+          "sources": [
+            "kg-local-course",
+            "kg-who-checklist"
+          ],
+          "points": [
+            "记录定位时同时写病例号、平面和患者侧别，例如“CT-001，轴位，患者右侧”。单独保存一张裁掉方向标记的截图会丢失关键语境。",
+            "若题干侧别与当前资料冲突，先标出不一致并回看来源；不要用图像更清晰、病灶更显眼或多数人的猜测来解决冲突。",
+            "自测可让同伴只读你的定位句，尝试指出同一区域。如果需要补问“你的左还是患者的左”，说明表述还需要完善。"
+          ]
+        }
+      ],
+      "pitfalls": [
+        "把屏幕右侧永久记作患者右侧。",
+        "只看病灶或颜色，跳过方向标签。",
+        "资料侧别冲突时仍继续给出肺段结论。"
+      ],
+      "workflow": [
+        "核对病例号和当前影像来源。",
+        "读出当前平面的 R/L 与前后或头足标记。",
+        "用患者坐标写一句位置描述。",
+        "改变视角后重读标记，检查描述是否仍然成立。"
+      ],
+      "scenario": {
+        "stem": "同学把 CT-001 屏幕左侧的青绿色区域写成“左肺”，随后转动三维模型，又认为同一区域换到了右肺。应怎样纠正？",
+        "discussion": "先请他找到轴位 R 标记，再把句子改成“患者右侧的源标注区域”。接着旋转模型并重复描述，解释变化的是观察角度。此题只检验侧别与表达；确认具体肺段还需要肺叶和连续分支证据。",
+        "sources": [
+          "kg-dicom-view",
+          "kg-local-course"
+        ]
+      },
+      "takeaways": [
+        "患者是方向参照。",
+        "换平面、换视角都重新读标记。",
+        "位置表述必须能被另一人复核。"
+      ],
+      "references": [
+        "kg-dicom-directions",
+        "kg-dicom-view",
+        "kg-who-checklist",
+        "kg-local-course"
+      ],
+      "images": [
+        {
+          "src": "./segment-atlas/figures/RS2.webp",
+          "caption": "CT-001 轴位，图中 R 位于画面左侧；青绿色为源 RS2 网格的覆盖显示。此图用于方向识读，彩色边界不是原 CT 天然分界线。",
+          "kind": "真实 CT + 源覆盖",
+          "verified": "已逐图查看，标题显示 CT-001 / RS2 / CT80"
+        }
+      ],
+      "diagramSuggestion": {
+        "title": "患者与观察者的左右",
+        "description": "绘制双视角原创方向示意：中间患者 R/L 固定，外围观察窗口转动；用蓝色 R 和粉色 L 贯穿图例，明确标注“教学示意”。"
+      },
+      "diagram": {
+        "type": "learning-flow",
+        "title": "建立患者坐标",
+        "labels": [
+          "核对病例",
+          "读取方向",
+          "描述位置",
+          "换视角复核"
+        ],
+        "caption": "根据本节课程整理的学习关系示意。"
+      }
+    },
+    {
+      "id": "orientation-space",
+      "title": "多平面空间核对",
+      "summary": "轴位、冠状位和矢状位可以看成穿过同一体积的三张切片。学习的目标是追踪同一个空间点，而不是寻找三个看起来相似的像素。把来源、方向、物理位置和结构连续性一起核对，三屏对照才有意义。",
+      "sections": [
+        {
+          "title": "像素如何落在患者身体里",
+          "sources": [
+            "kg-dicom-plane",
+            "kg-dicom-spacing"
+          ],
+          "points": [
+            "DICOM 用影像起点、行列方向和像素间距描述二维图像在患者空间中的位置。屏幕上的第几行、第几列，需要这些信息才能对应到毫米坐标。",
+            "像素间距记录相邻像素中心的物理距离。把图片放大两倍，只是让同一像素占更多屏幕空间，不等于扫描获得了更多解剖细节。",
+            "层厚与相邻层中心间距不是同一个概念。课程中遇到“第 70 层”，应把它当成当前序列的索引，不能自动解释为统一的解剖高度。"
+          ]
+        },
+        {
+          "title": "三种切面，各看一件事",
+          "sources": [
+            "kg-local-course",
+            "kg-dicom-view"
+          ],
+          "points": [
+            "本课把轴位用于逐层观察分支出现、分开和延续；冠状位帮助组织上下关系，矢状位帮助整理前后与上下的组合关系。",
+            "同一个管状结构在不同切面可能呈圆点、短条或长条。练习时先寻找连续连接，再比较形态，避免把邻近圆点当成同一支管道。",
+            "联动十字的价值是保留当前空间点。切平面后先确认十字与病例信息，再观察它落在什么结构上，而不是照搬上一张图的像素位置。"
+          ]
+        },
+        {
+          "title": "看清对应，也看清资料范围",
+          "sources": [
+            "kg-local-course"
+          ],
+          "points": [
+            "本站 CT 包经过裁剪和重采样，冠状位与矢状位来自同一体数据。重组后的平滑轮廓可以帮助观察，但不能补回原资料未保留的细小结构。",
+            "比较两个病例时，可对照相似解剖标志和分支关系；即便两边显示同一层号，也不能认为两位患者处于同一高度。",
+            "当彩色覆盖与灰阶观察产生疑问，记录具体病例、平面和位置，再关闭覆盖回看。没有源标签的区域应记为资料未覆盖，不自行补色定段。"
+          ]
+        }
+      ],
+      "pitfalls": [
+        "把同一层号当成跨病例的统一坐标。",
+        "按相同颜色或相同像素位置寻找同一结构。",
+        "将放大或插值后的平滑外观当成更高原始分辨率。"
+      ],
+      "workflow": [
+        "确认三屏属于同一病例和同一体数据。",
+        "在轴位选点并观察前后连续层面。",
+        "保持联动点，切冠状位和矢状位核对。",
+        "记录支持对应的连接关系及仍不清楚的部分。"
+      ],
+      "scenario": {
+        "stem": "两例 CT 都停在第 70 层，学生把甲病例的定位点复制到乙病例同一像素处，认为已完成对照。这个对应还缺什么？",
+        "discussion": "缺少患者空间位置和解剖标志的核对。先分别建立方向，再寻找各自可确认的肺叶与分支；“同一像素”和“同一层号”只描述显示索引。若无法建立可靠对应，应保留不确定性，而不是强行给出同一肺段名称。",
+        "sources": [
+          "kg-dicom-plane",
+          "kg-local-course"
+        ]
+      },
+      "takeaways": [
+        "同一空间点可以有不同截面形态。",
+        "联动前提是来源和坐标一致。",
+        "重组与放大不等于新增原始细节。"
+      ],
+      "references": [
+        "kg-dicom-plane",
+        "kg-dicom-spacing",
+        "kg-dicom-view",
+        "kg-local-course"
+      ],
+      "images": [
+        {
+          "src": "./segment-atlas/figures/RS2.webp",
+          "caption": "轴位示例：CT-001 的 RS2 源覆盖。静态图仅展示一个切面；请进入影像对照页完成同点的冠状位、矢状位核对。",
+          "kind": "真实 CT + 源覆盖",
+          "verified": "已逐图查看"
+        }
+      ],
+      "diagramSuggestion": {
+        "title": "一体三面，同点联动",
+        "description": "用青、紫、橙三张正交半透明平面穿过同一个发光十字；旁边对应轴位、冠状位、矢状位小窗。作为原创几何示意，不伪装为患者重建。"
+      },
+      "diagram": {
+        "type": "learning-flow",
+        "title": "多平面对照路径",
+        "labels": [
+          "确认同源",
+          "连续层面",
+          "多平面核对",
+          "记录证据"
+        ],
+        "caption": "根据本节课程整理的学习关系示意。"
+      }
+    },
+    {
+      "id": "segment-name",
+      "title": "肺叶肺段命名",
+      "summary": "肺段名称是一套带层级的空间语言。先说哪侧、哪叶，再说段号和名称，才能避免“同号就是同一位置”的误解。记住常见名称只是起点；遇到左侧合并命名、共干或源标签缺项，还需要读清资料采用的方案。",
+      "sections": [
+        {
+          "title": "把代码拆成可理解的层级",
+          "sources": [
+            "kg-bronchial-text",
+            "kg-lobectomy-anatomy"
+          ],
+          "points": [
+            "支气管树从主支气管分到叶支气管，再进入段支气管。肺段属于肺叶内部的划分，所以只报“S2”不如“右上叶后段 S2”明确。",
+            "右上叶常用 S1 尖段、S2 后段、S3 前段；右中叶为 S4 外侧段、S5 内侧段。名称应随肺叶一起记，不拆成孤立数字。",
+            "左上叶常用 S1+2 尖后段，舌区的 S4、S5 分别为上舌段、下舌段。左舌区属于左上叶，不能另起一个“左中叶”。"
+          ]
+        },
+        {
+          "title": "合并命名与分支共干",
+          "sources": [
+            "kg-basal-ct-2023",
+            "kg-local-course"
+          ],
+          "points": [
+            "双下叶原始 CT 研究记录了多种支气管共干，其中包括左侧 B7+8。学习时应区分“共用一段起始通路”与“下游区域完全相同”这两个问题。",
+            "本站沿用病例提供的 LS8 标签，没有把每个 LS8 自动改写为 LS7+8。名称能否等同，需要该病例的完整分支资料支持。",
+            "亚段后缀 a/b/c 也属于源资料的一部分。若只提供 RS10b、RS10c，父段汇总表示已提供区域的集合，不保证完整 S10 都已覆盖。"
+          ]
+        },
+        {
+          "title": "建立容易混淆的对照组",
+          "sources": [
+            "kg-local-course"
+          ],
+          "points": [
+            "把右上叶 S2 与右下叶 S6 放在一起练：两者都可位于胸腔后方，但所属肺叶不同；“在后面”不足以完成命名。",
+            "把右中叶 S4/S5 与左舌段 S4/S5 配对：前者常用外侧、内侧描述，后者用上、下描述。相同数字不意味着两侧可以机械镜像。",
+            "建议建立个人对照卡：完整名称、所属肺叶、最容易混淆对象、下一步核对线索。答题后修改卡片中的理由，比只抄正确段号更有用。"
+          ]
+        }
+      ],
+      "pitfalls": [
+        "只凭前后位置命名，遗漏肺叶归属。",
+        "把左侧 S1+2 当作软件漏分。",
+        "把源标签缺项理解成患者必然缺少某段。"
+      ],
+      "workflow": [
+        "读 R/L，明确患者侧别。",
+        "确定所属肺叶和当前命名方案。",
+        "组合段号、中文名与完整源标签。",
+        "用连续分支和覆盖范围检查易混淆对象。"
+      ],
+      "scenario": {
+        "stem": "目录里看到了 LS1+2 和 LS8，却没有独立 LS7。学生判断“左肺数据少了两个段，应该自动补齐”。如何改写这段记录？",
+        "discussion": "先记录真实可用标签：LS1+2 是本站采用的尖后段合并名称；独立 LS7 网格未提供，不能据此判断患者解剖缺失。对 LS8 保留源名称，另列“需结合完整支气管资料核对合并命名”，这样区分了知识、数据和待确认事项。",
+        "sources": [
+          "kg-lobectomy-anatomy",
+          "kg-local-course"
+        ]
+      },
+      "takeaways": [
+        "完整名称包含侧别、肺叶和肺段。",
+        "同号跨侧不能机械照搬。",
+        "命名方案、真实变异和资料缺项分别记录。"
+      ],
+      "references": [
+        "kg-bronchial-text",
+        "kg-lobectomy-anatomy",
+        "kg-basal-ct-2023",
+        "kg-local-course"
+      ],
+      "images": [
+        {
+          "src": "./segment-atlas/figures/LS1-2.webp",
+          "caption": "CT-001 的 LS1+2 源覆盖显示；金黄色区域用于认识本站的左上叶尖后段合并名称。",
+          "kind": "真实 CT + 源覆盖",
+          "verified": "已逐图查看，标题显示 CT-001 / LS1+2 / CT98"
+        },
+        {
+          "src": "./segment-atlas/figures/RS4.webp",
+          "caption": "CT-006 的 RS4 源覆盖显示，用于与左舌段命名对照；此图未逐支标注 B4。",
+          "kind": "真实 CT + 源覆盖",
+          "verified": "已逐图查看，标题显示 CT-006 / RS4 / CT88"
+        }
+      ],
+      "diagramSuggestion": {
+        "title": "五叶与肺段代码目录",
+        "description": "制作可展开的左右肺树状目录：先五个肺叶，再列本站真实存在的源段名。LS7 以“命名专题 / 无独立源网格”展示，避免绘制猜测区域。"
+      },
+      "diagram": {
+        "type": "learning-flow",
+        "title": "完整命名的学习顺序",
+        "labels": [
+          "确认侧别",
+          "确定肺叶",
+          "对应段名",
+          "核对源标签"
+        ],
+        "caption": "根据本节课程整理的学习关系示意。"
+      }
+    },
+    {
+      "id": "segment-trace",
+      "title": "肺段连续定位",
+      "summary": "连续定位要回答的不只是“这一块叫什么”，还要回答“我沿哪条线索找到它”。把肺叶归属、支气管连续性、多平面关系和源覆盖分开观察，再把证据组合起来；颜色适合核对学习结果，不能替代定位理由。",
+      "sections": [
+        {
+          "title": "由整体走向分支",
+          "sources": [
+            "kg-bronchial-text",
+            "kg-local-course"
+          ],
+          "points": [
+            "段支气管与相应支气管肺段存在结构联系，因此本课采用先定肺叶、再沿气道分支追踪的观察路径。一个孤立圆形截面通常不足以交代起源和去向。",
+            "先选择较容易识别的近端分支，缓慢浏览相邻层面，记录分叉和进入区域。暂时看不清时可退回已经确认的位置，避免在远端连续猜名称。",
+            "本站支气管、动脉、静脉主要按整树导出，不能把教程里的 B1/A1/V1 索引当成对病例每根细支的自动标定；应明确哪些关系实际可见。"
+          ]
+        },
+        {
+          "title": "用另一种证据交叉检查",
+          "sources": [
+            "kg-lul-ct-2022",
+            "kg-rml-ct-2025",
+            "kg-local-course"
+          ],
+          "points": [
+            "左上叶 103 例三维 CT 研究记录多种血管和支气管分支关系。它提醒我们分别核对三套通路，不把某一支气管附近的血管直接命名为同号动脉。",
+            "右中叶 541 例研究将二维 CT 与三维重建相互核对。这里可借用这种验证思路：模型提出空间线索，连续灰阶影像检查该线索是否成立。",
+            "本课建议轴位追踪后保留定位点，再切换冠状位或矢状位。若另一平面不支持原判断，回到分叉处重新观察，并保留待确认的解释。"
+          ]
+        },
+        {
+          "title": "知道定位能够回答到哪一步",
+          "sources": [
+            "kg-ests-segment-2023",
+            "kg-local-course"
+          ],
+          "points": [
+            "ESTS 2023 共识可检索的推荐条目把三维重建用于病灶位置、血管变异和切缘可行性评估。由此可区分两个任务：解剖定位为方案讨论提供资料，但不独立决定术式。",
+            "本站彩色覆盖来自病例源网格。覆盖打开后答对段号，说明你完成了标签核对；关闭覆盖仍能讲清肺叶和连续走行，才更接近完成定位推理。",
+            "评价自己的解释时分别检查：依据是否来自同一病例、是否包含连续层面、是否说明了资料限制。不要把一个正确答案包装成所有分支都已确认。"
+          ]
+        }
+      ],
+      "pitfalls": [
+        "靠单层轮廓或覆盖颜色猜段。",
+        "看到邻近血管就套用同号分支名称。",
+        "把病灶定位成功直接写成确定段切方案。"
+      ],
+      "workflow": [
+        "核对患者方向并定位到所属肺叶。",
+        "由近端向外周追踪连续支气管分支。",
+        "保留空间点，用另一平面与独立图层核对。",
+        "打开源覆盖验证，写出理由和不能确认的部分。"
+      ],
+      "scenario": {
+        "stem": "某区域在轴位上靠后。学生凭位置写 S6，但课程覆盖显示 RS2。应如何处理这个冲突？",
+        "discussion": "先比较“后方”与“肺叶归属”提供的信息不同。回到近端确认相关肺叶，再沿连续分支追踪；可将本站 RS2 与 RS6 图并列作为复习入口，但它们是不同层面，不能仅比颜色或图形就宣称完成了鉴别。",
+        "sources": [
+          "kg-local-course"
+        ]
+      },
+      "takeaways": [
+        "定位必须有连续证据。",
+        "重建、灰阶和源标注分别解释。",
+        "位置结论与治疗方案属于不同判断。"
+      ],
+      "references": [
+        "kg-bronchial-text",
+        "kg-lul-ct-2022",
+        "kg-rml-ct-2025",
+        "kg-ests-segment-2023",
+        "kg-local-course"
+      ],
+      "images": [
+        {
+          "src": "./segment-atlas/figures/RS2.webp",
+          "caption": "CT-001，RS2 源覆盖示例；与下图共同用于复习“后方位置不等于同一肺叶”。两图来自不同层面。",
+          "kind": "真实 CT + 源覆盖",
+          "verified": "已逐图查看"
+        },
+        {
+          "src": "./segment-atlas/figures/RS6.webp",
+          "caption": "CT-001，RS6 源覆盖示例，图面标注 CT57。段号来自已提供源网格；请进入连续影像继续核对肺叶和分支。",
+          "kind": "真实 CT + 源覆盖",
+          "verified": "已逐图查看"
+        }
+      ],
+      "diagramSuggestion": {
+        "title": "定位证据拼图",
+        "description": "用四块不同颜色的证据卡展示“患者方向—肺叶—连续分支—另一平面”，点击卡片显示学习问题；末端连接源覆盖核对，不画成临床手术流程。"
+      },
+      "diagram": {
+        "type": "learning-flow",
+        "title": "肺段定位的证据链",
+        "labels": [
+          "定位肺叶",
+          "追踪分支",
+          "多平面对照",
+          "验证覆盖"
+        ],
+        "caption": "根据本节课程整理的学习关系示意。"
+      }
+    },
+    {
+      "id": "airway-route",
+      "title": "支气管通路追踪",
+      "summary": "学习气道时，把每条支气管看成通向下游肺组织的道路。名称说明它处于哪一层级，连续性说明它从哪里来、通向哪里。右侧最重要的对照之一，是已经分出的右上叶支气管与继续通向中下叶的中间支气管。",
+      "sections": [
+        {
+          "title": "先认层级，再认去向",
+          "sources": [
+            "kg-bronchial-text",
+            "kg-lobectomy-anatomy"
+          ],
+          "points": [
+            "主支气管通向左右肺，叶支气管进入相应肺叶，段支气管进入相应肺段。用这三个层级描述路线，可以避免把一段较粗的上游通路误称为某个肺段专属。",
+            "右侧气道中，上叶支气管分出后，仍有经中间支气管继续向中、下叶的通气路线。因此看到“继续向下”时，要核对下游分叉，而不能直接归入上叶。",
+            "本课采用 B 表示支气管、S 表示肺段；两者有关联，却不是同一种对象。答题时分别说清“经过的管道”和“通向的肺组织”。"
+          ]
+        },
+        {
+          "title": "读懂分叉与个体变异",
+          "sources": [
+            "kg-rml-ct-2025",
+            "kg-basal-ct-2023",
+            "kg-local-course"
+          ],
+          "points": [
+            "2025 年右中叶 CT 原始研究记录不同分支形式与走向。常见示意图可用来学习路径，但不能要求每位患者的 B4、B5 都按屏幕左右整齐排列。",
+            "双下叶大样本 CT 研究也记录多个基底支气管共干形式。看到一个共同起点时，应继续追踪分开后的区域，不能只按近端开口数量数肺段。",
+            "建议每次只跟踪一条路线：先在心中确认起点，再跟到下一个分叉，并在相邻层面往返一次。若分支交叉或遮挡，先减少图层再观察。"
+          ]
+        },
+        {
+          "title": "从“认识名字”走到“解释影响”",
+          "sources": [
+            "kg-local-course"
+          ],
+          "points": [
+            "在本站简化教学模型中，可用“气管—右主支气管—中间支气管—中叶或下叶”复述路线。该模型用于学习层级，不是某位患者的真实分支证明。",
+            "回答保护问题时，补一句下游服务区域：“这条通路继续通向拟保留的右中、下叶。”它比只圈出名称更能反映是否理解余肺通气。",
+            "学习迁移可换一个观察方向或关闭肺实质表面，再复述同一路线。若换视角便失去方向，应回到已经确认的近端分叉重新建立连续性。"
+          ]
+        }
+      ],
+      "pitfalls": [
+        "把中间支气管当成右上叶专属通路。",
+        "根据一处灰白颜色或粗细直接命名。",
+        "把共同起源等同于下游只通向一个肺段。"
+      ],
+      "workflow": [
+        "从已确认的近端气道建立起点。",
+        "先分清主、叶、段三个层级。",
+        "连续追踪分叉，写出下游所属肺叶。",
+        "换视角再复述路线，并指出拟保留通路。"
+      ],
+      "scenario": {
+        "stem": "题图已经看到右上叶支气管分出，剩余气道向尾侧延续。学生只写“右上叶另一支”，并说不上下游去向。应怎样补足解释？",
+        "discussion": "先回到分叉前后连续观察，再寻找与中、下叶相连的路线。若确认属于中间支气管，应说明它仍承担通向中下叶的气道连接。若当前资料不足以确认，就记录“待追踪下游”，不靠向下走或外观像支气管完成命名。",
+        "sources": [
+          "kg-lobectomy-anatomy",
+          "kg-local-course"
+        ]
+      },
+      "takeaways": [
+        "层级、起点、去向一起描述。",
+        "中间支气管关系到右中下叶通气。",
+        "分支共干与下游区域分别追踪。"
+      ],
+      "references": [
+        "kg-bronchial-text",
+        "kg-lobectomy-anatomy",
+        "kg-rml-ct-2025",
+        "kg-basal-ct-2023",
+        "kg-local-course"
+      ],
+      "images": [
+        {
+          "src": "./segment-atlas/figures/RS4.webp",
+          "caption": "CT-006 的右中叶 RS4 源覆盖，帮助把气道追踪与下游肺组织联系起来。此图没有标明中间支气管或 B4，不能凭该静态图确认它们。",
+          "kind": "真实 CT + 源覆盖",
+          "verified": "已逐图查看"
+        }
+      ],
+      "diagramSuggestion": {
+        "title": "右侧通气路线图",
+        "description": "依照本站 anatomy-data.js 的简化树，用金色表示右上叶支气管，青色表示中间支气管及通向中下叶的路线；标注“原创层级示意，非患者个体解剖”。节点点击展示起点和下游肺叶。"
+      },
+      "diagram": {
+        "type": "learning-flow",
+        "title": "从气道起点到下游归属",
+        "labels": [
+          "确认近端",
+          "辨别层级",
+          "追踪分叉",
+          "复述路线"
+        ],
+        "caption": "根据本节课程整理的学习关系示意。"
+      }
+    },
+    {
+      "id": "airway-protect",
+      "title": "余肺通气保护",
+      "summary": "气道安全学习有两个同时存在的问题：目标气道是否辨认正确，以及拟保留肺的通气路线是否得到确认。认识一个名称只完成了部分任务。面对资料不足或异常信号，应能明确说出尚未解决的疑问，并在教学情境中选择暂停复核。",
+      "sections": [
+        {
+          "title": "把目标和保留对象分开列出",
+          "sources": [
+            "kg-lobectomy-anatomy",
+            "kg-local-course"
+          ],
+          "points": [
+            "右上叶与右中下叶的气道归属不同。课程以右上叶情境为例，要求学生分别指出目标支气管和中间支气管所连接的保留区域。",
+            "可画两栏学习表：一栏写拟讨论的目标，另一栏写需要保留的通路。若只能填出目标名称，就把保护对象识别列为下一步学习任务。",
+            "本站相关多选题把目标、闭合路径和邻近保留组织放在一起考察。这里训练的是辨认与复核意识，不把静态截图变成器械使用说明。"
+          ]
+        },
+        {
+          "title": "正常通气不能只看一个线索",
+          "sources": [
+            "kg-airway-kink-2021",
+            "kg-local-course"
+          ],
+          "points": [
+            "一项 100 例右上叶切除回顾性研究观察到中间支气管成角与部分术后呼吸症状的关联。它提示气道空间形态也值得关注，但不能把关联直接当成每例患者的病因。",
+            "因此在教学讨论中，应将“已确认名称”和“下游通气状况已解释”分开。研究发现也不能推出仅凭一张模型图就能判断个体气道一定安全。",
+            "保留肺膨胀异常只是需要解释的现象。本课要求先写观察事实，再列待核对的信息，避免一步跳到“已经切断某支气管”的唯一结论。"
+          ]
+        },
+        {
+          "title": "把不确定性说给团队听",
+          "sources": [
+            "kg-who-checklist",
+            "kg-local-course"
+          ],
+          "points": [
+            "WHO 安全框架强调团队共同暂停、核查和沟通。本课把这一原则用在未解决的气道疑问上：先清楚提出问题，让相关团队共同复核。",
+            "学生可采用“我确认了什么—还有什么没看清—需要核对什么”的三句表达。例如确认目标名称后，仍应明确报告保留路线尚未被指出。",
+            "复盘时分别记录解剖识别错误、保护对象遗漏和异常信号未复核。三类问题需要不同练习，不能都归为“不会做手术”或用操作速度评价。"
+          ]
+        }
+      ],
+      "pitfalls": [
+        "只确认目标，遗漏拟保留气道。",
+        "认为血管已确认就等于气道也安全。",
+        "把膨胀异常直接解释成唯一损伤原因。"
+      ],
+      "workflow": [
+        "在教学记录中列出目标与拟保留肺叶。",
+        "分别追踪目标气道及保留通气路线。",
+        "识别当前证据没有回答的问题。",
+        "选择暂停复核，并用清楚的事实向团队表达疑虑。"
+      ],
+      "scenario": {
+        "stem": "右上叶教学情境中，目标气道名称已答对，但学生没有指出中间支气管；随后又看到“保留肺膨胀异常”的提示。他能直接宣布确认安全或确定损伤吗？",
+        "discussion": "两种结论都超过现有证据。应先补足保护对象的路线识别，并把膨胀异常作为需要团队复核的事实。课堂回答应强调暂停、复核气道及相关原因，记录尚缺的证据；这里不要求学生模拟真实临床处理或给出具体操作动作。",
+        "sources": [
+          "kg-local-course",
+          "kg-who-checklist"
+        ]
+      },
+      "takeaways": [
+        "目标确认与余肺保护同时检查。",
+        "异常现象不自动等于唯一病因。",
+        "能清楚提出待核查问题也是学习成果。"
+      ],
+      "references": [
+        "kg-lobectomy-anatomy",
+        "kg-airway-kink-2021",
+        "kg-who-checklist",
+        "kg-local-course"
+      ],
+      "images": [
+        {
+          "src": "./or-field/clean/frames/s03_stapler_ready.jpg",
+          "caption": "本站公开教学术野帧：可见器械及周围组织，用于练习提出“目标和保留结构是否已确认”的问题。本帧不据外观命名某条支气管，也不说明已完成安全确认。",
+          "kind": "真实教学术野背景",
+          "verified": "已逐图查看，可见器械与组织；未推断未标明管道身份"
+        }
+      ],
+      "diagramSuggestion": {
+        "title": "目标与保留通路双确认",
+        "description": "左栏金色标“目标身份”，右栏青色标“余肺通路”，下方紫色卡片显示“证据不足 → 提出疑问 → 团队复核”。作为原创安全认知示意，不绘制击发、切断等技术步骤。"
+      },
+      "diagram": {
+        "type": "learning-flow",
+        "title": "保留通气的核对路径",
+        "labels": [
+          "列出余肺",
+          "追踪通路",
+          "标记缺口",
+          "暂停复核"
+        ],
+        "caption": "根据本节课程整理的学习关系示意。"
+      }
+    },
+    {
+      "id": "vessels-mechanism",
+      "title": "灌注与静脉回流",
+      "summary": "理解血管，先问血流从哪里来、经过哪里、流向哪里。肺动脉灌注、肺静脉回流与支气管通气相互配合，但分别回答不同问题。辨认通路之后，还要区分管腔受阻和管壁破损，才能解释风险。",
+      "sections": [
+        {
+          "title": "把气流和血流分别画清楚",
+          "points": [
+            "肺动脉把右心室排出的血液送向肺毛细血管床；肺静脉把经过肺部气体交换的血液送回左心房。动脉、静脉的名称依据血流方向。",
+            "通气描述空气进出肺，灌注描述血液流经肺毛细血管。气道通畅不能单独证明对应区域的血流也正常。",
+            "学习时画两条相遇的线：一条连接气道与肺泡，另一条连接肺动脉、毛细血管与肺静脉，再标出气体交换的位置。"
+          ],
+          "sources": [
+            "phys-circulation-2022",
+            "phys-gas-2022"
+          ]
+        },
+        {
+          "title": "同是血管异常，机制可以不同",
+          "points": [
+            "肺动脉分支受阻，首先影响其下游的肺动脉血流；静脉受阻则影响血液流出。将二者都写成“供血不好”，会丢失关键方向。",
+            "依据毛细血管液体交换原理，静脉回流障碍可能增加淤血和水肿风险；这是机制推理，不能从单张图推出程度或出现时间。",
+            "开放性血管损伤与单纯管腔闭塞不同。题目没有提供破口信息时，不应自行补成“已经向胸腔大量出血”。"
+          ],
+          "sources": [
+            "phys-capillary-2022",
+            "phys-circulation-2022",
+            "vats-bleeding-2019"
+          ]
+        },
+        {
+          "title": "影像提供形态，解释还需要证据",
+          "points": [
+            "肺静脉 CT 研究显示，走行、汇入口和引流区域都可能变异；常见示意图适合建立概念，不能替代某一患者的血管地图。",
+            "本地术野帧可用于比较管状轮廓、邻近组织和器械遮挡；没有来源标注时，仅凭灰白外观不能指定动静脉或分支编号。",
+            "把记录分成“看见的形态、待核实的归属、可能受影响的功能”。三个层次分开后，哪些结论已经成立会更清楚。"
+          ],
+          "sources": [
+            "pv-atlas-2020"
+          ]
+        }
+      ],
+      "pitfalls": [
+        "用三维模型的颜色判断血液含氧量，或把同色结构当成同一功能区域。",
+        "看到支气管通畅，就忽略肺动脉灌注与肺静脉回流。",
+        "把闭塞、破裂和画面暂时看不清写成同一种异常。"
+      ],
+      "workflow": [
+        "明确讨论的肺叶或肺段，以及它属于拟切除还是拟保留区域。",
+        "分别画出空气通路、动脉入口和静脉出口。",
+        "指出题目实际给出的异常位置，并标出未提供的信息。",
+        "用“通路变化—功能影响—仍需核实”解释结论。"
+      ],
+      "scenario": {
+        "stem": "教学情境：拟保留肺组织的气道和肺动脉均被描述为通畅，但其一条静脉的回流受到阻碍。能否据前两项正常宣布这块肺安全？",
+        "discussion": "不能。入口与气流正常并未回答血液能否顺利流出。讨论应集中在受影响静脉的引流区域、其他回流通路是否存在及证据是否充分。情境没有给出开放破口、受累范围或生理监测结果，因此也不能据此断言已经发生胸腔出血或预测具体结局。"
+      },
+      "takeaways": [
+        "通气、灌注和回流分别判断。",
+        "闭塞与开放损伤分别解释。",
+        "先定位通路，再讨论功能后果。"
+      ],
+      "references": [
+        "phys-circulation-2022",
+        "phys-gas-2022",
+        "phys-capillary-2022",
+        "pv-atlas-2020",
+        "vats-bleeding-2019"
+      ],
+      "images": [
+        {
+          "src": "./or-field/clean/frames/s02_y_vessel.jpg",
+          "alt": "真实胸腔镜画面中的分叉管状轮廓与周围组织",
+          "caption": "本站左上肺叶切除教学录像的管道游离片段。观察分叉轮廓及其空间关系；本帧不提供血流方向或未标注分支编号的证明。",
+          "provenance": "已对照 dist/or-field/script.json 第 2 站并人工查看原帧。"
+        }
+      ],
+      "diagram": {
+        "type": "learning-flow",
+        "title": "从通路到功能的推理",
+        "labels": [
+          "明确区域",
+          "区分通路",
+          "定位异常",
+          "解释影响"
+        ],
+        "caption": "根据本节课程整理的学习关系示意。"
+      }
+    },
+    {
+      "id": "vessels-preserve",
+      "title": "余肺血管保护",
+      "summary": "肺切除学习不能只围绕拟处理的目标。还要从留下来的肺组织反向追问：它的血流从哪里进入，又经哪里回到心脏？共享静脉干和异常汇流，使“目标辨认正确”与“保留通路完整”成为两项独立任务。",
+      "sections": [
+        {
+          "title": "为什么右中叶静脉值得单独看",
+          "points": [
+            "2025 年的右中叶静脉三维研究报告了跨水平裂、汇入上叶静脉等变异；这些发现说明，邻近上叶的分支可能仍承担中叶回流。",
+            "论文采用回顾性病例资料及 CT 重建进行分类。它支持逐例检查汇流关系，不等于所有患者都遵循某一种模式。",
+            "在学习右上叶切除情境时，尝试单独写一行“中叶回流证据”。若这一行只有手术名称而无影像线索，判断仍不完整。"
+          ],
+          "sources": [
+            "rml-vein-2025"
+          ]
+        },
+        {
+          "title": "保留区域要有自己的血管地图",
+          "points": [
+            "肺静脉变异图谱描述了中叶静脉直接汇入左心房、分流至不同肺静脉等形式。不能把一条总干的名称当成所有属支的区域归属。",
+            "阅读影像时，将“来自哪片肺、沿什么方向走、最终汇入哪里”记成同一条链，避免只看到汇合点就停止追踪。",
+            "若示意图与本例影像不一致，先标记差异，再寻求完整影像和专业复核；不通过修改描述，让本例勉强符合模板。"
+          ],
+          "sources": [
+            "pv-atlas-2020"
+          ]
+        },
+        {
+          "title": "把目标确认和保护确认并列",
+          "points": [
+            "欧洲多中心原始研究记录过支气管血管结构误离断及计划外扩大切除。这提示辨认错误可能改变最终保留范围，不能只记录目标名称。",
+            "本课可用两列清单练习：左列写拟处理目标及依据，右列写拟保留通路及依据；两列都允许暂填“尚未证实”。",
+            "交叉核对时，请同伴解释你写出的回流路径。如果对方只能复述颜色或屏幕位置，应回到解剖关系继续讨论。"
+          ],
+          "sources": [
+            "ests-complications-2015",
+            "who-team-2021"
+          ]
+        }
+      ],
+      "pitfalls": [
+        "把跨越肺裂的静脉自动归为拟切除肺叶。",
+        "认为辨清目标后，邻近属支无需逐一说明服务区域。",
+        "把研究人群中的变异频率当成本例是否存在变异的答案。"
+      ],
+      "workflow": [
+        "先写清拟保留肺组织，明确保护问题的对象。",
+        "在同一患者资料中追踪相关血管的连续性和汇流。",
+        "比较目标通路与保留通路，列出共享或不确定部位。",
+        "用可复核的影像依据向教师说明仍需确认的关系。"
+      ],
+      "scenario": {
+        "stem": "教学情境：拟行右上叶切除，三维图中一支来自中叶的静脉与上叶静脉汇合。有人提出，两支同色且共用总干，可以合并视为上叶目标。",
+        "discussion": "颜色与汇合位置都不能改变血管的引流来源。先把中叶分支从外周到汇入口的关系说明清楚，再讨论保留回流是否获得支持。现有配图来自另一例左侧手术，只用于形态观察，不能充当本情境右中叶变异的影像证据。"
+      },
+      "takeaways": [
+        "从拟保留区域反向追踪通路。",
+        "共享汇流不等于相同归属。",
+        "目标与保护对象都要有依据。"
+      ],
+      "references": [
+        "rml-vein-2025",
+        "pv-atlas-2020",
+        "ests-complications-2015",
+        "who-team-2021"
+      ],
+      "images": [
+        {
+          "src": "./or-field/clean/frames/s02_energy_pair.jpg",
+          "alt": "真实左上肺门术野中的邻近管状结构与器械",
+          "caption": "左上肺叶切除教学录像：器械与邻近管状结构的空间关系。用于讨论“目标之外还要观察什么”；不是右中叶静脉变异病例图。",
+          "provenance": "已对照 dist/or-field/script.json 第 2 站并人工查看原帧。"
+        }
+      ],
+      "diagram": {
+        "type": "learning-flow",
+        "title": "余肺血流的核对路径",
+        "labels": [
+          "明确余肺",
+          "追踪血管",
+          "比较通路",
+          "复核依据"
+        ],
+        "caption": "根据本节课程整理的学习关系示意。"
+      }
+    },
+    {
+      "id": "safety-confirm",
+      "title": "核查与术野辨识",
+      "summary": "安全核查把患者、计划、现场和团队连接起来。WHO 核查表提供团队共同停下并确认的框架；术野辨识则把这一习惯落实到当前结构。清单已经填写，不代表某一根管道的身份也已经被证明。",
+      "sections": [
+        {
+          "title": "认识三个核查时点",
+          "points": [
+            "WHO 手册分别安排麻醉诱导前、切皮前和患者离开手术室前的核查，三个时点围绕不同风险，不能合并为一次事后补填。",
+            "切皮前由团队共同确认患者、手术和部位，沟通关键风险，并确认所需影像可用；核查要得到明确回应。",
+            "离室前关注实际完成的手术、物品清点、标本标识、设备问题及恢复管理要点。它把现场信息传递给后续照护。"
+          ],
+          "sources": [
+            "who-checklist-2009"
+          ]
+        },
+        {
+          "title": "从清单核对走向结构核对",
+          "points": [
+            "多中心研究曾记录支气管血管结构误离断。学习时应区分“计划切哪里”和“眼前是什么”，避免用既定顺序替代现场身份确认。",
+            "对本站灰白管状结构帧，先说明确实可见的轮廓、走向和遮挡；来源没有标注的具体分支，保留为待核实。",
+            "对闭合器械帧，课堂讨论可分别检查目标身份、邻近保留组织和视野缺口。器械已经到位本身不是结构确认的证据。"
+          ],
+          "sources": [
+            "ests-complications-2015"
+          ]
+        },
+        {
+          "title": "让疑问能够被听见和处理",
+          "points": [
+            "WHO 团队教学资料强调明确角色、复述确认和向具体成员分配任务。提出疑问时，使用可观察的事实比模糊表达“感觉不对”更有效。",
+            "原创课堂表达示例：“这一段的连续性还未显示，我不能确认它的归属。”随后请团队说明需要补充哪项证据，而不是仓促选择名称。",
+            "经典核查表研究采用实施前后比较并观察到结局改善的关联；不能据此把一次点击核查按钮等同于已经提高本站学习者的临床能力。"
+          ],
+          "sources": [
+            "who-team-2021",
+            "haynes-checklist-2009"
+          ]
+        }
+      ],
+      "pitfalls": [
+        "一个人默默打勾，其他成员没有参与确认。",
+        "因熟悉术式顺序而替画面中尚未辨清的结构命名。",
+        "把“有人提出过疑问”当成“疑问已经得到回应”。"
+      ],
+      "workflow": [
+        "指出当前属于哪一个核查时点或局部辨识任务。",
+        "分开列出已确认的患者信息、影像信息与结构信息。",
+        "明确说出缺口，并让适当的团队成员回应。",
+        "复述结论与仍待解决的问题，形成可追溯记录。"
+      ],
+      "scenario": {
+        "stem": "教学情境：团队已完成切皮前核查。观察新术野时，一位学生无法确认灰白条索的归属；同伴说“核查已经通过，可以不再问”。",
+        "discussion": "切皮前核查和当前结构辨认解决不同层次的问题。学生可描述看见什么、哪里不连续以及仍需何种影像或现场信息；教师应判断证据是否充分。讨论重点是把不确定性转化为具体核实任务，而非鼓励学生自行处理结构。"
+      },
+      "takeaways": [
+        "核查需要共同确认和回应。",
+        "计划正确不等于结构已辨清。",
+        "把不确定说清楚，是有效信息。"
+      ],
+      "references": [
+        "who-checklist-2009",
+        "who-team-2021",
+        "haynes-checklist-2009",
+        "ests-complications-2015"
+      ],
+      "images": [
+        {
+          "src": "./or-field/clean/frames/s01_white_tube.jpg",
+          "alt": "器械旁新显露的灰白条索状结构",
+          "caption": "本站左上肺门显露片段：可见灰白管状轮廓。用于训练事实描述与不确定性表达，不据此指定未标注的分支身份。",
+          "provenance": "已对照 dist/or-field/script.json 第 1 站并人工查看原帧。"
+        },
+        {
+          "src": "./or-field/clean/frames/s03_stapler_jaws.jpg",
+          "alt": "真实胸腔镜画面中闭合器械钳口与周围组织",
+          "caption": "闭合器械观察帧。用于讨论器械、目标组织与视野范围；单帧不能证明完成了 WHO 团队核查，也不构成可以击发的指令。",
+          "provenance": "已对照 dist/or-field/script.json 第 3 站并人工查看原帧。"
+        }
+      ],
+      "diagram": {
+        "type": "learning-flow",
+        "title": "共同核查与证据确认",
+        "labels": [
+          "识别时点",
+          "整理证据",
+          "回应疑问",
+          "复述记录"
+        ],
+        "caption": "根据本节课程整理的学习关系示意。"
+      }
+    },
+    {
+      "id": "safety-response",
+      "title": "出血应对与升级",
+      "summary": "出血情境的学习重点，是看清优先级如何改变：暂停会扩大损伤的行为，交由有资质的团队控制风险，同步求助，并及时评估升级方案。这里训练风险识别和团队沟通，不教授血管修补或器械操作技术。",
+      "sections": [
+        {
+          "title": "危险出现后，先改变任务优先级",
+          "points": [
+            "VATS 出血国际共识把控制出血放在首位，并明确反对盲目夹持。具体控制方法由具备相应能力的手术团队选择。",
+            "课堂观察应分清“新的出血被发现”“暂时控制”“原因已明确”三个状态，避免把画面暂时改善写成风险完全解除。",
+            "本地录像没有展示本情境的真实大出血结局。可讨论危险识别与沟通，不从静止画面推算失血量、严重度或可等待时间。"
+          ],
+          "sources": [
+            "vats-bleeding-2019"
+          ]
+        },
+        {
+          "title": "求助要包含信息和回应",
+          "points": [
+            "WHO 团队资料提倡明确对象、清楚分工和复述确认。危急沟通应让相关人员知道发生了什么、当前缺口是什么以及需要谁响应。",
+            "教学角色演练可分为主刀、麻醉与护理：分别报告现场观察、患者状态和资源准备，避免只有画面信息而缺少全身与团队信息。",
+            "在事前讨论中预想角色与支援途径，再在事后复盘回应是否闭环。演练评价看信息有没有到达和落实，不奖励独自硬撑。"
+          ],
+          "sources": [
+            "who-team-2021"
+          ]
+        },
+        {
+          "title": "升级是一项风险管理决策",
+          "points": [
+            "共识将视野受限、循环不稳定，以及团队经验或器械资源不足等列为需要考虑及时转开胸的情形；判断不应只看切口大小。",
+            "欧洲多中心研究强调持续警觉与结构化应对计划。即使由有经验者参与，也不能省略风险准备或把意外归咎于单一因素。",
+            "复盘应记录触发升级的证据、求助信息、团队响应和仍待改进的系统问题；不把维持微创形式本身当成成功指标。"
+          ],
+          "sources": [
+            "vats-bleeding-2019",
+            "ests-complications-2015"
+          ]
+        }
+      ],
+      "pitfalls": [
+        "视野不清时继续猜测结构，以加快原定进度。",
+        "只喊“快来帮忙”，却没有明确对象、问题或回应。",
+        "把转换入路自动视为失败，因而忽视升级时机。"
+      ],
+      "workflow": [
+        "识别情境变化，并说出需要停止的危险行为。",
+        "确认风险控制已由具备资质的团队负责。",
+        "围绕现场、患者状态和资源需求组织求助信息。",
+        "讨论升级依据与交接要点，随后复盘团队响应。"
+      ],
+      "scenario": {
+        "stem": "教学情境：录像突然进入视野明显受限的假设事件。有人提议坚持原微创计划，理由只是“此前步骤都很顺利”。此时还缺少哪些决策信息？",
+        "discussion": "既往顺利不能代表当前风险已受控。应讨论现场是否获得有效控制、患者状态是否稳定、团队能否安全识别和处理，以及支援和资源是否足够。由有资质团队综合决定升级途径。本情境没有足够数据支持具体手法或等待时限。"
+      },
+      "takeaways": [
+        "控制当前风险优先于原定进度。",
+        "求助要明确，并确认收到回应。",
+        "升级依据来自现场、患者与团队条件。"
+      ],
+      "references": [
+        "vats-bleeding-2019",
+        "who-team-2021",
+        "ests-complications-2015"
+      ],
+      "images": [
+        {
+          "src": "./or-field/clean/frames/s02_energy_pair.jpg",
+          "alt": "真实胸腔镜术野中的器械与邻近管状组织",
+          "caption": "用于假设出血情境讨论的真实术野观察素材，用于讨论器械与组织关系。它不是大出血、压迫止血或转换开胸的实录。",
+          "provenance": "已人工查看原帧；本站 script.json 明确缺少误伤喷血的真实结局切片。"
+        }
+      ],
+      "diagram": {
+        "type": "learning-flow",
+        "title": "风险识别与团队升级",
+        "labels": [
+          "识别变化",
+          "确认责任",
+          "组织求助",
+          "讨论升级"
+        ],
+        "caption": "根据本节课程整理的学习关系示意。"
+      }
+    },
+    {
+      "id": "decision-conditions",
+      "summary": "切除范围的讨论需要把肿瘤学条件、空间条件和功能条件放在同一张清单上。定位到某一肺段，只完成了“病灶在哪里”这一问；还要解释切除后能否获得合适边界、怎样完成分期，以及患者能否承受计划中的治疗。",
+      "sections": [
+        {
+          "title": "建立一张可追溯的病例底稿",
+          "points": [
+            "按诊断、分期、尺寸与密度、肺叶肺段位置分别记录；未知项明确标成待补充，不用正常值填空。",
+            "在连续CT层面确认病灶与胸膜、段间边界、主要支气管血管的关系；每条结论保留对应影像依据。",
+            "将‘初步可讨论的方案’和‘已完成评估的方案’分列，避免一张重建图让讨论过早结束。"
+          ],
+          "sources": [
+            "course-clinical"
+          ]
+        },
+        {
+          "title": "认识解剖性段切的质量要求",
+          "points": [
+            "ESTS共识强调段支气管、动脉等解剖结构的辨认与处理，并允许静脉支沿段间平面处理。",
+            "三维规划有助识别变异和预估切缘；细小分支可能遗漏，充气CT模型也不等于术中萎陷肺。",
+            "切除范围需服从肿瘤位置与足够切缘，并结合淋巴结评估；模型中病灶位于段内并不自动证明方案充分。"
+          ],
+          "sources": [
+            "ests-segment-2023"
+          ]
+        },
+        {
+          "title": "把选择写成有条件的理由",
+          "points": [
+            "分别说明肿瘤控制、肺功能保留和再次治疗可能性等关注点；患者重视的目标也应出现在讨论记录中。",
+            "使用‘如果资料A得到确认，可进一步讨论B’的表达，让下一步检查真正对应一个决策问题。",
+            "若切缘、淋巴结或功能条件发生变化，重新比较方案；不能因为先前画过某段的切除轮廓就坚持原计划。"
+          ],
+          "sources": [
+            "course-clinical",
+            "accp-physiology-2013"
+          ]
+        }
+      ],
+      "pitfalls": [
+        "把≤2 cm当成所有结节一律段切或楔切的指令。",
+        "将软件重建成功当作肿瘤学适应证成立。",
+        "只描述切除目标，遗漏保留肺的血流、回流与通气。"
+      ],
+      "workflow": [
+        "整理已知与未知：先写证据清单。",
+        "定位与规划：核对连续影像和候选切缘。",
+        "补齐分期及功能：让每个检查回答具体问题。",
+        "共同讨论：写明方案条件与需要调整的触发点。"
+      ],
+      "scenario": {
+        "stem": "原创病例：外周1.6 cm混合磨玻璃病灶，已定位右上叶S2。淋巴结状态、DLCO和候选切缘尚未确认，能否直接确定段切？",
+        "discussion": "尚不足以确定。先把三个缺项对应到分期、耐受性和局部可行性，说明各自可能改变哪部分决策。学习目标是补齐论证链，而不是只根据肺段编号给出术式名称。"
+      },
+      "takeaways": [
+        "位置、适应证与耐受性是相互连接的不同问题。",
+        "检查结果应能解释方案为何成立。",
+        "条件改变时允许并需要重新规划。"
+      ],
+      "references": [
+        "course-clinical",
+        "ests-segment-2023",
+        "accp-physiology-2013"
+      ],
+      "images": [],
+      "diagram": {
+        "type": "decision-gates",
+        "title": "切除范围的三道条件",
+        "labels": [
+          "肿瘤与分期",
+          "位置与切缘",
+          "功能与患者目标"
+        ],
+        "result": "满足条件后比较候选方案",
+        "caption": "原创决策关系示意；三条路径共同支持讨论，不按任一单项自动选择术式。"
+      }
+    },
+    {
+      "id": "decision-evidence",
+      "summary": "读切除范围研究时，先读入组条件和比较对象，再读结果。总生存、无病生存、局部复发和肺功能回答不同问题；一个终点有利，不能自动推导所有终点都更好，也不能把不同试验的结果拼成适用于所有患者的结论。",
+      "sections": [
+        {
+          "title": "CALGB 140503回答了什么",
+          "points": [
+            "697例随机分组；术前CT实性成分≤2 cm、中心位于肺外1/3，并在术中确认肺门及纵隔淋巴结阴性后随机分组。",
+            "按第7版TNM临床T1aN0条件入组；亚肺叶组包含楔切及段切，主要终点无病生存达到对叶切的非劣效。",
+            "亚肺叶与叶切组5年无病生存分别为63.6%与64.1%，总生存为80.3%与78.9%；这不构成段切与楔切的独立随机比较。"
+          ],
+          "sources": [
+            "calgb-140503"
+          ]
+        },
+        {
+          "title": "JCOG0802回答了什么",
+          "points": [
+            "1106例日本患者；临床IA期、直径≤2 cm、实性成分与肿瘤直径比CTR>0.5，比较解剖性段切与叶切。",
+            "5年总生存为94.3%与91.1%，段切组有利；局部复发比例却为10.5%与5.4%，需要同时呈现。",
+            "一年FEV₁下降幅度的组间差为3.5个百分点，未达到预设10个百分点的临床意义标准。"
+          ],
+          "sources": [
+            "jcog-0802"
+          ]
+        },
+        {
+          "title": "把论文放回当前病例",
+          "points": [
+            "为当前病例逐项填写‘符合、不符合、尚未知’，尤其核对大小、外周位置、病理与淋巴结条件。",
+            "先写研究主要终点，再写一个重要代价或不确定性；不要只摘最亮眼的生存百分比。",
+            "若患者资料与研究不同，说明这是适用性缺口，补充其他证据并交由团队讨论，不能悄悄放宽入组条件。"
+          ],
+          "sources": [
+            "course-clinical"
+          ]
+        }
+      ],
+      "pitfalls": [
+        "将非劣效读成每位患者疗效完全相同。",
+        "把亚肺叶组结果当成楔切与段切的独立随机结论。",
+        "跨试验直接比较生存率高低，忽视人群和终点差异。"
+      ],
+      "workflow": [
+        "人群：圈出大小、位置、分期和功能条件。",
+        "比较：写清段切、楔切或二者合并的分组。",
+        "结果：并列主要终点及复发、功能等重要结局。",
+        "迁移：检查当前病例符合项与资料缺口。"
+      ],
+      "scenario": {
+        "stem": "原创病例：外周1.8 cm病灶，功能尚可，尚无充分淋巴结资料。学习者引用CALGB 140503并说‘亚肺叶已经确定最好’。",
+        "discussion": "这句话缺少适用条件，也把非劣效扩写成优效。先核对淋巴结证据，再明确患者可行的比较方案；用‘研究支持在符合条件人群中讨论’替代未经证实的个体结论。"
+      },
+      "takeaways": [
+        "结果数字必须与入组条件一起读。",
+        "总生存与局部复发可以呈现不同方向。",
+        "论文提供比较依据，个体决策还需完整资料。"
+      ],
+      "references": [
+        "calgb-140503",
+        "jcog-0802",
+        "course-clinical"
+      ],
+      "images": [],
+      "diagram": {
+        "type": "trial-comparison",
+        "title": "两项关键随机试验",
+        "labels": [
+          "CALGB · 亚肺叶对叶切",
+          "JCOG · 段切对叶切"
+        ],
+        "metrics": [
+          {
+            "trial": "CALGB 140503",
+            "endpoint": "5年无病生存",
+            "values": [
+              63.6,
+              64.1
+            ],
+            "groups": [
+              "亚肺叶",
+              "肺叶"
+            ]
+          },
+          {
+            "trial": "JCOG0802",
+            "endpoint": "局部复发比例",
+            "values": [
+              10.5,
+              5.4
+            ],
+            "groups": [
+              "肺段",
+              "肺叶"
+            ]
+          }
+        ],
+        "caption": "按原始试验数值制作的原创比较示意。两行终点与研究人群不同，不能跨行比较优劣。"
+      }
+    },
+    {
+      "id": "fitness-diffusion",
+      "summary": "肺功能不是一张只有通过或不通过的成绩单。FEV₁偏重通气表现，DLCO评价气体跨肺泡—毛细血管界面转移的能力；ppo指标则在明确切除计划后估计保留肺的功能。先认清指标、阶段和质量，再解释数值。",
+      "sections": [
+        {
+          "title": "同一口呼吸，两个观察维度",
+          "points": [
+            "FEV₁是用力呼气第一秒的呼出体积；读取数值前，应核对本次肺量计检查的可接受性和重复性。",
+            "DLCO利用一氧化碳转移测量弥散相关能力；血红蛋白、吸氧等条件会影响结果解释，须结合规范报告。",
+            "原始队列研究表明FEV₁较好时仍可能有DLCO降低，不能从一项正常推断另一项一定正常。"
+          ],
+          "sources": [
+            "spirometry-standard-2019",
+            "dlco-standard-2017",
+            "dlco-cohort-2006"
+          ]
+        },
+        {
+          "title": "读清术前与预计术后",
+          "points": [
+            "2025指南建议拟手术者测量FEV₁与DLCO；ppoDLCO用于估计计划切除后的弥散储备。",
+            "同一患者可能有不同候选切除范围，因此计算记录需要同时注明拟保留的功能肺组织和估算方法。",
+            "ppo并非术后实测；若计划、基础检测或肺内功能分布改变，原来的估算也需要重新核对。"
+          ],
+          "sources": [
+            "fitness-2025",
+            "course-clinical"
+          ]
+        },
+        {
+          "title": "把一份报告读完整",
+          "points": [
+            "依次摘录指标全名、单位、实测值、预计值百分比与检查日期，不把百分比误当升数。",
+            "把检查质量与患者当日状态放在数值旁边；数据不可靠时，先标注解释限制，再讨论是否需要复测。",
+            "采用一句完整表达：‘这项检测描述什么、此处属于哪个阶段、下一步还缺哪项信息’。"
+          ],
+          "sources": [
+            "dlco-standard-2017",
+            "spirometry-standard-2019",
+            "course-clinical"
+          ]
+        }
+      ],
+      "pitfalls": [
+        "FEV₁为86%就取消DLCO测定。",
+        "把术前DLCO与ppoDLCO当作同一个数字。",
+        "把肺量计照片称作DLCO实际检查，或推断照片人物结果。"
+      ],
+      "workflow": [
+        "识别：指标名称与通气、弥散维度对应。",
+        "核对：单位、参考值及检测质量。",
+        "联系：注明术前实测或计划下的预计术后值。",
+        "补充：指出下一步功能或运动评估缺口。"
+      ],
+      "scenario": {
+        "stem": "原创病例：报告显示FEV₁为预计值86%，DLCO为58%。同学认为两项都是肺功能，保留较高者即可。",
+        "discussion": "两项数值并不冲突，反映不同维度。应保留两项结果并核对检查质量；继续估计计划切除后的功能及其他风险。单独挑选较好看的数字，会删掉本次评估最需要解释的信息。"
+      },
+      "takeaways": [
+        "正常通气指标不能替代弥散评价。",
+        "ppo必须绑定具体切除计划。",
+        "检查质量决定数值能够支持多强的结论。"
+      ],
+      "references": [
+        "spirometry-standard-2019",
+        "dlco-standard-2017",
+        "dlco-cohort-2006",
+        "fitness-2025",
+        "course-clinical"
+      ],
+      "images": [
+        {
+          "src": "./assessment-clinical/lung-function-test.jpg",
+          "caption": "NIOSH技术人员演示肺量计检查。用于辨认真实检查场景，不是DLCO测定照片；本页病例数值均为独立教学设定。",
+          "credit": "CDC / Veronica Burkel, MPH · 2013",
+          "license": "Public domain",
+          "source": "https://wwwn.cdc.gov/phil/Details.aspx?pid=20950"
+        }
+      ],
+      "diagram": {
+        "type": "gas-exchange",
+        "title": "通气 · 弥散 · 保留储备",
+        "labels": [
+          "FEV₁ · 气流输出",
+          "DLCO · 气体转移",
+          "ppo · 计划后储备"
+        ],
+        "caption": "原创功能关系图；三种信息相互补充，不能相互替代。"
+      }
+    },
+    {
+      "id": "fitness-risk",
+      "summary": "风险分层的用途是安排更充分的评估、讨论风险和发现可改善的因素。某一指标落入较高风险范围，既不是对结局的保证，也不能直接等同所有治疗的绝对禁忌。最终应把预计获益、功能储备和患者生活目标放在一起讨论。",
+      "sections": [
+        {
+          "title": "读对ppoDLCO三档分层",
+          "points": [
+            "2025指南的ppoDLCO推荐分档为≥60%、40–59%和<40%，分别对应正常、中等和较高风险层级。",
+            "52%属于40–59%层级；这是预计术后功能分层，不是‘52%存活率’，也不是当前DLCO的同义写法。",
+            "60%附近的差异需放回检测与估算背景，不能认为59%和60%之间存在一种确定的生理断崖。"
+          ],
+          "sources": [
+            "fitness-2025",
+            "course-clinical"
+          ]
+        },
+        {
+          "title": "把其他维度接入评估",
+          "points": [
+            "心血管状态、FEV₁、DLCO、预计术后功能和运动表现回答互补问题；ACCP指南也采用这样的连续评估思路。",
+            "2025指南增加对营养、衰弱和患者报告结局的重视；年龄应与整体状态共同解释。",
+            "练习时将异常项分成‘已解释、待检查、可改善’，帮助团队说明为何继续评估，而不是只给一个红色标签。"
+          ],
+          "sources": [
+            "accp-physiology-2013",
+            "fitness-2025",
+            "course-clinical"
+          ]
+        },
+        {
+          "title": "可改善因素也需要证据",
+          "points": [
+            "一项151例术前训练随机试验改善了运动指标，但其主要死亡与院内并发症复合终点差异未达统计学显著。",
+            "因此可以讨论专业评估下的康复机会，但不把训练写成必然消除风险或必然改善生存的承诺。",
+            "复评记录应注明改变了什么、观察到什么、哪些问题仍在；分层更新必须来自新的证据。"
+          ],
+          "sources": [
+            "prehab-rct-2017",
+            "course-clinical"
+          ]
+        }
+      ],
+      "pitfalls": [
+        "把ppoDLCO<40%自动解释为所有治疗均无价值。",
+        "只用年龄数字排除根治性治疗。",
+        "把研究中的康复获益写成每个人的零风险保证。"
+      ],
+      "workflow": [
+        "分层：先确认指标及对应标准版本。",
+        "合并：整理心肺、运动、营养与生活功能信息。",
+        "完善：针对资料缺口与可改善因素制定评估计划。",
+        "讨论：记录获益风险、患者目标及复评时间。"
+      ],
+      "scenario": {
+        "stem": "原创病例：78岁患者拟治疗早期肺癌，ppoDLCO为38%，心血管和运动资料未完成，日常可独立生活。",
+        "discussion": "需要指出较高功能风险并补足整体评价。年龄、38%和独立生活分别提供不同信息，不能互相覆盖。练习答案应说明资料缺口和讨论方向，不能从三个数字直接判定唯一治疗。"
+      },
+      "takeaways": [
+        "风险层级不是结局概率。",
+        "用多维信息解释患者，而非用单项标签代替患者。",
+        "改善与复评应形成可追溯记录。"
+      ],
+      "references": [
+        "fitness-2025",
+        "accp-physiology-2013",
+        "prehab-rct-2017",
+        "course-clinical"
+      ],
+      "images": [
+        {
+          "src": "./assessment-clinical/spirometry-clinical.jpg",
+          "caption": "真实肺量计检查场景；仅展示检查方法，不代表完整术前适应能力评估，也不推断照片人物的诊断。",
+          "credit": "Jmarchn · Doing spirometry · 2013",
+          "license": "CC BY-SA 3.0",
+          "licenseURL": "https://creativecommons.org/licenses/by-sa/3.0/",
+          "source": "https://commons.wikimedia.org/wiki/File:DoingSpirometry.JPG"
+        }
+      ],
+      "diagram": {
+        "type": "risk-bands",
+        "title": "ppoDLCO风险分层",
+        "bands": [
+          {
+            "label": "≥60%",
+            "level": "正常层级",
+            "color": "#34d399"
+          },
+          {
+            "label": "40–59%",
+            "level": "中等层级",
+            "color": "#fbbf24"
+          },
+          {
+            "label": "<40%",
+            "level": "较高层级",
+            "color": "#fb7185"
+          }
+        ],
+        "caption": "依据2025 ERS/ESTS指南PICO 2b推荐。仅表示该指标的分层，须结合多维评估。"
+      }
+    },
+    {
+      "id": "staging-tissue",
+      "summary": "分期是一条证据链：影像指出可疑区域，取材取得可分析标本，病理报告回答该标本是否支持肿瘤受累。三者不能互相替代。学习者既要读懂‘发现了什么’，也要读懂‘这个结果实际上能排除什么’。",
+      "sections": [
+        {
+          "title": "为每条证据标注身份",
+          "points": [
+            "把CT形态、PET代谢表现和组织学结果分开写；‘可疑’是影像判断，不能改写成‘已获病理证实’。",
+            "淋巴结体积、代谢信息和临床背景用于提出分期问题；不能只凭图像颜色直接宣布某站转移。",
+            "报告应标明侧别、站位、取材途径、标本质量及结果；缺少站位时，阳性结果也难以准确放回图谱。"
+          ],
+          "sources": [
+            "course-clinical"
+          ]
+        },
+        {
+          "title": "有组织分期指征时怎么理解路径",
+          "points": [
+            "2026联合指南推荐内镜超声优于纵隔镜作为纵隔淋巴结组织分期方式。",
+            "EBUS经气道，EUS或EUS-B经食管，所能接近的区域互补；选择需对应具体分期问题与团队能力。",
+            "检测名称不代表答案充分。必须核对是否取得能回答问题的材料，并将组织结果与原影像相互核对。"
+          ],
+          "sources": [
+            "staging-2026",
+            "course-clinical"
+          ]
+        },
+        {
+          "title": "区分阴性与无法判定",
+          "points": [
+            "‘未检出恶性细胞’需要结合标本是否充分解释；‘标本不足’不能直接填入可靠阴性一栏。",
+            "MEDIASTrial在阴性系统性内镜后比较两条路径，术后未预见N2仍发生；任何单次阴性都不等于绝对无病。",
+            "讨论资料冲突时，先列出取样范围、质量与影像是否一致，再由专业团队决定如何补充信息。"
+          ],
+          "sources": [
+            "media-st-2023",
+            "course-clinical"
+          ]
+        }
+      ],
+      "pitfalls": [
+        "PET高摄取直接等同淋巴结病理阳性。",
+        "没有看到阳性细胞就忽略标本不足。",
+        "在缺少取材站位和质量时给出绝对排除结论。"
+      ],
+      "workflow": [
+        "定位问题：记录影像可疑区域与分期目的。",
+        "选择证据：由团队确认取材指征与可及路径。",
+        "核对质量：站位、标本充分性和病理结果一起读。",
+        "整合结论：区分已证实、尚未证实与无法判定。"
+      ],
+      "scenario": {
+        "stem": "原创病例：纵隔PET-CT可疑，EBUS报告提示取材不足，学习者准备将该站标绿并记录‘阴性’。",
+        "discussion": "这会把缺少证据变成排除证据。应把状态设为‘尚不能判定’，保留影像疑点与标本质量说明；继续评估的理由是证据链未完成，而不是简单重复检查名称。"
+      },
+      "takeaways": [
+        "影像怀疑与病理证据分别记录。",
+        "阴性解释必须包含取材质量。",
+        "图谱颜色应反映证据状态及不确定性。"
+      ],
+      "references": [
+        "staging-2026",
+        "media-st-2023",
+        "course-clinical"
+      ],
+      "images": [
+        {
+          "src": "./assessment-clinical/pet-mediastinal.webp",
+          "caption": "公开论文中的胸部CT与PET/CT融合图（图2）。用于观察形态与代谢信息；原文病例的病理与历史分期不能代入本页原创情境。",
+          "credit": "Chi A; Nguyen NP · Frontiers in Oncology · 2014",
+          "license": "CC BY 4.0",
+          "licenseURL": "https://creativecommons.org/licenses/by/4.0/",
+          "source": "https://doi.org/10.3389/fonc.2014.00273"
+        }
+      ],
+      "diagram": {
+        "type": "evidence-chain",
+        "title": "影像 → 取材 → 组织证据",
+        "labels": [
+          "影像怀疑",
+          "取样覆盖",
+          "标本充分性",
+          "病理解释"
+        ],
+        "caption": "原创证据链示意；任一环缺失均应保留不确定性。"
+      }
+    },
+    {
+      "id": "staging-systematic",
+      "summary": "系统性分期要求观察整张淋巴结分布图，并核对各区域的评估质量。找到一个可疑目标只是起点。不同站位是否受累会改变疾病范围的描述，所以需要记录‘检查了哪里、取得什么、还有哪里不能判断’。",
+      "sections": [
+        {
+          "title": "从单个目标走向覆盖评估",
+          "points": [
+            "2026指南将系统性EBUS作为最低分期标准，理想情况联合EUS；系统性EBUS也可作为可接受替代。",
+            "SCORE前瞻性研究纳入229例；系统性EBUS加EUS-B较仅PET引导靶向EBUS发现更多N2/N3受累。",
+            "教学记录可以按站位绘制覆盖清单，分别标出已评估、已取材、材料不足及未能评估，避免只记录针数。"
+          ],
+          "sources": [
+            "staging-2026",
+            "score-2019",
+            "course-clinical"
+          ]
+        },
+        {
+          "title": "站数与TNM第9版有什么关系",
+          "points": [
+            "IASLC第9版在N2范围内区分：N2a为单个同侧纵隔或隆突下站受累；N2b为多个N2站受累。",
+            "‘一个站有多枚阳性结’与‘多个站阳性’属于不同信息；不能拿阳性淋巴结枚数直接替代站数。",
+            "先明确原发肿瘤侧别、受累站位与证据阶段，再查相应T、N、M分期组合；N字母不能独立决定完整分期。"
+          ],
+          "sources": [
+            "tnm9-stage-2024",
+            "iaslc-tnm9-official",
+            "course-clinical"
+          ]
+        },
+        {
+          "title": "正确理解阴性之后的更新",
+          "points": [
+            "2026指南不再建议阴性系统性内镜分期后常规追加纵隔镜；这项更新以完成系统性评估为前提。",
+            "MEDIASTrial的主要比较是术后未预见N2：直接切除组8.8%，追加纵隔镜组7.7%，达到预设非劣效界值。",
+            "因此不要把‘不常规追加’改成‘任何阴性结果都无须复核’，尤其不能忽略覆盖不足或取材质量问题。"
+          ],
+          "sources": [
+            "staging-2026",
+            "media-st-2023",
+            "course-clinical"
+          ]
+        }
+      ],
+      "pitfalls": [
+        "只取PET最亮的一站就宣称完成系统分期。",
+        "将两枚阳性淋巴结直接标为N2b，未核对站位。",
+        "把指南更新扩写为阴性结果永远不需复核。"
+      ],
+      "workflow": [
+        "读图：确认原发侧别与待评估区域。",
+        "覆盖：将计划站位与实际评估逐一对应。",
+        "证据：记录每站取材充分性及组织结果。",
+        "整合：核对单站、多站和仍未解决的分期问题。"
+      ],
+      "scenario": {
+        "stem": "原创病例：同侧一个纵隔站取到两枚阳性淋巴结，另一站尚未充分评估。能否据‘两枚’直接认定N2b，并结束评估？",
+        "discussion": "不能。N2a与N2b区分的是受累站数；已证实单站不能代表其他站阴性。应保留未充分评估区域，完成覆盖与证据核对后，再依据完整资料描述N分类及全套分期。"
+      },
+      "takeaways": [
+        "系统性体现在覆盖与质量。",
+        "站位、侧别与证据状态共同决定分期解释。",
+        "新指南结论要带着前提一起应用。"
+      ],
+      "references": [
+        "staging-2026",
+        "score-2019",
+        "tnm9-stage-2024",
+        "iaslc-tnm9-official",
+        "media-st-2023",
+        "course-clinical"
+      ],
+      "images": [
+        {
+          "src": "./assessment-clinical/pet-lung.jpg",
+          "caption": "公开论文PET/CT图1：上下两个面板用于展示不同影像背景，不能当作同一患者的连续层面，也不与本站原创病例绑定。",
+          "credit": "Chi A; Nguyen NP · Frontiers in Oncology · 2014",
+          "license": "CC BY 4.0",
+          "licenseURL": "https://creativecommons.org/licenses/by/4.0/",
+          "source": "https://doi.org/10.3389/fonc.2014.00273"
+        }
+      ],
+      "diagram": {
+        "type": "station-coverage",
+        "title": "按站记录 · 按证据着色",
+        "labels": [
+          "已评估",
+          "已取材",
+          "材料不足",
+          "未评估"
+        ],
+        "caption": "原创覆盖示意；用于表达评估状态，不以概念图代替IASLC解剖站位边界。"
+      }
+    }
+  ],
+  "stats": {
+    "sourceCount": 38,
+    "uniqueSourceUrlCount": 37,
+    "nodeCount": 16,
+    "sectionCount": 48,
+    "pointCount": 144,
+    "pitfallCount": 48,
+    "workflowStepCount": 64,
+    "scenarioCount": 16,
+    "takeawayCount": 48,
+    "imagePlacementCount": 17,
+    "diagramCount": 16,
+    "addedLearningFlowCount": 10,
+    "referenceUsageCount": 154,
+    "unresolvedReferenceCount": 0,
+    "sourceFieldKeysByInput": {
+      "anatomy": [
+        "access",
+        "checked",
+        "id",
+        "supports",
+        "title",
+        "type",
+        "url",
+        "year"
+      ],
+      "safety": [
+        "access",
+        "checked",
+        "documentUrl",
+        "id",
+        "supports",
+        "title",
+        "type",
+        "url",
+        "year"
+      ],
+      "clinical": [
+        "accessNote",
+        "checked",
+        "id",
+        "supports",
+        "title",
+        "type",
+        "url",
+        "year"
+      ]
+    },
+    "sourceFieldKeysNormalized": [
+      "access",
+      "accessNote",
+      "checked",
+      "documentUrl",
+      "id",
+      "supports",
+      "title",
+      "type",
+      "url",
+      "year"
+    ],
+    "inputMetadata": {
+      "anatomy": {
+        "schemaVersion": 1,
+        "checked": "2026-09-15",
+        "scope": "医学生的影像方向、肺段定位与余肺通气学习；病例练习为原创教学情境，学习步骤不是手术操作步骤。",
+        "imageNotes": [
+          "所有给出的 images.src 均为已存在且已逐图查看的本站文件，不需要复制外部论文图片。",
+          "segment-atlas/figures/*-unmarked.webp 仍有彩色源肺段覆盖；unmarked 仅指隐藏病灶红圈，不能写成未着色原始 CT。",
+          "图像中的 CT80、CT57 等是面向读者的显示层号；catalog.json 的 slice 为从零开始的索引，编写图注应沿用图面或明确索引约定。",
+          "源覆盖目录的 clinicalReview 为 pending；图注采用源覆盖/教学显示，不声称逐例临床审核完成。",
+          "anatomy-data.js 是原创简化教学模型而非患者 DICOM。若截图或重新绘制，应持续显示教学示意标签。"
+        ]
+      },
+      "safety": {
+        "version": "KNOWLEDGE-SAFETY-2026.09.15-1",
+        "checked": "2026-09-15",
+        "editorialNote": "文献事实采用简短原创概括；场景、比较练习和学习路径为教学应用，不是原文翻译或手术操作规程。研究频率不外推为本站病例的个体概率。"
+      },
+      "clinical": {
+        "version": "THORAX-KNOWLEDGE-CLINICAL-2026.09.15",
+        "checked": "2026-09-15",
+        "editorialNote": "围绕本站课程原创的学习解释、练习流程与假设情境；文献事实只作短摘要，各研究适用人群与证据局限随内容呈现。流程属于学习与评估思路，不是独立实施侵入性操作的指令。"
+      }
+    }
+  }
+}

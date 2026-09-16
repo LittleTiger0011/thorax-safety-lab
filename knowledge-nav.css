@@ -1,0 +1,5 @@
+/* The additional entry stays in the existing navigation row on small screens. */
+.workspace-nav:has(.knowledge-nav-link){min-width:0;max-width:100%;overflow-x:auto;scrollbar-width:thin}
+.workspace-nav:has(.knowledge-nav-link)>a{flex-shrink:0}
+@media(max-width:640px){.workspace-nav:has(.knowledge-nav-link)>a{padding-left:6px;padding-right:6px}}
+@media(max-width:359px){.workspace-nav:has(.knowledge-nav-link){justify-content:flex-start}}

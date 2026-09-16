@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#070d12">
+<meta name="description" content="胸外科安全实训：结合真实胸腔镜影像，学习肺门解剖辨识、关键结构定位与安全判断。">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; connect-src 'self'; media-src 'self' blob:; font-src 'self'; object-src 'none'; base-uri 'self'">
+<title>术野辨识与肺门解剖｜胸外科安全实训</title>
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{
+  color-scheme:dark;
+  --bg:#070d12;
+  --bg2:#0c151c;
+  --panel:#101c24;
+  --panel2:#16242e;
+  --line:#2a3d48;
+  --text:#eef4f7;
+  --muted:#8aa0ad;
+  --accent:#7ed9c8;
+  --accent-dim:#163a38;
+  --gold:#e4c27a;
+  --gold-dim:#3a3220;
+  --danger:#e08b96;
+  --danger-dim:#3a2228;
+  --ok:#8fceb0;
+  --bezel:#141c22;
+  --hair:#e4c27a55;
+  font-family:"PingFang SC","Hiragino Sans GB","Noto Sans SC","Microsoft YaHei",sans-serif;
+  font-size:16px;
+  line-height:1.55;
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);color:var(--text)}
+button,input,select{font:inherit;color:inherit}
+button{background:none;border:1px solid transparent;cursor:pointer;border-radius:8px;padding:8px 14px}
+button:disabled{opacity:.4;cursor:not-allowed}
+button:focus-visible,a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,p{margin:0}
+[hidden]{display:none!important}
+.skip{position:absolute;left:12px;top:-80px;background:#fff;color:#000;padding:8px 12px;z-index:20}
+.skip:focus{top:8px}
+
+body.theater{display:flex;flex-direction:column;min-height:100%}
+
+header.top{
+  display:flex;align-items:center;gap:22px;
+  padding:10px 22px;min-height:64px;
+  border-bottom:1px solid var(--line);
+  background:linear-gradient(#0d161c,#0a1218);
+}
+.brand{display:flex;align-items:center;gap:12px;color:var(--text)}
+.brand:hover{text-decoration:none}
+.brand-mark{
+  width:38px;height:38px;border-radius:9px;
+  display:grid;place-items:center;
+  border:1px solid #3d5c58;background:#143330;color:var(--accent);
+  font-size:1.05rem;letter-spacing:.04em;
+}
+.brand strong{display:block;font-size:.95rem;font-weight:650;letter-spacing:.04em}
+.brand small{display:block;font-size:.62rem;letter-spacing:.18em;color:#7f96a3;margin-top:1px}
+.crumb{color:var(--muted);font-size:.8rem;letter-spacing:.08em}
+.crumb b{color:var(--gold);font-weight:550}
+.top-actions{margin-left:auto;display:flex;gap:8px;align-items:center}
+.quiet{color:var(--muted);border-color:transparent}
+.quiet:hover{background:#1a2c36}
+.outline{border-color:#3a5360}
+.outline:hover{background:#1a2c36}
+.primary{background:var(--accent);color:#0b2424;border-color:var(--accent);font-weight:650}
+.primary:hover{background:#a8eee0}
+.gold{background:var(--gold);color:#241c0e;border-color:var(--gold);font-weight:650}
+
+.layout{
+  flex:1;display:grid;
+  grid-template-columns:220px minmax(0,1fr) 340px;
+  min-height:0;
+}
+.rail,.panel{
+  background:var(--bg2);
+  border-right:1px solid var(--line);
+  overflow:auto;
+}
+.panel{border-right:0;border-left:1px solid var(--line)}
+
+.rail{padding:16px 12px 24px}
+.rail .eyebrow,.panel .eyebrow{
+  color:var(--accent);font-size:.68rem;letter-spacing:.16em;margin-bottom:8px
+}
+.station{
+  display:grid;grid-template-columns:52px 1fr;gap:10px;
+  padding:8px;border-radius:10px;border:1px solid transparent;
+  color:var(--text);text-align:left;width:100%;margin-bottom:8px
+}
+.station img{width:52px;height:36px;object-fit:cover;border-radius:5px;background:#000;display:block}
+.station strong{display:block;font-size:.82rem;font-weight:600}
+.station span{display:block;font-size:.7rem;color:var(--muted)}
+.station.now{border-color:#4e8f86;background:#143330}
+.station.done{opacity:.75}
+.station.done strong:after{content:" · 完成";color:var(--accent);font-weight:500}
+
+.monitor-col{display:flex;flex-direction:column;min-width:0;background:#05090c;justify-content:flex-start}
+.monitor{
+  flex:0 1 auto;
+  width:calc(100% - 32px);
+  aspect-ratio:2.15 / 1;
+  max-height:calc(100vh - 148px);
+  min-height:280px;
+  margin:14px 16px 0;
+  background:#000;
+  border:1px solid #2c3c44;
+  border-radius:14px;
+  box-shadow:0 0 0 1px #000, 0 24px 60px #000a, inset 0 0 0 8px var(--bezel);
+  position:relative;overflow:hidden;
+}
+.stage{position:absolute;inset:8px;background:#000}
+.stage video,.stage img{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:contain;background:#000;
+}
+.stage canvas{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.stage.quiz canvas{pointer-events:auto;cursor:crosshair}
+.hud{
+  position:absolute;left:18px;bottom:16px;right:18px;
+  display:flex;justify-content:space-between;align-items:flex-end;
+  pointer-events:none;gap:12px
+}
+.hud .src{
+  font-size:.72rem;color:#d7e6ec;background:#0a1218c9;
+  padding:4px 8px;border-radius:4px;letter-spacing:.02em;
+  max-width:70%
+}
+.hud .clock{font:12px/1.2 ui-monospace,monospace;color:#d5c38a;background:#0a1218c9;padding:4px 8px;border-radius:4px}
+.pause-flag{
+  position:absolute;top:18px;left:50%;transform:translateX(-50%);
+  background:#3a3220ee;color:var(--gold);border:1px solid #8a7340;
+  padding:6px 12px;border-radius:999px;font-size:.78rem;letter-spacing:.06em;
+  pointer-events:none
+}
+.cal-readout{
+  position:absolute;top:16px;right:16px;z-index:3;
+  background:#0a1218e6;border:1px solid var(--gold);color:var(--gold);
+  font:12px/1.4 ui-monospace,monospace;padding:8px 10px;border-radius:6px;
+  max-width:46%;pointer-events:none;white-space:pre-wrap
+}
+
+.transport{
+  display:flex;align-items:center;gap:10px;
+  padding:10px 18px 14px;
+}
+.transport .bar{
+  flex:1;height:12px;background:#24323a;border-radius:99px;position:relative;
+  cursor:pointer;touch-action:none
+}
+.transport .bar>span{display:block;height:100%;background:var(--accent);width:0;border-radius:99px;pointer-events:none}
+.transport .bar .mark{
+  position:absolute;top:-3px;width:2px;height:18px;background:var(--gold);opacity:.85;pointer-events:none
+}
+.card{cursor:pointer;text-align:left;font:inherit;color:inherit;width:100%;padding:0}
+.card:hover{border-color:#6aa79e}
+.icon-btn{border:1px solid #3a5360;padding:6px 10px;font-size:.8rem;color:#c5d6de}
+.icon-btn:hover{background:#1a2c36}
+.rate{color:var(--muted);font-size:.75rem}
+
+.panel{padding:16px 18px 28px;display:flex;flex-direction:column;gap:12px}
+.panel h2{font-size:1.12rem;font-weight:650;letter-spacing:.01em}
+.panel .lead{color:#b9ccd6;font-size:.9rem}
+.task-card{
+  border:1px solid #355056;background:#122028;border-radius:12px;padding:14px
+}
+.task-card h3{font-size:.78rem;letter-spacing:.12em;color:var(--gold);margin-bottom:8px;font-weight:550}
+.options{display:grid;gap:8px;margin-top:10px}
+.opt{
+  text-align:left;border:1px solid #3a5360;background:#102028;
+  padding:11px 12px;display:flex;gap:10px;align-items:flex-start;
+  color:#d5e4eb;font-size:.9rem;min-height:52px
+}
+.opt .ltr{color:#7fa3b0;font-weight:650;width:1.1em;flex-shrink:0}
+.opt:hover{border-color:#6aa79e;background:#163038}
+.opt.correct{border-color:#4e9a7a;background:#16352e}
+.opt.wrong{border-color:#8a4d5a;background:#352028}
+.feedback{
+  border-radius:10px;padding:12px 14px;font-size:.88rem;line-height:1.55
+}
+.feedback.ok{background:#16352e;border:1px solid #3e7a62;color:#c6ead8}
+.feedback.bad{background:#352028;border:1px solid #8a4d5a;color:#f3c9d0}
+.panel-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.hint{font-size:.78rem;color:var(--muted)}
+.misses{font-size:.78rem;color:#e0b7a0}
+
+.intro{
+  position:fixed;inset:0;z-index:8;overflow:auto;
+  background:#070d12;
+}
+.intro-bg{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(90deg,#070d12 0%,#070d12cc 28%,#070d1288 100%),
+    url("./or-field/clean/posters/step02.jpg") center/cover;
+  filter:saturate(.9)
+}
+.intro-inner{
+  position:relative;max-width:1080px;margin:0 auto;
+  padding:72px 28px 80px
+}
+.intro-inner .eyebrow{color:var(--gold);letter-spacing:.2em;font-size:.72rem}
+.intro-inner h1{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:620;letter-spacing:.02em;margin:12px 0 10px;line-height:1.25}
+.intro-inner .deck{max-width:38rem;color:#c5d5de;font-size:1.02rem}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:36px 0 28px}
+.card{
+  background:#101c24ee;border:1px solid #314650;border-radius:12px;overflow:hidden
+}
+.card img{width:100%;height:110px;object-fit:cover;object-position:center;display:block;background:#000}
+.card div{padding:10px 12px 12px}
+.card strong{display:block;font-size:.85rem}
+.card span{display:block;font-size:.72rem;color:var(--muted);margin-top:3px}
+.note{
+  border-left:3px solid var(--gold);
+  background:#16140f;padding:12px 16px;color:#e2d3ae;font-size:.86rem;
+  max-width:46rem;margin-bottom:22px
+}
+.intro-actions{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+
+.report{display:grid;gap:14px}
+.metrics{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.metric{border:1px solid #314650;border-radius:10px;padding:12px;background:#122028}
+.metric .v{font-size:1.7rem;color:#d9f3ec;line-height:1.15}
+.metric .l{font-size:.75rem;color:var(--muted)}
+.log-list{list-style:none;padding:0;margin:0;font-size:.8rem;color:#b7c9d2}
+.log-list li{display:grid;grid-template-columns:64px 1fr;gap:8px;padding:6px 0;border-bottom:1px solid #24343c}
+.log-list time{color:#7f96a3;font-variant-numeric:tabular-nums}
+
+footer.foot{
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+  padding:8px 22px 12px;color:#6d8592;font-size:.72rem;
+  border-top:1px solid var(--line)
+}
+
+@media(max-width:1100px){
+  .layout{grid-template-columns:1fr;grid-template-rows:auto 1fr auto}
+  .rail{display:flex;gap:8px;overflow:auto;border-right:0;border-bottom:1px solid var(--line);padding:10px}
+  .station{min-width:190px;margin:0}
+  .panel{border-left:0;border-top:1px solid var(--line)}
+  .monitor{min-height:42vh}
+  .cards{grid-template-columns:1fr 1fr}
+}
+@media(max-width:640px){
+  header.top{padding:10px 12px;flex-wrap:wrap}
+  .crumb{display:none}
+  .intro-inner{padding:28px 16px 24px}
+  .intro-inner h1{font-size:1.7rem}
+  .cards{grid-template-columns:1fr;margin:18px 0 16px}
+  .card img{height:84px}
+  .intro-actions{
+    position:sticky;bottom:0;padding:12px 0 8px;
+    background:linear-gradient(180deg,transparent,#070d12 28%);
+  }
+  .monitor{margin:8px;min-height:200px;aspect-ratio:16/9;box-shadow:0 0 0 1px #000, inset 0 0 0 6px var(--bezel)}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+@media print{
+  header.top,.rail,.monitor-col,.foot,.intro,.panel-actions,.transport{display:none!important}
+  .layout{display:block}
+  .panel{border:0;background:#fff;color:#111}
+  .metric,.task-card{border-color:#ccc;background:#fff}
+  .metric .v{color:#111}
+}
+</style>
+</head>
+<body class="theater">
+<a class="skip" href="#panel">跳到当前任务</a>
+
+<header class="top">
+  <a class="brand" href="./index.html" aria-label="返回真实影像首页">
+    <span class="brand-mark" aria-hidden="true">野</span>
+    <span><strong>胸外科安全实训</strong><small>CT · ANATOMY · SAFETY</small></span>
+  </a>
+  <div class="crumb">主线 · 左上肺门　<b id="crumb-step">准备</b></div>
+  <div class="top-actions">
+    <button id="btn-help" class="quiet">说明</button>
+    <button id="btn-abort" class="outline">结束并查看记录</button>
+    <a class="quiet" href="./safety-training.html?route=knowledge">知识图谱</a>
+    <a class="quiet" href="./index.html">影像首页</a>
+  </div>
+</header>
+
+<div class="intro" id="intro">
+  <div class="intro-bg" aria-hidden="true"></div>
+  <div class="intro-inner">
+    <p class="eyebrow">REAL FIELD · ANATOMY & SAFETY</p>
+    <h1>看真实术野，<br>辨清关键结构。</h1>
+    <p class="deck">四站训练。每站播放真实手术切片，在决策点暂停，并在真实帧上点击指定结构。没有插画，没有生成的解剖图。</p>
+    <div class="cards" id="intro-cards"></div>
+    <p class="note" id="disclaimer"></p>
+    <div class="intro-actions">
+      <button class="gold" id="btn-start">开始主线训练</button>
+      <button class="outline" id="btn-optics-only">只做圆形 30° 对照</button>
+      <span class="hint">空格播放 / 暂停 · 拖动进度条或左右方向键快进快退 · 点击卡片或左侧站点点播 · 1 2 3 选择选项</span>
+    </div>
+  </div>
+</div>
+
+<div class="layout" id="app" hidden>
+  <aside class="rail" id="rail" aria-label="训练站"></aside>
+  <section class="monitor-col">
+    <div class="monitor" id="monitor">
+      <div class="stage" id="stage">
+        <video id="vid" playsinline preload="metadata"></video>
+        <img id="still" alt="当前真实术野定帧" hidden>
+        <canvas id="overlay"></canvas>
+        <div class="pause-flag" id="pause-flag" hidden>决策点 · 画面已暂停</div>
+        <div class="cal-readout" id="cal" hidden></div>
+        <div class="hud">
+          <span class="src" id="hud-src"></span>
+          <span class="clock" id="hud-clock">00:00</span>
+        </div>
+      </div>
+    </div>
+    <div class="transport">
+      <button class="icon-btn" id="btn-play" aria-label="播放或暂停">播放</button>
+      <button class="icon-btn" id="btn-replay">回看 5 秒</button>
+      <button class="icon-btn" id="btn-fwd">快进 5 秒</button>
+      <div class="bar" id="bar" role="slider" aria-label="播放进度，可拖动或点击跳转" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" tabindex="0"><span id="bar-fill"></span><i class="mark" id="bar-mark"></i></div>
+      <span class="rate" id="rate-label">1.0×</span>
+      <button class="icon-btn" id="btn-rate">半速</button>
+    </div>
+  </section>
+  <aside class="panel" id="panel" tabindex="-1">
+    <p class="eyebrow" id="panel-kicker">TASK</p>
+    <h2 id="panel-title">当前任务</h2>
+    <p class="lead" id="panel-lead"></p>
+    <div class="task-card" id="task-box"></div>
+    <div class="panel-actions" id="panel-actions"></div>
+    <p class="hint" id="panel-hint"></p>
+  </aside>
+</div>
+
+<footer class="foot">
+  <span>《外科学》胸外科 · 真实影像训练</span>
+  <span>主线：左上肺叶切除（公开教学录像） · 对照：单操作孔 RS8</span>
+  <span>记录只存在本机浏览器</span>
+</footer>
+
+<dialog id="modal">
+  <div class="task-card" style="margin:18px;max-width:36rem">
+    <h3>来源与用法</h3>
+    <p id="modal-body" class="lead" style="margin-top:8px"></p>
+    <p class="hint" style="margin-top:12px">叠加层为 1.5 像素单色细线。热区在点中之前不画出来。错误后果使用同一批真实帧，没有并发症切片时会明确写出来。</p>
+    <div class="panel-actions"><button class="primary" id="modal-close">关闭</button></div>
+  </div>
+</dialog>
+
+<script type="module" src="./or-field.js"></script>
+</body>
+</html>

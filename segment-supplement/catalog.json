@@ -1,0 +1,437 @@
+{
+  "schemaVersion": 1,
+  "purpose": "source-preserving-experimental-review",
+  "teacherAnswersAllowed": false,
+  "caseCount": 15,
+  "labelCodes": [
+    "RS1",
+    "RS2",
+    "RS3",
+    "RS4",
+    "RS5",
+    "RS6",
+    "RS7",
+    "RS8",
+    "RS9",
+    "RS10",
+    "LS1+2",
+    "LS3",
+    "LS4",
+    "LS5",
+    "LS6",
+    "LS8",
+    "LS9",
+    "LS10"
+  ],
+  "model": "Locally trained 96-64-32 ReLU branch-context neural classifier",
+  "cases": [
+    {
+      "id": "CT-001",
+      "asset": "CT-001.json",
+      "sourceCodes": 16,
+      "displayCodes": 18,
+      "candidateOnlyCodes": 2,
+      "sourceVoxels": 1809665,
+      "addedCandidateVoxels": 170039,
+      "displayVoxels": 1979704,
+      "missing": [],
+      "authorReview": {
+        "reviewId": "author-review-2026-09-13",
+        "status": "approved-by-author",
+        "reviewKind": "user-declared-review",
+        "date": "2026-09-13",
+        "ctSha256": "ad11f1e79ba83f76631d4e399039f7a243c748155fe5d8af7e89177584365b9d",
+        "sourceAtlasSha256": "8aa6c38e1c1fbb2f9f5681d1f8f225e201714f5481364f5c9e7fb838e9124d9a",
+        "candidateSha256": "81ad9df9f4c591813feda0466980652123ffe3af241e9aff04e721281e67e144"
+      }
+    },
+    {
+      "id": "CT-002",
+      "asset": "CT-002.json",
+      "sourceCodes": 4,
+      "displayCodes": 18,
+      "candidateOnlyCodes": 14,
+      "sourceVoxels": 325435,
+      "addedCandidateVoxels": 1302462,
+      "displayVoxels": 1627897,
+      "missing": [],
+      "authorReview": {
+        "reviewId": "author-review-2026-09-13",
+        "status": "approved-by-author",
+        "reviewKind": "user-declared-review",
+        "date": "2026-09-13",
+        "ctSha256": "2ddf7abd1890dce703e5651b999e0bf927c4f7678829d6d634267eb32f16e320",
+        "sourceAtlasSha256": "1146804426f4edeaea24ccc6ac41122787f289e6e844645ef8f2b186a3c787b2",
+        "candidateSha256": "0545fd396318c75ef656114ab3dfa5637980b7cabbdf9472555c18d919a4ca4f"
+      }
+    },
+    {
+      "id": "CT-003",
+      "asset": "CT-003.json",
+      "sourceCodes": 9,
+      "displayCodes": 18,
+      "candidateOnlyCodes": 9,
+      "sourceVoxels": 1144891,
+      "addedCandidateVoxels": 1085922,
+      "displayVoxels": 2230813,
+      "missing": [],
+      "authorReview": {
+        "reviewId": "author-review-2026-09-13",
+        "status": "approved-by-author",
+        "reviewKind": "user-declared-review",
+        "date": "2026-09-13",
+        "ctSha256": "d129d9b299d875ab7e5f94a43f3ac434ee7e26a6ef11832a33d0113e7a8d1bb4",
+        "sourceAtlasSha256": "b61a187af50be4d49a9a5099143e1f82d43795682969e09cd47c0dafb06caafe",
+        "candidateSha256": "74ebf4e5ba5e30ca7bed2610802aa53a6378115d4ec6304eadbb689279d5a855"
+      }
+    },
+    {
+      "id": "CT-004",
+      "asset": "CT-004.json",
+      "sourceCodes": 3,
+      "displayCodes": 18,
+      "candidateOnlyCodes": 15,
+      "sourceVoxels": 632124,
+      "addedCandidateVoxels": 2652947,
+      "displayVoxels": 3285071,
+      "missing": [],
+      "authorReview": {
+        "reviewId": "author-review-2026-09-13",
+        "status": "approved-by-author",
+        "reviewKind": "user-declared-review",
+        "date": "2026-09-13",
+        "ctSha256": "262c451d4cc900950ce7c9644569b3324d2b2afadd54ec3985e490e85d4181d5",
+        "sourceAtlasSha256": "fa9aa4a47aa7b3b7142385ea546fedb2555fabaa56e51bdae54a54fc3a90f881",
+        "candidateSha256": "6d34db12e81fea3165794b456fd8c0f6efaa16fbf03cc10e47cc61d154b83040"
+      }
+    },
+    {
+      "id": "CT-005",
+      "asset": "CT-005.json",
+      "sourceCodes": 11,
+      "displayCodes": 18,
+      "candidateOnlyCodes": 7,
+      "sourceVoxels": 1683632,
+      "addedCandidateVoxels": 740633,
+      "displayVoxels": 2424265,
+      "missing": [],
+      "authorReview": {
+        "reviewId": "author-review-2026-09-13",
+        "status": "approved-by-author",
+        "reviewKind": "user-declared-review",
+        "date": "2026-09-13",
+        "ctSha256": "db5eb328f882f7b682dafc0252b6dbc4a90baeb07d72e9fe3c5274eec107691b",
+        "sourceAtlasSha256": "8702744e2461e37b918b7dcfa19e8132786ad33a3c2976112dcbbdc5bb6e5d5e",
+        "candidateSha256": "fcbeaf4015020024e3d44699a1ad24aa28fe2891be2026dd378d3de0c04cac44"
+      }
+    },
+    {
+      "id": "CT-006",
+      "asset": "CT-006.json",
+      "sourceCodes": 5,
+      "displayCodes": 18,
+      "candidateOnlyCodes": 13,
+      "sourceVoxels": 490165,
+      "addedCandidateVoxels": 1150700,
+      "displayVoxels": 1640865,
+      "missing": [],
+      "authorReview": {
+        "reviewId": "author-review-2026-09-13",
+        "status": "approved-by-author",
+        "reviewKind": "user-declared-review",
+        "date": "2026-09-13",
+        "ctSha256": "a009d1d0123db81ca6e46af14e6da26dbc2abf32329cd321f62d6bdf2f307048",
+        "sourceAtlasSha256": "5d8a78630ab5881fef872a2ffd470d7fd2626530c2cff6eec5340210b2159ef3",
+        "candidateSha256": "adb03b0f322ff300fdc487c8dca7904060c89580e088300fee19aaf323c9bdc4"
+      }
+    },
+    {
+      "id": "CT-007",
+      "asset": "CT-007.json",
+      "sourceCodes": 5,
+      "displayCodes": 18,
+      "candidateOnlyCodes": 13,
+      "sourceVoxels": 730095,
+      "addedCandidateVoxels": 2122847,
+      "displayVoxels": 2852942,
+      "missing": [],
+      "authorReview": {
+        "reviewId": "author-review-2026-09-13",
+        "status": "approved-by-author",
+        "reviewKind": "user-declared-review",
+        "date": "2026-09-13",
+        "ctSha256": "2dc78a23cffa206c2a2010be5ab0ec3d2efab59be0568ed042ab943bd8074eea",
+        "sourceAtlasSha256": "9d13433f8fdfd32fc14835a7870c13f3bd00248018554e6544720f2c3a4cb211",
+        "candidateSha256": "0db718a7468814f926abf43c2a87cc141f8881b58fcca61c61063b005211f84d"
+      }
+    },
+    {
+      "id": "CT-008",
+      "asset": "CT-008.json",
+      "sourceCodes": 4,
+      "displayCodes": 13,
+      "candidateOnlyCodes": 9,
+      "sourceVoxels": 286787,
+      "addedCandidateVoxels": 608860,
+      "displayVoxels": 895647,
+      "missing": [
+        {
+          "code": "RS1",
+          "lobe": "RUL",
+          "reason": "神经网络未生成可显示的该段区域"
+        },
+        {
+          "code": "RS3",
+          "lobe": "RUL",
+          "reason": "神经网络未生成可显示的该段区域"
+        },
+        {
+          "code": "RS5",
+          "lobe": "RML",
+          "reason": "神经网络未生成可显示的该段区域"
+        },
+        {
+          "code": "RS7",
+          "lobe": "RLL",
+          "reason": "神经网络未生成可显示的该段区域"
+        },
+        {
+          "code": "RS9",
+          "lobe": "RLL",
+          "reason": "神经网络未生成可显示的该段区域"
+        }
+      ],
+      "authorReview": {
+        "reviewId": "author-review-2026-09-13",
+        "status": "approved-by-author",
+        "reviewKind": "user-declared-review",
+        "date": "2026-09-13",
+        "ctSha256": "97b9965c4943444c83c685bf0d09c21c2d028219450e8df8d829b55c9b0ef6a1",
+        "sourceAtlasSha256": "700e95540bfb0e8d828cf84a6f2dc163ea6ac4ed0e752cd48d35fa41e7f0d04f",
+        "candidateSha256": "a7d9ace20599f132abedd741a9598f3efa2347a78e62ef1f26247c00fddc3a4b"
+      }
+    },
+    {
+      "id": "CT-009",
+      "asset": "CT-009.json",
+      "sourceCodes": 8,
+      "displayCodes": 16,
+      "candidateOnlyCodes": 8,
+      "sourceVoxels": 1311351,
+      "addedCandidateVoxels": 1727987,
+      "displayVoxels": 3039338,
+      "missing": [
+        {
+          "code": "LS1+2",
+          "lobe": "LUL",
+          "reason": "神经网络未生成可显示的该段区域"
+        },
+        {
+          "code": "LS8",
+          "lobe": "LLL",
+          "reason": "神经网络未生成可显示的该段区域"
+        }
+      ],
+      "authorReview": {
+        "reviewId": "author-review-2026-09-13",
+        "status": "approved-by-author",
+        "reviewKind": "user-declared-review",
+        "date": "2026-09-13",
+        "ctSha256": "bc4bdd4c47bacfe459195a9f2f52df8e05199d0e7ce0f635e7d78bc5bc2e8116",
+        "sourceAtlasSha256": "2484fb03f3471360cab0e192206c988f4bb7242702d0cc169d7c2cb7d93dea23",
+        "candidateSha256": "9aefa85895c8c938393efc02cc25ed2fcb089da2ed234894d56c7aa1a9b442e9"
+      }
+    },
+    {
+      "id": "CT-010",
+      "asset": "CT-010.json",
+      "sourceCodes": 5,
+      "displayCodes": 14,
+      "candidateOnlyCodes": 9,
+      "sourceVoxels": 868360,
+      "addedCandidateVoxels": 1553054,
+      "displayVoxels": 2421414,
+      "missing": [
+        {
+          "code": "RS1",
+          "lobe": "RUL",
+          "reason": "缺少本病例的源肺叶网格"
+        },
+        {
+          "code": "RS2",
+          "lobe": "RUL",
+          "reason": "缺少本病例的源肺叶网格"
+        },
+        {
+          "code": "RS3",
+          "lobe": "RUL",
+          "reason": "缺少本病例的源肺叶网格"
+        },
+        {
+          "code": "RS4",
+          "lobe": "RML",
+          "reason": "神经网络未生成可显示的该段区域"
+        }
+      ],
+      "authorReview": {
+        "reviewId": "author-review-2026-09-13",
+        "status": "approved-by-author",
+        "reviewKind": "user-declared-review",
+        "date": "2026-09-13",
+        "ctSha256": "55a9ad1a7324a6af3e9bfdac707d6453fc1eb9401e5fdd92e33ba1c11d84ded1",
+        "sourceAtlasSha256": "4b66d929b615ae4ba3cc5b740f6e58707f99efc2c0e497c1e8d5a400fe69db14",
+        "candidateSha256": "18e9ec12cd905cb102f0b6e7644abb72b04387ef2109feb757505ac11a22459d"
+      }
+    },
+    {
+      "id": "CT-011",
+      "asset": "CT-011.json",
+      "sourceCodes": 9,
+      "displayCodes": 17,
+      "candidateOnlyCodes": 8,
+      "sourceVoxels": 1366205,
+      "addedCandidateVoxels": 1325904,
+      "displayVoxels": 2692109,
+      "missing": [
+        {
+          "code": "LS4",
+          "lobe": "LUL",
+          "reason": "神经网络未生成可显示的该段区域"
+        }
+      ],
+      "authorReview": {
+        "reviewId": "author-review-2026-09-13",
+        "status": "approved-by-author",
+        "reviewKind": "user-declared-review",
+        "date": "2026-09-13",
+        "ctSha256": "810b7c2268484eba8ee3f94ce61eeb950b8e667ba3768ff906b1b31bf1496863",
+        "sourceAtlasSha256": "359982729f2fb10ba3feda941638db4aa7dd894766eb9e958bcf51fbb317fca3",
+        "candidateSha256": "6e12e39b1b36e727d73d70e3a15fd3e27ea51b1f7c6278284618625097f29bc4"
+      }
+    },
+    {
+      "id": "CT-012",
+      "asset": "CT-012.json",
+      "sourceCodes": 4,
+      "displayCodes": 18,
+      "candidateOnlyCodes": 14,
+      "sourceVoxels": 518364,
+      "addedCandidateVoxels": 2063981,
+      "displayVoxels": 2582345,
+      "missing": [],
+      "authorReview": {
+        "reviewId": "author-review-2026-09-13",
+        "status": "approved-by-author",
+        "reviewKind": "user-declared-review",
+        "date": "2026-09-13",
+        "ctSha256": "25fe7593d3fbd8cb2c747246d200b48a727bffb7e331e5f112cb517817e4aaf7",
+        "sourceAtlasSha256": "59e0c2aef930f17870c66baae7614676673d428a15e1b5d709f4c6c09a9d0203",
+        "candidateSha256": "ae2163c391067df65fb4aba65fdc281b633a61a0c95e70007a1c25320258b665"
+      }
+    },
+    {
+      "id": "CT-013",
+      "asset": "CT-013.json",
+      "sourceCodes": 5,
+      "displayCodes": 18,
+      "candidateOnlyCodes": 13,
+      "sourceVoxels": 697404,
+      "addedCandidateVoxels": 1998574,
+      "displayVoxels": 2695978,
+      "missing": [],
+      "authorReview": {
+        "reviewId": "author-review-2026-09-13",
+        "status": "approved-by-author",
+        "reviewKind": "user-declared-review",
+        "date": "2026-09-13",
+        "ctSha256": "ebba926bc89269cc2f488d2587aae19a93225dbd873ab864c2ce792f46627598",
+        "sourceAtlasSha256": "b20a3ff99bfa9ba7ef0d212227692da76e579562162617aacbf7b5b92188fada",
+        "candidateSha256": "d237127c759ab4756a9e3f3d480ce7fadb8515e57579c6a614f6ba1b46861c34"
+      }
+    },
+    {
+      "id": "CT-014",
+      "asset": "CT-014.json",
+      "sourceCodes": 4,
+      "displayCodes": 13,
+      "candidateOnlyCodes": 9,
+      "sourceVoxels": 539293,
+      "addedCandidateVoxels": 1066315,
+      "displayVoxels": 1605608,
+      "missing": [
+        {
+          "code": "RS6",
+          "lobe": "RLL",
+          "reason": "缺少本病例的源肺叶网格"
+        },
+        {
+          "code": "RS7",
+          "lobe": "RLL",
+          "reason": "缺少本病例的源肺叶网格"
+        },
+        {
+          "code": "RS8",
+          "lobe": "RLL",
+          "reason": "缺少本病例的源肺叶网格"
+        },
+        {
+          "code": "RS9",
+          "lobe": "RLL",
+          "reason": "缺少本病例的源肺叶网格"
+        },
+        {
+          "code": "RS10",
+          "lobe": "RLL",
+          "reason": "缺少本病例的源肺叶网格"
+        }
+      ],
+      "authorReview": {
+        "reviewId": "author-review-2026-09-13",
+        "status": "approved-by-author",
+        "reviewKind": "user-declared-review",
+        "date": "2026-09-13",
+        "ctSha256": "78d58729e9772fac37a3733f65cbd818108b5ffe657a8c57e01763703aa1f2f6",
+        "sourceAtlasSha256": "966000df046916fc702ac8d68969ae5308da3e384a71c39aefb10330ed38b360",
+        "candidateSha256": "d4a9db6f0055956eb9e2e7b557f05eaefa2637128b8b970f34f7bb910a0eda48"
+      }
+    },
+    {
+      "id": "CT-015",
+      "asset": "CT-015.json",
+      "sourceCodes": 8,
+      "displayCodes": 17,
+      "candidateOnlyCodes": 9,
+      "sourceVoxels": 1013206,
+      "addedCandidateVoxels": 1098877,
+      "displayVoxels": 2112083,
+      "missing": [
+        {
+          "code": "LS9",
+          "lobe": "LLL",
+          "reason": "神经网络未生成可显示的该段区域"
+        }
+      ],
+      "authorReview": {
+        "reviewId": "author-review-2026-09-13",
+        "status": "approved-by-author",
+        "reviewKind": "user-declared-review",
+        "date": "2026-09-13",
+        "ctSha256": "a7d755f4baf544805d463cd65bc8e40239a3457e80402bb595c028c990375fc5",
+        "sourceAtlasSha256": "d46e99d80b50c8a55c065388b08d2080a24ce5791a426a8eca18154e29ec3dc6",
+        "candidateSha256": "f7d9aa1803e29dff7a5f22e10957e0f7a5da41657c1acb8a4a79eef90deb22d7"
+      }
+    }
+  ],
+  "sourceCaseCodeCount": 100,
+  "displayCaseCodeCount": 252,
+  "missingCaseCodeCount": 18,
+  "status": "Current displayed merged annotations approved by project author; ungenerated regions remain listed.",
+  "authorReview": {
+    "reviewId": "author-review-2026-09-13",
+    "status": "approved-by-author",
+    "reviewKind": "user-declared-review",
+    "date": "2026-09-13",
+    "asset": "author-review.json",
+    "sha256": "d48729f93958ea6a50284d2afeca537e1d8ae04ed5e306e55b70e9d09372bd2d"
+  }
+}

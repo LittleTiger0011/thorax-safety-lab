@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>肺段标注生成记录</title>
+  <style>
+    :root{color-scheme:dark;font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;background:#07121b;color:#e4edf2}*{box-sizing:border-box}body{margin:0}header,main{max-width:1600px;margin:auto;padding:24px 30px}header{padding-bottom:10px}a{color:#91cfd4;text-decoration:none}nav{display:flex;justify-content:space-between;font-size:14px}.eyebrow{color:#e6b56f;letter-spacing:.13em;font-size:12px;margin-top:34px}h1{font-size:clamp(25px,3.2vw,42px);font-weight:600;margin:10px 0}p{line-height:1.75;color:#a6bcc8}strong{color:#f2c17c}.notice{border:1px solid #685332;background:#28231c;border-radius:12px;padding:14px 18px;line-height:1.8;margin:14px 0 22px}.controls{display:flex;gap:14px 22px;align-items:end;flex-wrap:wrap;margin-bottom:16px}label{display:grid;gap:8px;font-size:12px;color:#acbfca}select,button{font:inherit;color:#e5eef3;border:1px solid #355063;background:#132633;border-radius:7px;padding:10px 13px}button{cursor:pointer}button:hover{background:#254253}select{min-width:125px}select:focus-visible,button:focus-visible,input:focus-visible{outline:2px solid #86c9ca;outline-offset:3px}.range{display:grid;grid-template-columns:auto minmax(160px,1fr) auto auto;gap:14px;align-items:center;padding:14px 18px;background:#10232f;border-radius:10px}input[type=range]{accent-color:#91d4cb;width:100%}.slab{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px}.pane{min-width:0;background:#0c1a25;border:1px solid #243b4a;border-radius:12px;overflow:hidden}.pane h2{font-size:16px;margin:0;padding:16px}.pane:last-child h2{color:#edbb75}.view{height:380px;overflow:auto;display:flex;background:#010608;padding:10px;cursor:grab;touch-action:pan-x pan-y}.view.dragging{cursor:grabbing}canvas{display:block;flex:none;margin:auto}.names{min-height:88px;padding:14px;font-size:12px;line-height:1.9;color:#aec5d1;border-top:1px solid #233d4e}.chip{display:inline-block;margin:2px 9px 2px 0}.chip:before{content:'●';color:var(--color);margin-right:5px}.facts{font-size:13px;line-height:1.8;color:#91aab9;margin:14px 0}.legend{display:flex;gap:20px;flex-wrap:wrap;font-size:13px;align-items:center}.legend label{display:flex;align-items:center;gap:8px;font-size:13px}.matrix{margin-top:28px;overflow:auto;border:1px solid #2b4150;border-radius:12px}table{border-collapse:collapse;width:100%;font-size:13px;white-space:nowrap}th,td{text-align:left;padding:13px 17px;border-bottom:1px solid #223745}th{background:#132633;color:#bdd0dc}tr:last-child td{border-bottom:0}td button{padding:5px 10px}.low{color:#f1bc72}.hint{font-size:12px}#status{min-height:22px;font-size:13px;color:#b0cad5}.counter{font-variant-numeric:tabular-nums;min-width:100px}.fit-control{display:flex;align-items:center;gap:8px}#zoom{width:150px}.loading .slab{opacity:.35;pointer-events:none}@media(max-width:960px){header,main{padding:20px}.slab{grid-template-columns:1fr}.view{height:420px}.names{min-height:48px}.range{grid-template-columns:auto 1fr auto}.range button:last-child{display:none}}@media(max-width:520px){.controls{gap:12px}.controls label{width:calc(50% - 12px)}select{width:100%;min-width:0}.range{padding:12px 8px;gap:8px}.view{height:310px}.counter{min-width:75px}}
+  </style>
+</head>
+<body>
+<header>
+  <nav><a href="./">← 返回真实病例工作台</a><span>15 例 · 标注生成记录</span></nav>
+  <div class="eyebrow">ANNOTATION RECORD · 标注生成记录</div>
+  <h1>肺段标注生成对照</h1>
+  <p>同一病例，同一CT层面。对照源资料与合并前计算结果，查看标注生成过程。</p>
+  <div class="notice" role="note"><strong>当前工作台显示的新增肺段已由作者审核。</strong><br>本页保留合并前模型输出与历史数值：98个源段的平均Dice为0.732，13个低于0.50，最低为0。当前工作台优先保留源标注，再显示新增区域。<a href="./segment-supplement/author-review.json">查看作者审核与版本记录</a></div>
+</header>
+<main>
+  <div class="controls">
+    <label>病例<select id="case"><option>载入病例…</option></select></label>
+    <label>观察平面<select id="plane"><option value="axial">轴位</option><option value="coronal">冠状位</option><option value="sagittal">矢状位</option></select></label>
+    <label>肺段<select id="segment"><option value="all">全部肺段</option></select></label>
+    <label>覆盖显示<select id="overlay"><option value="fill">填色</option><option value="outline">轮廓</option><option value="off">关闭覆盖</option></select></label>
+    <button id="focus">定位所选源段</button>
+    <a id="case-link" href="./">打开本例完整三屏 →</a>
+  </div>
+  <div class="legend"><label><input id="names" type="checkbox" checked>显示段名</label><label>覆盖强度<input id="opacity" type="range" min="10" max="65" value="25" style="width:120px"></label><div class="fit-control"><label for="zoom">缩放</label><input id="zoom" type="range" min="10" max="300" value="100"><output id="zoom-value">100%</output><button id="fit">适应窗口／居中</button></div></div>
+  <p class="hint">三个窗口同步改变层面和缩放。放大后可拖动窗口内图像，或使用滚动条查看边缘。</p>
+  <div class="range"><button id="previous" aria-label="上一层">←</button><input id="slice" type="range" min="0" max="1" value="0" aria-label="CT层面"><output class="counter" id="slice-value">—</output><button id="next" aria-label="下一层">→</button></div>
+  <p id="status" role="status" aria-live="polite">正在载入实验目录…</p>
+  <section class="slab" aria-label="同层CT对照">
+    <article class="pane"><h2>01 · 原始 CT</h2><div class="view"><canvas id="raw" aria-label="原始CT层面"></canvas></div><div class="names" id="raw-names">提供者导出的真实CT，窗宽1500、窗位−600。</div></article>
+    <article class="pane"><h2>02 · 已有源标注</h2><div class="view"><canvas id="source" aria-label="源肺段覆盖"></canvas></div><div class="names" id="source-names"></div></article>
+    <article class="pane"><h2>03 · 合并前计算结果</h2><div class="view"><canvas id="candidate" aria-label="合并前肺段计算结果"></canvas></div><div class="names" id="candidate-names"></div></article>
+  </section>
+  <div class="facts" id="facts"></div>
+  <p class="hint">源标注空白表示未提供标签；计算结果空白表示该版本没有生成该段区域。段名沿用本库源资料，空白不表示该肺段在解剖上不存在。</p>
+  <div class="matrix"><table><thead><tr><th>病例</th><th>可对照源段</th><th>平均Dice</th><th>低于0.50的源段</th><th>未计算的肺叶</th></tr></thead><tbody id="results"></tbody></table></div>
+  <p class="hint">Dice衡量与源标注的区域重合程度，1代表完全相同；它不是临床准确率。该试验按病例分别留出验证，没有独立医学金标准，不能用于证明全部肺段正确。</p>
+</main>
+<script type="module" src="./segment-experiment.js"></script>
+</body>
+</html>

@@ -1,0 +1,322 @@
+{
+  "module_id": "real-or-field-pa-isolation",
+  "title_cn": "真实术野训练",
+  "subtitle_cn": "肺门管道游离 · 只用真实手术影像",
+  "disclaimer": "全部术野来自去标识化公开教学录像。代码只播放、暂停和叠加细线，不生成解剖图。主线取自公开教学录像中的左上肺叶切除肺门游离，不是尖后段切除的独立成片。圆形 30° 对照取自另一台单操作孔 RS8 切除术，与主线不是同一患者、同一术式。画面未标注的分支编号一律视为 uncertain。",
+  "scoring": {
+    "decision_weight": 1,
+    "landmark_weight": 1
+  },
+  "masks": {
+    "yang_letterbox": {
+      "type": "letterbox",
+      "box": { "x": 0.102, "y": 0.007, "w": 0.858, "h": 0.988 }
+    },
+    "gong_circle": {
+      "type": "circle",
+      "cx": 0.5,
+      "cy": 0.5,
+      "rx": 0.266,
+      "ry": 0.472
+    }
+  },
+  "steps": [
+    {
+      "id": "hilar_expose",
+      "index": 1,
+      "name_cn": "显露肺门",
+      "kicker": "STATION 01  ·  LEFT UPPER HILUM",
+      "source_cn": "公开教学录像 · 左上肺叶切除术 · 08:00–09:12",
+      "video": "or-field/clean/video/step01_hilar_expose.mp4",
+      "poster": "or-field/clean/posters/step01.jpg",
+      "duration_sec": 72,
+      "pause_at_sec": 30,
+      "mask": "yang_letterbox",
+      "brief_cn": "能量器械正在打开肺门前方的结缔组织。请看清新露出的灰白条索，再决定怎么处理。",
+      "play_remainder": true,
+      "decision_point": {
+        "id": "dp_white_tube",
+        "prompt_cn": "画面中新露出的灰白条索，下一步更合理的是？",
+        "why_pause_cn": "已看到管状轮廓。先判断，再动手。",
+        "options": [
+          {
+            "id": "A",
+            "text_cn": "沿其表面的薄膜继续分离，看清是否为管道后再决定处理方式",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "text_cn": "当作粘连带，用能量器械直接切断",
+            "correct": false,
+            "consequence": {
+              "frame": "or-field/clean/frames/s01_white_tube.jpg",
+              "outline_id": "white_tube",
+              "feedback_cn": "该结构表面光滑、呈管状，不像扁平的膜性粘连。本包没有“误切喷血”的真实切片，所以停在此帧：直接切断可能损伤血管。"
+            }
+          },
+          {
+            "id": "C",
+            "text_cn": "已经能看到软骨环，按支气管处理",
+            "correct": false,
+            "consequence": {
+              "frame": "or-field/clean/frames/s01_white_tube.jpg",
+              "outline_id": "white_tube",
+              "feedback_cn": "这一帧里看不到环形软骨。不要用术式记忆补画面里没有的结构。"
+            }
+          }
+        ]
+      },
+      "landmarks": [
+        {
+          "id": "white_tube",
+          "name_cn": "灰白管状结构",
+          "quiz_prompt_cn": "请点击刚露出的灰白管状结构（不要点肺实质，也不要点器械）",
+          "frame": "or-field/clean/frames/s01_white_tube.jpg",
+          "hotspots": [
+            {
+              "shape": "polygon",
+              "points_norm": [
+                [0.50, 0.26],
+                [0.71, 0.24],
+                [0.74, 0.46],
+                [0.62, 0.52],
+                [0.48, 0.42]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pa_isolation",
+      "index": 2,
+      "name_cn": "管道游离",
+      "kicker": "STATION 02  ·  BRANCH ISOLATION",
+      "source_cn": "公开教学录像 · 左上肺叶切除术 · 12:00–13:27",
+      "video": "or-field/clean/video/step02_pa_isolation.mp4",
+      "poster": "or-field/clean/posters/step02.jpg",
+      "duration_sec": 87,
+      "pause_at_sec": 63,
+      "mask": "yang_letterbox",
+      "brief_cn": "肺门区出现 Y 形灰白管道。能量器械沿鞘膜分离，吸引器对抗牵引。编号在画面上未标出，只根据外形判断。",
+      "play_remainder": false,
+      "outlines": {
+        "stump": {
+          "shape": "polygon",
+          "points_norm": [
+            [0.50, 0.26],
+            [0.63, 0.24],
+            [0.64, 0.42],
+            [0.50, 0.44]
+          ]
+        },
+        "y_vessel": {
+          "shape": "polygon",
+          "points_norm": [
+            [0.45, 0.46],
+            [0.58, 0.36],
+            [0.73, 0.30],
+            [0.78, 0.44],
+            [0.70, 0.62],
+            [0.52, 0.64],
+            [0.44, 0.56]
+          ]
+        }
+      },
+      "trails": [
+        {
+          "from_sec": 21,
+          "to_sec": 36,
+          "color": "#E4C27A",
+          "points_norm": [[0.22, 0.78], [0.42, 0.58], [0.50, 0.50]]
+        }
+      ],
+      "decision_point": {
+        "id": "dp_behind_vessel",
+        "prompt_cn": "器械已经从该灰白分叉结构的后方穿过。这意味着什么？",
+        "why_pause_cn": "后方通道是游离完成的关键瞬间。",
+        "options": [
+          {
+            "id": "A",
+            "text_cn": "管道后方间隙已经建立，可以考虑用闭合器械替换目前的杆身",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "text_cn": "可以立刻用能量器械在目前这个平面横断",
+            "correct": false,
+            "consequence": {
+              "frame": "or-field/clean/frames/s02_behind_vessel.jpg",
+              "outline_id": "y_vessel",
+              "feedback_cn": "管壁薄、近心侧已有暗色残端。能量横断在本素材中没有对应的安全结局。游离完成不等于可以随意离断。"
+            }
+          },
+          {
+            "id": "C",
+            "text_cn": "后方深蓝色圆形断面是尚未处理的完整分支，应一并切断",
+            "correct": false,
+            "consequence": {
+              "frame": "or-field/clean/frames/s02_y_vessel.jpg",
+              "outline_id": "stump",
+              "feedback_cn": "深蓝 / 灰蓝圆形断面是已经离断的残端，不是完整管道。把它当成新的分支会切到已经处理过的结构。"
+            }
+          }
+        ]
+      },
+      "landmarks": [
+        {
+          "id": "y_vessel",
+          "name_cn": "灰白分叉管道",
+          "quiz_prompt_cn": "请点击该 Y 形灰白管道（不要点近心侧的暗色残端）",
+          "frame": "or-field/clean/frames/s02_y_vessel.jpg",
+          "hotspots": [
+            {
+              "shape": "polygon",
+              "points_norm": [
+                [0.45, 0.46],
+                [0.58, 0.36],
+                [0.73, 0.30],
+                [0.78, 0.44],
+                [0.70, 0.62],
+                [0.52, 0.64],
+                [0.44, 0.56]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stapler",
+      "index": 3,
+      "name_cn": "闭合就位",
+      "kicker": "STATION 03  ·  STAPLER",
+      "source_cn": "公开教学录像 · 左上肺叶切除术 · 13:27–14:09",
+      "video": "or-field/clean/video/step03_stapler.mp4",
+      "poster": "or-field/clean/posters/step03.jpg",
+      "duration_sec": 42,
+      "pause_at_sec": 21,
+      "mask": "yang_letterbox",
+      "brief_cn": "直线切割缝合器进入刚才游离出的间隙。击发前先看钉仓里到底夹了什么。",
+      "play_remainder": true,
+      "decision_point": {
+        "id": "dp_before_fire",
+        "prompt_cn": "钉仓已经伸入。击发前应确认什么？",
+        "why_pause_cn": "金属反光很大，真正的目标只占钉仓里很小一截。",
+        "options": [
+          {
+            "id": "A",
+            "text_cn": "钉仓内只有要处理的管道，周围肺组织和已处理残端不在闭合线内",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "text_cn": "只要缝合器进入肺门就可以击发",
+            "correct": false,
+            "consequence": {
+              "frame": "or-field/clean/frames/s03_stapler_jaws.jpg",
+              "outline_id": "in_jaws",
+              "feedback_cn": "缝合器进入肺门只说明位置大致对。击发前仍要看清闭合线里是不是目标管道。"
+            }
+          },
+          {
+            "id": "C",
+            "text_cn": "钉仓金属反光说明已经夹闭完成",
+            "correct": false,
+            "consequence": {
+              "frame": "or-field/clean/frames/s03_stapler_jaws.jpg",
+              "outline_id": "in_jaws",
+              "feedback_cn": "这一帧没有击发后的钉线。高光来自金属表面，不是闭合完成的标志。"
+            }
+          }
+        ]
+      },
+      "landmarks": [
+        {
+          "id": "in_jaws",
+          "name_cn": "钉仓中的目标管道",
+          "quiz_prompt_cn": "请点击缝合器钉仓开口里的组织（不要点左侧萎陷肺）",
+          "frame": "or-field/clean/frames/s03_stapler_jaws.jpg",
+          "hotspots": [
+            {
+              "shape": "polygon",
+              "points_norm": [
+                [0.44, 0.34],
+                [0.57, 0.30],
+                [0.58, 0.56],
+                [0.43, 0.58]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "circular_optics",
+      "index": 4,
+      "name_cn": "圆形 30° 对照",
+      "kicker": "STATION 04  ·  CIRCULAR OPTICS",
+      "source_cn": "对照录像 · 单操作孔 RS8 · 另一患者、另一术式",
+      "video": "or-field/clean/video/step04_circular_optics.mp4",
+      "poster": "or-field/clean/posters/step04.jpg",
+      "duration_sec": 62,
+      "pause_at_sec": 17,
+      "mask": "gong_circle",
+      "brief_cn": "这不是左上叶，也不是同一台手术。只用来对照：圆形光阑、同轴高光、边缘变暗。",
+      "play_remainder": true,
+      "decision_point": {
+        "id": "dp_optics",
+        "prompt_cn": "与前三段矩形术野相比，这段圆形画面主要说明什么？",
+        "why_pause_cn": "光学特征，不要求辨认 A8 编号。",
+        "options": [
+          {
+            "id": "A",
+            "text_cn": "光学视场接近圆形，光源与镜头同轴，边缘变暗来自光阑和距离衰减",
+            "correct": true
+          },
+          {
+            "id": "B",
+            "text_cn": "圆形黑边就是胸膜腔的真实形状",
+            "correct": false,
+            "consequence": {
+              "frame": "or-field/clean/frames/s04_white_vessel.jpg",
+              "outline_id": "white_vessel",
+              "feedback_cn": "黑边是镜头圆形光阑落到矩形监视器上的结果，不是胸膜腔本身的形状。"
+            }
+          },
+          {
+            "id": "C",
+            "text_cn": "只有 0 度镜才是圆形，30 度镜一定显示成矩形",
+            "correct": false,
+            "consequence": {
+              "frame": "or-field/clean/frames/s04_white_vessel.jpg",
+              "outline_id": "white_vessel",
+              "feedback_cn": "0 度镜和 30 度镜的光学视场都可以是圆形。矩形满幅往往是后期裁切或监视器铺满，不能用来判断镜头角度。"
+            }
+          }
+        ]
+      },
+      "landmarks": [
+        {
+          "id": "white_vessel",
+          "name_cn": "裂内灰白管道",
+          "quiz_prompt_cn": "请点击圆形术野里正在被分离的灰白管道（不要点左侧粉肺）",
+          "frame": "or-field/clean/frames/s04_white_vessel.jpg",
+          "hotspots": [
+            {
+              "shape": "polygon",
+              "points_norm": [
+                [0.40, 0.50],
+                [0.56, 0.30],
+                [0.80, 0.26],
+                [0.84, 0.48],
+                [0.62, 0.60],
+                [0.42, 0.64]
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

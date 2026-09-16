@@ -1,0 +1,10 @@
+/*.gz
+  Content-Type: application/octet-stream
+  Content-Encoding: identity
+  X-Content-Type-Options: nosniff
+
+/or-field/video/*
+  Accept-Ranges: bytes
+
+/or-field/clean/video/*
+  Accept-Ranges: bytes

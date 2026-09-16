@@ -1,0 +1,331 @@
+{
+  "schemaVersion": 1,
+  "title": "真实影像病例库",
+  "caseCount": 15,
+  "sliceCount": 2043,
+  "structureCount": 359,
+  "latestCaseIds": [
+    "CT-009",
+    "CT-010",
+    "CT-011",
+    "CT-012",
+    "CT-013",
+    "CT-014",
+    "CT-015"
+  ],
+  "cases": [
+    {
+      "id": "CT-001",
+      "title": "双肺结节",
+      "manifest": "CT-001/case.json",
+      "preview": "CT-001/preview.webp",
+      "slices": 120,
+      "structures": 47,
+      "dimensions": [
+        298,
+        210,
+        120
+      ],
+      "spacing": [
+        0.95377606153488,
+        0.95377606153488,
+        2.0
+      ],
+      "downloadBytes": 9563286,
+      "targets": 11
+    },
+    {
+      "id": "CT-002",
+      "title": "左上叶结节",
+      "manifest": "CT-002/case.json",
+      "preview": "CT-002/preview.webp",
+      "slices": 136,
+      "structures": 20,
+      "dimensions": [
+        259,
+        209,
+        136
+      ],
+      "spacing": [
+        1.0928061008453,
+        1.0928061008453,
+        2.0
+      ],
+      "downloadBytes": 8934197,
+      "targets": 40
+    },
+    {
+      "id": "CT-003",
+      "title": "双肺结节",
+      "manifest": "CT-003/case.json",
+      "preview": "CT-003/preview.webp",
+      "slices": 130,
+      "structures": 29,
+      "dimensions": [
+        299,
+        198,
+        130
+      ],
+      "spacing": [
+        0.90198862552643,
+        0.90198862552643,
+        2.0
+      ],
+      "downloadBytes": 9572908,
+      "targets": 4
+    },
+    {
+      "id": "CT-004",
+      "title": "右上叶结节",
+      "manifest": "CT-004/case.json",
+      "preview": "CT-004/preview.webp",
+      "slices": 157,
+      "structures": 16,
+      "dimensions": [
+        299,
+        200,
+        157
+      ],
+      "spacing": [
+        1.00146484375,
+        1.00146484375,
+        2.0
+      ],
+      "downloadBytes": 11152594,
+      "targets": 7
+    },
+    {
+      "id": "CT-005",
+      "title": "双肺结节",
+      "manifest": "CT-005/case.json",
+      "preview": "CT-005/preview.webp",
+      "slices": 128,
+      "structures": 31,
+      "dimensions": [
+        292,
+        200,
+        128
+      ],
+      "spacing": [
+        0.84755861759186,
+        0.84755861759186,
+        2.0
+      ],
+      "downloadBytes": 9565094,
+      "targets": 15
+    },
+    {
+      "id": "CT-006",
+      "title": "右肺结节",
+      "manifest": "CT-006/case.json",
+      "preview": "CT-006/preview.webp",
+      "slices": 155,
+      "structures": 18,
+      "dimensions": [
+        260,
+        165,
+        155
+      ],
+      "spacing": [
+        1.2297111749649,
+        1.2297111749649,
+        2.0
+      ],
+      "downloadBytes": 8477533,
+      "targets": 9
+    },
+    {
+      "id": "CT-007",
+      "title": "右下叶结节",
+      "manifest": "CT-007/case.json",
+      "preview": "CT-007/preview.webp",
+      "slices": 137,
+      "structures": 21,
+      "dimensions": [
+        320,
+        210,
+        137
+      ],
+      "spacing": [
+        0.77425593137741,
+        0.77425593137741,
+        2.0
+      ],
+      "downloadBytes": 10887731,
+      "targets": 3
+    },
+    {
+      "id": "CT-008",
+      "title": "左上叶结节",
+      "manifest": "CT-008/case.json",
+      "preview": "CT-008/preview.webp",
+      "slices": 130,
+      "structures": 18,
+      "dimensions": [
+        259,
+        179,
+        130
+      ],
+      "spacing": [
+        1.0361601114273,
+        1.0361601114273,
+        2.0
+      ],
+      "downloadBytes": 6552061,
+      "targets": 4
+    },
+    {
+      "id": "CT-009",
+      "title": "右肺结节",
+      "manifest": "CT-009/case.json",
+      "preview": "CT-009/preview.webp",
+      "slices": 160,
+      "structures": 26,
+      "dimensions": [
+        299,
+        234,
+        160
+      ],
+      "spacing": [
+        0.96839946508408,
+        0.96839946508408,
+        2.0
+      ],
+      "downloadBytes": 13335886,
+      "targets": 2
+    },
+    {
+      "id": "CT-010",
+      "title": "右下叶结节",
+      "manifest": "CT-010/case.json",
+      "preview": "CT-010/preview.webp",
+      "slices": 130,
+      "structures": 21,
+      "dimensions": [
+        326,
+        210,
+        130
+      ],
+      "spacing": [
+        0.80267858505249,
+        0.80267858505249,
+        2.0
+      ],
+      "downloadBytes": 10212385,
+      "targets": 5
+    },
+    {
+      "id": "CT-011",
+      "title": "双肺结节",
+      "manifest": "CT-011/case.json",
+      "preview": "CT-011/preview.webp",
+      "slices": 150,
+      "structures": 28,
+      "dimensions": [
+        299,
+        230,
+        150
+      ],
+      "spacing": [
+        0.85869562625885,
+        0.85869562625885,
+        2.0
+      ],
+      "downloadBytes": 11480649,
+      "targets": 2
+    },
+    {
+      "id": "CT-012",
+      "title": "左下叶结节",
+      "manifest": "CT-012/case.json",
+      "preview": "CT-012/preview.webp",
+      "slices": 140,
+      "structures": 19,
+      "dimensions": [
+        319,
+        220,
+        140
+      ],
+      "spacing": [
+        0.80788350105286,
+        0.80788350105286,
+        2.0
+      ],
+      "downloadBytes": 11811501,
+      "targets": 3
+    },
+    {
+      "id": "CT-013",
+      "title": "右下叶结节",
+      "manifest": "CT-013/case.json",
+      "preview": "CT-013/preview.webp",
+      "slices": 130,
+      "structures": 21,
+      "dimensions": [
+        348,
+        228,
+        130
+      ],
+      "spacing": [
+        0.712890625,
+        0.712890625,
+        2.0
+      ],
+      "downloadBytes": 11163581,
+      "targets": 2
+    },
+    {
+      "id": "CT-014",
+      "title": "左上叶结节",
+      "manifest": "CT-014/case.json",
+      "preview": "CT-014/preview.webp",
+      "slices": 125,
+      "structures": 17,
+      "dimensions": [
+        275,
+        195,
+        125
+      ],
+      "spacing": [
+        0.873819231987,
+        0.873819231987,
+        2.0
+      ],
+      "downloadBytes": 8121141,
+      "targets": 1
+    },
+    {
+      "id": "CT-015",
+      "title": "右肺结节",
+      "manifest": "CT-015/case.json",
+      "preview": "CT-015/preview.webp",
+      "slices": 115,
+      "structures": 27,
+      "dimensions": [
+        362,
+        210,
+        115
+      ],
+      "spacing": [
+        0.72522324323654,
+        0.72522324323654,
+        2.0
+      ],
+      "downloadBytes": 10084040,
+      "targets": 2
+    }
+  ],
+  "privacy": "仅导出匿名编号、数值影像、几何与结构标签；未导出姓名、日期、病历号、DICOM UID 或私有元数据。",
+  "scope": "影像与解剖观察资料；无病理、分期或手术适应证信息，不自动生成治疗决策。",
+  "sources": [
+    {
+      "title": "DICOM Image Plane Module",
+      "url": "https://dicom.nema.org/medical/DICOM/2021b/output/chtml/part03/sect_C.7.6.2.html"
+    },
+    {
+      "title": "pydicom pixel data processing",
+      "url": "https://pydicom.github.io/pydicom/stable/guides/user/working_with_pixel_data.html"
+    }
+  ],
+  "triangleCount": 1833742
+}

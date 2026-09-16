@@ -1,0 +1,410 @@
+{
+  "schemaVersion": 1,
+  "segmentCodes": [
+    "RS1",
+    "RS2",
+    "RS3",
+    "RS4",
+    "RS5",
+    "RS6",
+    "RS7",
+    "RS8",
+    "RS9",
+    "RS10",
+    "LS1+2",
+    "LS3",
+    "LS4",
+    "LS5",
+    "LS6",
+    "LS8",
+    "LS9",
+    "LS10"
+  ],
+  "colors": [
+    "#f4c76a",
+    "#76c9bd",
+    "#eb9398",
+    "#b6a0ef",
+    "#f0ab68",
+    "#73bdeb",
+    "#dcba74",
+    "#a5ca7a",
+    "#d89cce",
+    "#8faaf1",
+    "#f4c76a",
+    "#76c9bd",
+    "#b6a0ef",
+    "#f0ab68",
+    "#73bdeb",
+    "#a5ca7a",
+    "#d89cce",
+    "#8faaf1"
+  ],
+  "cases": [
+    {
+      "id": "CT-001",
+      "atlas": "CT-001/atlas.json",
+      "codes": [
+        "RS1",
+        "RS2",
+        "RS3",
+        "RS6",
+        "RS7",
+        "RS8",
+        "RS9",
+        "RS10",
+        "LS1+2",
+        "LS3",
+        "LS4",
+        "LS5",
+        "LS6",
+        "LS8",
+        "LS9",
+        "LS10"
+      ],
+      "labeledVoxels": 1809665,
+      "overlapVoxels": 686,
+      "suppliedSurfaces": 37
+    },
+    {
+      "id": "CT-002",
+      "atlas": "CT-002/atlas.json",
+      "codes": [
+        "LS1+2",
+        "LS3",
+        "LS4",
+        "LS5"
+      ],
+      "labeledVoxels": 325435,
+      "overlapVoxels": 95,
+      "suppliedSurfaces": 10
+    },
+    {
+      "id": "CT-003",
+      "atlas": "CT-003/atlas.json",
+      "codes": [
+        "RS6",
+        "RS7",
+        "RS8",
+        "RS9",
+        "RS10",
+        "LS1+2",
+        "LS3",
+        "LS4",
+        "LS5"
+      ],
+      "labeledVoxels": 1144891,
+      "overlapVoxels": 366,
+      "suppliedSurfaces": 19
+    },
+    {
+      "id": "CT-004",
+      "atlas": "CT-004/atlas.json",
+      "codes": [
+        "RS1",
+        "RS2",
+        "RS3"
+      ],
+      "labeledVoxels": 632124,
+      "overlapVoxels": 136,
+      "suppliedSurfaces": 6
+    },
+    {
+      "id": "CT-005",
+      "atlas": "CT-005/atlas.json",
+      "codes": [
+        "RS1",
+        "RS2",
+        "RS3",
+        "LS1+2",
+        "LS3",
+        "LS4",
+        "LS5",
+        "LS6",
+        "LS8",
+        "LS9",
+        "LS10"
+      ],
+      "labeledVoxels": 1683632,
+      "overlapVoxels": 692,
+      "suppliedSurfaces": 21
+    },
+    {
+      "id": "CT-006",
+      "atlas": "CT-006/atlas.json",
+      "codes": [
+        "RS1",
+        "RS2",
+        "RS3",
+        "RS4",
+        "RS5"
+      ],
+      "labeledVoxels": 490165,
+      "overlapVoxels": 128,
+      "suppliedSurfaces": 8
+    },
+    {
+      "id": "CT-007",
+      "atlas": "CT-007/atlas.json",
+      "codes": [
+        "RS6",
+        "RS7",
+        "RS8",
+        "RS9",
+        "RS10"
+      ],
+      "labeledVoxels": 730095,
+      "overlapVoxels": 275,
+      "suppliedSurfaces": 11
+    },
+    {
+      "id": "CT-008",
+      "atlas": "CT-008/atlas.json",
+      "codes": [
+        "LS1+2",
+        "LS3",
+        "LS4",
+        "LS5"
+      ],
+      "labeledVoxels": 286787,
+      "overlapVoxels": 90,
+      "suppliedSurfaces": 8
+    },
+    {
+      "id": "CT-009",
+      "atlas": "CT-009/atlas.json",
+      "codes": [
+        "RS1",
+        "RS2",
+        "RS3",
+        "RS6",
+        "RS7",
+        "RS8",
+        "RS9",
+        "RS10"
+      ],
+      "labeledVoxels": 1311351,
+      "overlapVoxels": 472,
+      "suppliedSurfaces": 16
+    },
+    {
+      "id": "CT-010",
+      "atlas": "CT-010/atlas.json",
+      "codes": [
+        "RS6",
+        "RS7",
+        "RS8",
+        "RS9",
+        "RS10"
+      ],
+      "labeledVoxels": 868360,
+      "overlapVoxels": 238,
+      "suppliedSurfaces": 11
+    },
+    {
+      "id": "CT-011",
+      "atlas": "CT-011/atlas.json",
+      "codes": [
+        "RS6",
+        "RS7",
+        "RS8",
+        "RS9",
+        "RS10",
+        "LS6",
+        "LS8",
+        "LS9",
+        "LS10"
+      ],
+      "labeledVoxels": 1366205,
+      "overlapVoxels": 836,
+      "suppliedSurfaces": 18
+    },
+    {
+      "id": "CT-012",
+      "atlas": "CT-012/atlas.json",
+      "codes": [
+        "LS6",
+        "LS8",
+        "LS9",
+        "LS10"
+      ],
+      "labeledVoxels": 518364,
+      "overlapVoxels": 147,
+      "suppliedSurfaces": 9
+    },
+    {
+      "id": "CT-013",
+      "atlas": "CT-013/atlas.json",
+      "codes": [
+        "RS6",
+        "RS7",
+        "RS8",
+        "RS9",
+        "RS10"
+      ],
+      "labeledVoxels": 697404,
+      "overlapVoxels": 311,
+      "suppliedSurfaces": 11
+    },
+    {
+      "id": "CT-014",
+      "atlas": "CT-014/atlas.json",
+      "codes": [
+        "LS1+2",
+        "LS3",
+        "LS4",
+        "LS5"
+      ],
+      "labeledVoxels": 539293,
+      "overlapVoxels": 172,
+      "suppliedSurfaces": 8
+    },
+    {
+      "id": "CT-015",
+      "atlas": "CT-015/atlas.json",
+      "codes": [
+        "RS1",
+        "RS2",
+        "RS3",
+        "RS6",
+        "RS7",
+        "RS8",
+        "RS9",
+        "RS10"
+      ],
+      "labeledVoxels": 1013206,
+      "overlapVoxels": 406,
+      "suppliedSurfaces": 17
+    }
+  ],
+  "figures": {
+    "RS1": {
+      "caseId": "CT-001",
+      "slice": 92,
+      "asset": "figures/RS1.webp",
+      "sourceLesionContours": 2,
+      "unmarkedAsset": "figures/RS1-unmarked.webp"
+    },
+    "RS2": {
+      "caseId": "CT-001",
+      "slice": 79,
+      "asset": "figures/RS2.webp",
+      "sourceLesionContours": 0,
+      "unmarkedAsset": "figures/RS2-unmarked.webp"
+    },
+    "RS3": {
+      "caseId": "CT-001",
+      "slice": 62,
+      "asset": "figures/RS3.webp",
+      "sourceLesionContours": 2,
+      "unmarkedAsset": "figures/RS3-unmarked.webp"
+    },
+    "RS6": {
+      "caseId": "CT-001",
+      "slice": 56,
+      "asset": "figures/RS6.webp",
+      "sourceLesionContours": 0,
+      "unmarkedAsset": "figures/RS6-unmarked.webp"
+    },
+    "RS7": {
+      "caseId": "CT-001",
+      "slice": 31,
+      "asset": "figures/RS7.webp",
+      "sourceLesionContours": 0,
+      "unmarkedAsset": "figures/RS7-unmarked.webp"
+    },
+    "RS8": {
+      "caseId": "CT-001",
+      "slice": 28,
+      "asset": "figures/RS8.webp",
+      "sourceLesionContours": 0,
+      "unmarkedAsset": "figures/RS8-unmarked.webp"
+    },
+    "RS9": {
+      "caseId": "CT-001",
+      "slice": 51,
+      "asset": "figures/RS9.webp",
+      "sourceLesionContours": 1,
+      "unmarkedAsset": "figures/RS9-unmarked.webp"
+    },
+    "RS10": {
+      "caseId": "CT-001",
+      "slice": 36,
+      "asset": "figures/RS10.webp",
+      "sourceLesionContours": 0,
+      "unmarkedAsset": "figures/RS10-unmarked.webp"
+    },
+    "LS1+2": {
+      "caseId": "CT-001",
+      "slice": 97,
+      "asset": "figures/LS1-2.webp",
+      "sourceLesionContours": 0,
+      "unmarkedAsset": "figures/LS1-2-unmarked.webp"
+    },
+    "LS3": {
+      "caseId": "CT-001",
+      "slice": 76,
+      "asset": "figures/LS3.webp",
+      "sourceLesionContours": 0,
+      "unmarkedAsset": "figures/LS3-unmarked.webp"
+    },
+    "LS4": {
+      "caseId": "CT-001",
+      "slice": 64,
+      "asset": "figures/LS4.webp",
+      "sourceLesionContours": 0,
+      "unmarkedAsset": "figures/LS4-unmarked.webp"
+    },
+    "LS5": {
+      "caseId": "CT-001",
+      "slice": 40,
+      "asset": "figures/LS5.webp",
+      "sourceLesionContours": 1,
+      "unmarkedAsset": "figures/LS5-unmarked.webp"
+    },
+    "LS6": {
+      "caseId": "CT-001",
+      "slice": 66,
+      "asset": "figures/LS6.webp",
+      "sourceLesionContours": 0,
+      "unmarkedAsset": "figures/LS6-unmarked.webp"
+    },
+    "LS8": {
+      "caseId": "CT-001",
+      "slice": 27,
+      "asset": "figures/LS8.webp",
+      "sourceLesionContours": 0,
+      "unmarkedAsset": "figures/LS8-unmarked.webp"
+    },
+    "LS9": {
+      "caseId": "CT-001",
+      "slice": 25,
+      "asset": "figures/LS9.webp",
+      "sourceLesionContours": 0,
+      "unmarkedAsset": "figures/LS9-unmarked.webp"
+    },
+    "LS10": {
+      "caseId": "CT-001",
+      "slice": 22,
+      "asset": "figures/LS10.webp",
+      "sourceLesionContours": 0,
+      "unmarkedAsset": "figures/LS10-unmarked.webp"
+    },
+    "RS4": {
+      "caseId": "CT-006",
+      "slice": 87,
+      "asset": "figures/RS4.webp",
+      "sourceLesionContours": 0,
+      "unmarkedAsset": "figures/RS4-unmarked.webp"
+    },
+    "RS5": {
+      "caseId": "CT-006",
+      "slice": 76,
+      "asset": "figures/RS5.webp",
+      "sourceLesionContours": 0,
+      "unmarkedAsset": "figures/RS5-unmarked.webp"
+    }
+  },
+  "sourceSurfaces": 210,
+  "clinicalReview": "pending"
+}

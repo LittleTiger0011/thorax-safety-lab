@@ -1,0 +1,5190 @@
+{
+ "schemaVersion": 1,
+ "version": "DECISION-FEATURES-2026.09.13-1",
+ "generatedAt": "2026-09-13T22:09:44",
+ "method": {
+  "lesions": "Each supplied nodule annotation (case.json targets) matched to its connected mesh component; longest diameter = max vertex-pair distance; volume by divergence theorem; HU sampled at CT voxel centres inside the closed component (fallback: 3x3x3 neighbourhood at the centre).",
+  "solidFraction": "fraction of interior voxels with HU >= -300; aeratedFraction = HU < -750. Resampled 2 mm CT: treat as an estimate, confirm on thin-section CT.",
+  "lobe": "lobe whose supplied surface contains the lesion centre (even/odd ray test); nearest surface when no lobe contains it.",
+  "segment": "supplied segment atlas label at the lesion centre voxel; empty means no supplied segment surface there.",
+  "distances": "minimum vertex-to-vertex distance in mm to the containing lobe surface (pleural and fissural faces alike) and to the supplied bronchial tree surface.",
+  "planning": "source planning structure split into spheres (\"切缘球\"); distance from lesion centre to the nearest sphere centre; a lesion within 15 mm of a sphere centre is listed first, otherwise the largest lesion."
+ },
+ "notInPackage": [
+  "age",
+  "sex",
+  "symptoms",
+  "smokingHistory",
+  "priorImaging",
+  "pathology",
+  "pulmonaryFunction",
+  "stagingWorkup",
+  "contrastPhase"
+ ],
+ "cases": [
+  {
+   "id": "CT-001",
+   "title": "双肺结节",
+   "spacingMm": [
+    0.954,
+    0.954,
+    2.0
+   ],
+   "dimensions": [
+    298,
+    210,
+    120
+   ],
+   "ctSha256": "ad11f1e79ba83f76631d4e399039f7a243c748155fe5d8af7e89177584365b9d",
+   "geometrySha256": "8eab74b595dbc29c17e45b9b02fce0e8d94a0ff847bd86478b7fa965b16a16ea",
+   "lobesPresent": [
+    "左上叶",
+    "左下叶",
+    "右上叶",
+    "右中叶",
+    "右下叶"
+   ],
+   "segmentCodesPresent": [
+    "RS1",
+    "RS2",
+    "RS3",
+    "RS6",
+    "RS7",
+    "RS8",
+    "RS9",
+    "RS10",
+    "LS1+2",
+    "LS3",
+    "LS4",
+    "LS5",
+    "LS6",
+    "LS8",
+    "LS9",
+    "LS10"
+   ],
+   "lesionCount": 11,
+   "lesions": [
+    {
+     "id": "n1",
+     "structureId": "s01",
+     "center": [
+      96.64,
+      -104.99,
+      -374.46
+     ],
+     "voxel": [
+      253,
+      140,
+      52
+     ],
+     "vertexCount": 102,
+     "triangleCount": 200,
+     "longestDiameterMm": 17.6,
+     "extentMm": [
+      17.1,
+      13.5,
+      12.6
+     ],
+     "volumeMm3": 1320.7,
+     "voxelCount": 729,
+     "huMethod": "voxel-interior",
+     "meanHU": -308,
+     "medianHU": -290,
+     "minHU": -876,
+     "maxHU": 195,
+     "solidFraction": 0.514,
+     "aeratedFraction": 0.075,
+     "lobeId": "s44",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS9"
+     ],
+     "distanceToLobeSurfaceMm": 16.9,
+     "distanceToAirwayMm": 1.8,
+     "planningSphereDistanceMm": 1.6
+    },
+    {
+     "id": "n2",
+     "structureId": "s01",
+     "center": [
+      -73.47,
+      -94.89,
+      -290.94
+     ],
+     "voxel": [
+      75,
+      150,
+      94
+     ],
+     "vertexCount": 67,
+     "triangleCount": 130,
+     "longestDiameterMm": 9.7,
+     "extentMm": [
+      9.1,
+      6.8,
+      7.9
+     ],
+     "volumeMm3": 245.6,
+     "voxelCount": 135,
+     "huMethod": "voxel-interior",
+     "meanHU": -713,
+     "medianHU": -727,
+     "minHU": -867,
+     "maxHU": -414,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.422,
+     "lobeId": "s45",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS1"
+     ],
+     "distanceToLobeSurfaceMm": 10.0,
+     "distanceToAirwayMm": 5.6,
+     "planningSphereDistanceMm": 4.3
+    },
+    {
+     "id": "n3",
+     "structureId": "s01",
+     "center": [
+      -111.1,
+      -102.64,
+      -397.41
+     ],
+     "voxel": [
+      35,
+      142,
+      40
+     ],
+     "vertexCount": 52,
+     "triangleCount": 100,
+     "longestDiameterMm": 8.8,
+     "extentMm": [
+      6.3,
+      7.0,
+      7.8
+     ],
+     "volumeMm3": 132.7,
+     "voxelCount": 74,
+     "huMethod": "voxel-interior",
+     "meanHU": -400,
+     "medianHU": -471,
+     "minHU": -846,
+     "maxHU": 125,
+     "solidFraction": 0.392,
+     "aeratedFraction": 0.068,
+     "lobeId": "s47",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS8"
+     ],
+     "distanceToLobeSurfaceMm": 8.0,
+     "distanceToAirwayMm": 14.2,
+     "planningSphereDistanceMm": 3.0
+    },
+    {
+     "id": "n4",
+     "structureId": "s01",
+     "center": [
+      -42.35,
+      -149.53,
+      -296.89
+     ],
+     "voxel": [
+      107,
+      93,
+      91
+     ],
+     "vertexCount": 47,
+     "triangleCount": 90,
+     "longestDiameterMm": 7.1,
+     "extentMm": [
+      5.4,
+      6.2,
+      6.5
+     ],
+     "volumeMm3": 90.9,
+     "voxelCount": 50,
+     "huMethod": "voxel-interior",
+     "meanHU": -702,
+     "medianHU": -704,
+     "minHU": -821,
+     "maxHU": -608,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.14,
+     "lobeId": "s45",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS1"
+     ],
+     "distanceToLobeSurfaceMm": 10.2,
+     "distanceToAirwayMm": 11.6,
+     "planningSphereDistanceMm": 61.2
+    },
+    {
+     "id": "n5",
+     "structureId": "s01",
+     "center": [
+      65.76,
+      -76.83,
+      -287.66
+     ],
+     "voxel": [
+      221,
+      169,
+      95
+     ],
+     "vertexCount": 47,
+     "triangleCount": 90,
+     "longestDiameterMm": 7.5,
+     "extentMm": [
+      5.8,
+      5.3,
+      6.3
+     ],
+     "volumeMm3": 79.5,
+     "voxelCount": 41,
+     "huMethod": "voxel-interior",
+     "meanHU": -662,
+     "medianHU": -670,
+     "minHU": -806,
+     "maxHU": -520,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.171,
+     "lobeId": "s43",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS1+2"
+     ],
+     "distanceToLobeSurfaceMm": 8.1,
+     "distanceToAirwayMm": 21.7,
+     "planningSphereDistanceMm": 96.1
+    },
+    {
+     "id": "n7",
+     "structureId": "s01",
+     "center": [
+      -49.19,
+      -72.23,
+      -308.7
+     ],
+     "voxel": [
+      100,
+      174,
+      85
+     ],
+     "vertexCount": 41,
+     "triangleCount": 78,
+     "longestDiameterMm": 6.0,
+     "extentMm": [
+      4.4,
+      4.6,
+      6.0
+     ],
+     "volumeMm3": 54.2,
+     "voxelCount": 30,
+     "huMethod": "voxel-interior",
+     "meanHU": -674,
+     "medianHU": -674,
+     "minHU": -784,
+     "maxHU": -570,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.133,
+     "lobeId": "s45",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS2"
+     ],
+     "distanceToLobeSurfaceMm": 11.4,
+     "distanceToAirwayMm": 10.6,
+     "planningSphereDistanceMm": 34.5
+    },
+    {
+     "id": "n6",
+     "structureId": "s01",
+     "center": [
+      -98.15,
+      -165.14,
+      -355.93
+     ],
+     "voxel": [
+      49,
+      76,
+      61
+     ],
+     "vertexCount": 43,
+     "triangleCount": 82,
+     "longestDiameterMm": 5.7,
+     "extentMm": [
+      4.7,
+      5.3,
+      4.5
+     ],
+     "volumeMm3": 48.5,
+     "voxelCount": 28,
+     "huMethod": "voxel-interior",
+     "meanHU": -733,
+     "medianHU": -752,
+     "minHU": -803,
+     "maxHU": -635,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.5,
+     "lobeId": "s45",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS3"
+     ],
+     "distanceToLobeSurfaceMm": 8.5,
+     "distanceToAirwayMm": 27.1,
+     "planningSphereDistanceMm": 75.8
+    },
+    {
+     "id": "n9",
+     "structureId": "s01",
+     "center": [
+      113.18,
+      -96.96,
+      -354.67
+     ],
+     "voxel": [
+      270,
+      148,
+      62
+     ],
+     "vertexCount": 33,
+     "triangleCount": 62,
+     "longestDiameterMm": 5.3,
+     "extentMm": [
+      4.3,
+      3.8,
+      5.3
+     ],
+     "volumeMm3": 39.3,
+     "voxelCount": 21,
+     "huMethod": "voxel-interior",
+     "meanHU": -435,
+     "medianHU": -424,
+     "minHU": -806,
+     "maxHU": -157,
+     "solidFraction": 0.143,
+     "aeratedFraction": 0.095,
+     "lobeId": "s44",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS9"
+     ],
+     "distanceToLobeSurfaceMm": 4.1,
+     "distanceToAirwayMm": 27.3,
+     "planningSphereDistanceMm": 28.1
+    },
+    {
+     "id": "n8",
+     "structureId": "s01",
+     "center": [
+      -46.41,
+      -67.57,
+      -289.7
+     ],
+     "voxel": [
+      103,
+      179,
+      94
+     ],
+     "vertexCount": 36,
+     "triangleCount": 68,
+     "longestDiameterMm": 6.0,
+     "extentMm": [
+      4.4,
+      3.7,
+      5.7
+     ],
+     "volumeMm3": 39.2,
+     "voxelCount": 23,
+     "huMethod": "voxel-interior",
+     "meanHU": -335,
+     "medianHU": -378,
+     "minHU": -588,
+     "maxHU": -35,
+     "solidFraction": 0.478,
+     "aeratedFraction": 0.0,
+     "lobeId": "s45",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS2"
+     ],
+     "distanceToLobeSurfaceMm": 2.9,
+     "distanceToAirwayMm": 25.6,
+     "planningSphereDistanceMm": 36.8
+    },
+    {
+     "id": "n10",
+     "structureId": "s01",
+     "center": [
+      -77.77,
+      -67.68,
+      -317.7
+     ],
+     "voxel": [
+      70,
+      179,
+      80
+     ],
+     "vertexCount": 29,
+     "triangleCount": 54,
+     "longestDiameterMm": 5.3,
+     "extentMm": [
+      3.6,
+      3.9,
+      4.7
+     ],
+     "volumeMm3": 24.5,
+     "voxelCount": 17,
+     "huMethod": "voxel-interior",
+     "meanHU": -549,
+     "medianHU": -554,
+     "minHU": -687,
+     "maxHU": -360,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s45",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS2"
+     ],
+     "distanceToLobeSurfaceMm": 7.3,
+     "distanceToAirwayMm": 17.0,
+     "planningSphereDistanceMm": 37.1
+    },
+    {
+     "id": "n11",
+     "structureId": "s01",
+     "center": [
+      79.45,
+      -144.44,
+      -279.5
+     ],
+     "voxel": [
+      235,
+      98,
+      99
+     ],
+     "vertexCount": 22,
+     "triangleCount": 40,
+     "longestDiameterMm": 3.7,
+     "extentMm": [
+      3.3,
+      3.6,
+      2.9
+     ],
+     "volumeMm3": 13.4,
+     "voxelCount": 6,
+     "huMethod": "voxel-interior",
+     "meanHU": -732,
+     "medianHU": -723,
+     "minHU": -786,
+     "maxHU": -703,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.333,
+     "lobeId": "s43",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS3"
+     ],
+     "distanceToLobeSurfaceMm": 5.5,
+     "distanceToAirwayMm": 28.4,
+     "planningSphereDistanceMm": 103.7
+    }
+   ],
+   "planning": [
+    {
+     "id": "s02",
+     "index": 1,
+     "name": "切缘球",
+     "center": [
+      -108.4,
+      -103.3,
+      -398.5
+     ],
+     "radiusMm": 23.8,
+     "vertexCount": 360
+    },
+    {
+     "id": "s02",
+     "index": 2,
+     "name": "切缘球",
+     "center": [
+      -70.4,
+      -95.2,
+      -294.0
+     ],
+     "radiusMm": 23.8,
+     "vertexCount": 337
+    },
+    {
+     "id": "s02",
+     "index": 3,
+     "name": "切缘球",
+     "center": [
+      95.3,
+      -105.8,
+      -374.4
+     ],
+     "radiusMm": 27.8,
+     "vertexCount": 411
+    }
+   ],
+   "annotations": [],
+   "clinicalRegistrationReview": "pending",
+   "secondsToCompute": 0.5
+  },
+  {
+   "id": "CT-002",
+   "title": "左上叶结节",
+   "spacingMm": [
+    1.093,
+    1.093,
+    2.0
+   ],
+   "dimensions": [
+    259,
+    209,
+    136
+   ],
+   "ctSha256": "2ddf7abd1890dce703e5651b999e0bf927c4f7678829d6d634267eb32f16e320",
+   "geometrySha256": "88f342f8745410d741504f03086a19a1dbef68d862c4f329c0f9a3fe5154de8d",
+   "lobesPresent": [
+    "左上叶",
+    "左下叶",
+    "右上叶",
+    "右中叶",
+    "右下叶"
+   ],
+   "segmentCodesPresent": [
+    "LS1+2",
+    "LS3",
+    "LS4",
+    "LS5"
+   ],
+   "lesionCount": 40,
+   "lesions": [
+    {
+     "id": "n1",
+     "structureId": "s01",
+     "center": [
+      37.75,
+      -41.27,
+      -416.05
+     ],
+     "voxel": [
+      173,
+      77,
+      86
+     ],
+     "vertexCount": 97,
+     "triangleCount": 190,
+     "longestDiameterMm": 19.4,
+     "extentMm": [
+      15.1,
+      14.8,
+      11.7
+     ],
+     "volumeMm3": 887.6,
+     "voxelCount": 363,
+     "huMethod": "voxel-interior",
+     "meanHU": -641,
+     "medianHU": -668,
+     "minHU": -837,
+     "maxHU": -299,
+     "solidFraction": 0.003,
+     "aeratedFraction": 0.218,
+     "lobeId": "s16",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS4"
+     ],
+     "distanceToLobeSurfaceMm": 5.3,
+     "distanceToAirwayMm": 2.3,
+     "planningSphereDistanceMm": 4.5
+    },
+    {
+     "id": "n2",
+     "structureId": "s01",
+     "center": [
+      -17.19,
+      5.06,
+      -544.95
+     ],
+     "voxel": [
+      123,
+      119,
+      21
+     ],
+     "vertexCount": 44,
+     "triangleCount": 84,
+     "longestDiameterMm": 7.0,
+     "extentMm": [
+      4.3,
+      5.6,
+      6.8
+     ],
+     "volumeMm3": 71.9,
+     "voxelCount": 31,
+     "huMethod": "voxel-interior",
+     "meanHU": -531,
+     "medianHU": -530,
+     "minHU": -727,
+     "maxHU": -397,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s20",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 2.8,
+     "distanceToAirwayMm": 39.3,
+     "planningSphereDistanceMm": 151.6
+    },
+    {
+     "id": "n3",
+     "structureId": "s01",
+     "center": [
+      -71.88,
+      -24.78,
+      -485.01
+     ],
+     "voxel": [
+      73,
+      92,
+      51
+     ],
+     "vertexCount": 42,
+     "triangleCount": 80,
+     "longestDiameterMm": 7.6,
+     "extentMm": [
+      4.8,
+      5.9,
+      5.9
+     ],
+     "volumeMm3": 53.0,
+     "voxelCount": 21,
+     "huMethod": "voxel-interior",
+     "meanHU": -526,
+     "medianHU": -517,
+     "minHU": -729,
+     "maxHU": -307,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s19",
+     "lobe": "右中叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 0.6,
+     "distanceToAirwayMm": 15.4,
+     "planningSphereDistanceMm": 134.8
+    },
+    {
+     "id": "n6",
+     "structureId": "s01",
+     "center": [
+      -106.53,
+      45.18,
+      -438.03
+     ],
+     "voxel": [
+      41,
+      156,
+      75
+     ],
+     "vertexCount": 38,
+     "triangleCount": 72,
+     "longestDiameterMm": 5.6,
+     "extentMm": [
+      4.6,
+      4.2,
+      5.5
+     ],
+     "volumeMm3": 48.8,
+     "voxelCount": 24,
+     "huMethod": "voxel-interior",
+     "meanHU": -566,
+     "medianHU": -570,
+     "minHU": -726,
+     "maxHU": -440,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s19",
+     "lobe": "右中叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 2.9,
+     "distanceToAirwayMm": 32.9,
+     "planningSphereDistanceMm": 172.4
+    },
+    {
+     "id": "n4",
+     "structureId": "s01",
+     "center": [
+      -88.15,
+      59.49,
+      -516.0
+     ],
+     "voxel": [
+      58,
+      169,
+      36
+     ],
+     "vertexCount": 40,
+     "triangleCount": 76,
+     "longestDiameterMm": 6.2,
+     "extentMm": [
+      5.0,
+      3.7,
+      5.4
+     ],
+     "volumeMm3": 43.9,
+     "voxelCount": 19,
+     "huMethod": "voxel-interior",
+     "meanHU": -559,
+     "medianHU": -552,
+     "minHU": -690,
+     "maxHU": -417,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s20",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 10.1,
+     "distanceToAirwayMm": 24.0,
+     "planningSphereDistanceMm": 193.3
+    },
+    {
+     "id": "n8",
+     "structureId": "s01",
+     "center": [
+      62.71,
+      38.08,
+      -352.0
+     ],
+     "voxel": [
+      196,
+      149,
+      118
+     ],
+     "vertexCount": 36,
+     "triangleCount": 68,
+     "longestDiameterMm": 6.6,
+     "extentMm": [
+      4.4,
+      6.2,
+      4.7
+     ],
+     "volumeMm3": 40.5,
+     "voxelCount": 19,
+     "huMethod": "voxel-interior",
+     "meanHU": -579,
+     "medianHU": -603,
+     "minHU": -775,
+     "maxHU": -291,
+     "solidFraction": 0.053,
+     "aeratedFraction": 0.105,
+     "lobeId": "s16",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS1+2"
+     ],
+     "distanceToLobeSurfaceMm": 2.0,
+     "distanceToAirwayMm": 21.0,
+     "planningSphereDistanceMm": 102.1
+    },
+    {
+     "id": "n5",
+     "structureId": "s01",
+     "center": [
+      -57.9,
+      53.73,
+      -458.91
+     ],
+     "voxel": [
+      86,
+      163,
+      64
+     ],
+     "vertexCount": 39,
+     "triangleCount": 74,
+     "longestDiameterMm": 5.3,
+     "extentMm": [
+      5.0,
+      3.8,
+      4.4
+     ],
+     "volumeMm3": 38.7,
+     "voxelCount": 17,
+     "huMethod": "voxel-interior",
+     "meanHU": -540,
+     "medianHU": -574,
+     "minHU": -666,
+     "maxHU": -327,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s20",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 18.4,
+     "distanceToAirwayMm": 2.8,
+     "planningSphereDistanceMm": 144.3
+    },
+    {
+     "id": "n12",
+     "structureId": "s01",
+     "center": [
+      -111.91,
+      1.19,
+      -415.24
+     ],
+     "voxel": [
+      36,
+      115,
+      86
+     ],
+     "vertexCount": 34,
+     "triangleCount": 64,
+     "longestDiameterMm": 5.6,
+     "extentMm": [
+      3.9,
+      4.0,
+      5.4
+     ],
+     "volumeMm3": 37.5,
+     "voxelCount": 15,
+     "huMethod": "voxel-interior",
+     "meanHU": -635,
+     "medianHU": -635,
+     "minHU": -731,
+     "maxHU": -506,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s18",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 3.1,
+     "distanceToAirwayMm": 24.7,
+     "planningSphereDistanceMm": 158.3
+    },
+    {
+     "id": "n7",
+     "structureId": "s01",
+     "center": [
+      -93.92,
+      -9.77,
+      -358.28
+     ],
+     "voxel": [
+      53,
+      105,
+      115
+     ],
+     "vertexCount": 36,
+     "triangleCount": 68,
+     "longestDiameterMm": 5.2,
+     "extentMm": [
+      4.5,
+      4.1,
+      4.8
+     ],
+     "volumeMm3": 36.5,
+     "voxelCount": 16,
+     "huMethod": "voxel-interior",
+     "meanHU": -321,
+     "medianHU": -334,
+     "minHU": -555,
+     "maxHU": -22,
+     "solidFraction": 0.375,
+     "aeratedFraction": 0.0,
+     "lobeId": "s18",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 1.9,
+     "distanceToAirwayMm": 29.2,
+     "planningSphereDistanceMm": 148.4
+    },
+    {
+     "id": "n14",
+     "structureId": "s01",
+     "center": [
+      58.8,
+      21.53,
+      -417.77
+     ],
+     "voxel": [
+      193,
+      134,
+      85
+     ],
+     "vertexCount": 33,
+     "triangleCount": 62,
+     "longestDiameterMm": 5.2,
+     "extentMm": [
+      4.1,
+      3.6,
+      5.0
+     ],
+     "volumeMm3": 34.3,
+     "voxelCount": 14,
+     "huMethod": "voxel-interior",
+     "meanHU": -435,
+     "medianHU": -458,
+     "minHU": -682,
+     "maxHU": -211,
+     "solidFraction": 0.214,
+     "aeratedFraction": 0.0,
+     "lobeId": "s17",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 1.3,
+     "distanceToAirwayMm": 12.0,
+     "planningSphereDistanceMm": 65.3
+    },
+    {
+     "id": "n9",
+     "structureId": "s01",
+     "center": [
+      -71.48,
+      70.17,
+      -442.31
+     ],
+     "voxel": [
+      73,
+      179,
+      73
+     ],
+     "vertexCount": 35,
+     "triangleCount": 66,
+     "longestDiameterMm": 4.9,
+     "extentMm": [
+      4.4,
+      3.7,
+      4.3
+     ],
+     "volumeMm3": 33.3,
+     "voxelCount": 15,
+     "huMethod": "voxel-interior",
+     "meanHU": -686,
+     "medianHU": -684,
+     "minHU": -751,
+     "maxHU": -623,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.067,
+     "lobeId": "s20",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 11.4,
+     "distanceToAirwayMm": 17.4,
+     "planningSphereDistanceMm": 160.6
+    },
+    {
+     "id": "n10",
+     "structureId": "s01",
+     "center": [
+      79.32,
+      52.33,
+      -448.08
+     ],
+     "voxel": [
+      211,
+      162,
+      70
+     ],
+     "vertexCount": 35,
+     "triangleCount": 66,
+     "longestDiameterMm": 4.9,
+     "extentMm": [
+      3.7,
+      4.3,
+      4.4
+     ],
+     "volumeMm3": 31.3,
+     "voxelCount": 12,
+     "huMethod": "voxel-interior",
+     "meanHU": -614,
+     "medianHU": -622,
+     "minHU": -709,
+     "maxHU": -508,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s17",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 5.5,
+     "distanceToAirwayMm": 22.9,
+     "planningSphereDistanceMm": 107.1
+    },
+    {
+     "id": "n11",
+     "structureId": "s01",
+     "center": [
+      89.98,
+      -64.23,
+      -515.44
+     ],
+     "voxel": [
+      221,
+      56,
+      36
+     ],
+     "vertexCount": 35,
+     "triangleCount": 66,
+     "longestDiameterMm": 4.5,
+     "extentMm": [
+      3.8,
+      4.5,
+      4.0
+     ],
+     "volumeMm3": 30.3,
+     "voxelCount": 14,
+     "huMethod": "voxel-interior",
+     "meanHU": -719,
+     "medianHU": -728,
+     "minHU": -914,
+     "maxHU": -560,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.357,
+     "lobeId": "s17",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 6.4,
+     "distanceToAirwayMm": 65.2,
+     "planningSphereDistanceMm": 116.4
+    },
+    {
+     "id": "n19",
+     "structureId": "s01",
+     "center": [
+      49.74,
+      49.89,
+      -346.64
+     ],
+     "voxel": [
+      184,
+      160,
+      121
+     ],
+     "vertexCount": 27,
+     "triangleCount": 50,
+     "longestDiameterMm": 5.7,
+     "extentMm": [
+      2.7,
+      4.9,
+      5.1
+     ],
+     "volumeMm3": 27.0,
+     "voxelCount": 12,
+     "huMethod": "voxel-interior",
+     "meanHU": -682,
+     "medianHU": -678,
+     "minHU": -764,
+     "maxHU": -605,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.083,
+     "lobeId": "s16",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS1+2"
+     ],
+     "distanceToLobeSurfaceMm": 4.0,
+     "distanceToAirwayMm": 17.2,
+     "planningSphereDistanceMm": 112.7
+    },
+    {
+     "id": "n13",
+     "structureId": "s01",
+     "center": [
+      15.24,
+      57.81,
+      -475.43
+     ],
+     "voxel": [
+      153,
+      167,
+      56
+     ],
+     "vertexCount": 34,
+     "triangleCount": 64,
+     "longestDiameterMm": 4.6,
+     "extentMm": [
+      3.1,
+      3.9,
+      4.2
+     ],
+     "volumeMm3": 22.1,
+     "voxelCount": 10,
+     "huMethod": "voxel-interior",
+     "meanHU": -710,
+     "medianHU": -724,
+     "minHU": -825,
+     "maxHU": -573,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.3,
+     "lobeId": "s17",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 4.0,
+     "distanceToAirwayMm": 19.0,
+     "planningSphereDistanceMm": 119.8
+    },
+    {
+     "id": "n23",
+     "structureId": "s01",
+     "center": [
+      -85.67,
+      69.3,
+      -428.38
+     ],
+     "voxel": [
+      60,
+      178,
+      80
+     ],
+     "vertexCount": 25,
+     "triangleCount": 46,
+     "longestDiameterMm": 4.9,
+     "extentMm": [
+      2.9,
+      3.6,
+      4.8
+     ],
+     "volumeMm3": 21.4,
+     "voxelCount": 9,
+     "huMethod": "voxel-interior",
+     "meanHU": -574,
+     "medianHU": -587,
+     "minHU": -675,
+     "maxHU": -388,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s20",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 1.1,
+     "distanceToAirwayMm": 25.5,
+     "planningSphereDistanceMm": 168.4
+    },
+    {
+     "id": "n15",
+     "structureId": "s01",
+     "center": [
+      -37.86,
+      21.55,
+      -545.92
+     ],
+     "voxel": [
+      104,
+      134,
+      21
+     ],
+     "vertexCount": 30,
+     "triangleCount": 56,
+     "longestDiameterMm": 4.2,
+     "extentMm": [
+      3.9,
+      3.5,
+      3.7
+     ],
+     "volumeMm3": 20.6,
+     "voxelCount": 9,
+     "huMethod": "voxel-interior",
+     "meanHU": -681,
+     "medianHU": -683,
+     "minHU": -724,
+     "maxHU": -637,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s20",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 3.5,
+     "distanceToAirwayMm": 21.7,
+     "planningSphereDistanceMm": 166.9
+    },
+    {
+     "id": "n20",
+     "structureId": "s01",
+     "center": [
+      27.97,
+      66.77,
+      -421.02
+     ],
+     "voxel": [
+      164,
+      175,
+      83
+     ],
+     "vertexCount": 26,
+     "triangleCount": 48,
+     "longestDiameterMm": 4.7,
+     "extentMm": [
+      3.1,
+      4.4,
+      3.4
+     ],
+     "volumeMm3": 20.1,
+     "voxelCount": 9,
+     "huMethod": "voxel-interior",
+     "meanHU": -650,
+     "medianHU": -654,
+     "minHU": -685,
+     "maxHU": -606,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s17",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 12.2,
+     "distanceToAirwayMm": 12.6,
+     "planningSphereDistanceMm": 108.8
+    },
+    {
+     "id": "n17",
+     "structureId": "s01",
+     "center": [
+      43.49,
+      33.87,
+      -342.51
+     ],
+     "voxel": [
+      179,
+      145,
+      123
+     ],
+     "vertexCount": 28,
+     "triangleCount": 52,
+     "longestDiameterMm": 4.4,
+     "extentMm": [
+      3.7,
+      3.0,
+      4.1
+     ],
+     "volumeMm3": 19.9,
+     "voxelCount": 8,
+     "huMethod": "voxel-interior",
+     "meanHU": -628,
+     "medianHU": -615,
+     "minHU": -727,
+     "maxHU": -545,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s16",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS1+2"
+     ],
+     "distanceToLobeSurfaceMm": 8.4,
+     "distanceToAirwayMm": 9.0,
+     "planningSphereDistanceMm": 102.6
+    },
+    {
+     "id": "n16",
+     "structureId": "s01",
+     "center": [
+      -61.76,
+      60.05,
+      -405.93
+     ],
+     "voxel": [
+      82,
+      169,
+      91
+     ],
+     "vertexCount": 29,
+     "triangleCount": 54,
+     "longestDiameterMm": 4.3,
+     "extentMm": [
+      3.1,
+      3.5,
+      4.2
+     ],
+     "volumeMm3": 19.7,
+     "voxelCount": 6,
+     "huMethod": "voxel-interior",
+     "meanHU": -578,
+     "medianHU": -596,
+     "minHU": -639,
+     "maxHU": -495,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s18",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 6.1,
+     "distanceToAirwayMm": 10.5,
+     "planningSphereDistanceMm": 144.0
+    },
+    {
+     "id": "n18",
+     "structureId": "s01",
+     "center": [
+      14.03,
+      45.58,
+      -480.77
+     ],
+     "voxel": [
+      152,
+      156,
+      54
+     ],
+     "vertexCount": 27,
+     "triangleCount": 50,
+     "longestDiameterMm": 4.2,
+     "extentMm": [
+      3.3,
+      3.2,
+      4.2
+     ],
+     "volumeMm3": 19.0,
+     "voxelCount": 10,
+     "huMethod": "voxel-interior",
+     "meanHU": -707,
+     "medianHU": -710,
+     "minHU": -747,
+     "maxHU": -670,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s17",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 3.7,
+     "distanceToAirwayMm": 20.6,
+     "planningSphereDistanceMm": 113.4
+    },
+    {
+     "id": "n22",
+     "structureId": "s01",
+     "center": [
+      -97.48,
+      55.22,
+      -437.52
+     ],
+     "voxel": [
+      50,
+      165,
+      75
+     ],
+     "vertexCount": 25,
+     "triangleCount": 46,
+     "longestDiameterMm": 3.9,
+     "extentMm": [
+      2.8,
+      3.6,
+      3.7
+     ],
+     "volumeMm3": 16.6,
+     "voxelCount": 5,
+     "huMethod": "voxel-interior",
+     "meanHU": -645,
+     "medianHU": -648,
+     "minHU": -732,
+     "maxHU": -573,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s20",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 0.9,
+     "distanceToAirwayMm": 25.1,
+     "planningSphereDistanceMm": 170.1
+    },
+    {
+     "id": "n24",
+     "structureId": "s01",
+     "center": [
+      -85.26,
+      65.82,
+      -422.82
+     ],
+     "voxel": [
+      61,
+      175,
+      83
+     ],
+     "vertexCount": 25,
+     "triangleCount": 46,
+     "longestDiameterMm": 4.1,
+     "extentMm": [
+      2.9,
+      3.1,
+      3.9
+     ],
+     "volumeMm3": 15.7,
+     "voxelCount": 7,
+     "huMethod": "voxel-interior",
+     "meanHU": -645,
+     "medianHU": -645,
+     "minHU": -699,
+     "maxHU": -524,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s18",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 2.7,
+     "distanceToAirwayMm": 25.3,
+     "planningSphereDistanceMm": 165.4
+    },
+    {
+     "id": "n21",
+     "structureId": "s01",
+     "center": [
+      -103.87,
+      -26.08,
+      -416.13
+     ],
+     "voxel": [
+      44,
+      90,
+      86
+     ],
+     "vertexCount": 25,
+     "triangleCount": 46,
+     "longestDiameterMm": 3.7,
+     "extentMm": [
+      3.1,
+      3.3,
+      3.4
+     ],
+     "volumeMm3": 14.2,
+     "voxelCount": 5,
+     "huMethod": "voxel-interior",
+     "meanHU": -658,
+     "medianHU": -666,
+     "minHU": -682,
+     "maxHU": -623,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s18",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 5.8,
+     "distanceToAirwayMm": 22.1,
+     "planningSphereDistanceMm": 145.3
+    },
+    {
+     "id": "n27",
+     "structureId": "s01",
+     "center": [
+      81.67,
+      -34.37,
+      -499.16
+     ],
+     "voxel": [
+      214,
+      83,
+      44
+     ],
+     "vertexCount": 25,
+     "triangleCount": 46,
+     "longestDiameterMm": 4.6,
+     "extentMm": [
+      3.6,
+      3.4,
+      2.8
+     ],
+     "volumeMm3": 13.7,
+     "voxelCount": 5,
+     "huMethod": "voxel-interior",
+     "meanHU": -604,
+     "medianHU": -588,
+     "minHU": -692,
+     "maxHU": -507,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s17",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 15.8,
+     "distanceToAirwayMm": 37.9,
+     "planningSphereDistanceMm": 96.0
+    },
+    {
+     "id": "n30",
+     "structureId": "s01",
+     "center": [
+      -43.5,
+      33.81,
+      -450.65
+     ],
+     "voxel": [
+      99,
+      145,
+      69
+     ],
+     "vertexCount": 23,
+     "triangleCount": 42,
+     "longestDiameterMm": 3.9,
+     "extentMm": [
+      2.9,
+      2.8,
+      3.9
+     ],
+     "volumeMm3": 13.3,
+     "voxelCount": 6,
+     "huMethod": "voxel-interior",
+     "meanHU": -182,
+     "medianHU": -259,
+     "minHU": -378,
+     "maxHU": 116,
+     "solidFraction": 0.833,
+     "aeratedFraction": 0.0,
+     "lobeId": "s20",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 11.0,
+     "distanceToAirwayMm": 1.7,
+     "planningSphereDistanceMm": 118.8
+    },
+    {
+     "id": "n25",
+     "structureId": "s01",
+     "center": [
+      -77.36,
+      75.89,
+      -451.19
+     ],
+     "voxel": [
+      68,
+      184,
+      68
+     ],
+     "vertexCount": 25,
+     "triangleCount": 46,
+     "longestDiameterMm": 3.4,
+     "extentMm": [
+      3.0,
+      3.0,
+      3.2
+     ],
+     "volumeMm3": 13.0,
+     "voxelCount": 5,
+     "huMethod": "voxel-interior",
+     "meanHU": -644,
+     "medianHU": -630,
+     "minHU": -737,
+     "maxHU": -580,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s20",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 4.4,
+     "distanceToAirwayMm": 25.3,
+     "planningSphereDistanceMm": 170.5
+    },
+    {
+     "id": "n31",
+     "structureId": "s01",
+     "center": [
+      31.4,
+      -22.04,
+      -384.02
+     ],
+     "voxel": [
+      168,
+      94,
+      102
+     ],
+     "vertexCount": 23,
+     "triangleCount": 42,
+     "longestDiameterMm": 3.8,
+     "extentMm": [
+      2.6,
+      3.8,
+      3.3
+     ],
+     "volumeMm3": 12.2,
+     "voxelCount": 6,
+     "huMethod": "voxel-interior",
+     "meanHU": -680,
+     "medianHU": -692,
+     "minHU": -701,
+     "maxHU": -607,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s16",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS3"
+     ],
+     "distanceToLobeSurfaceMm": 21.4,
+     "distanceToAirwayMm": 8.5,
+     "planningSphereDistanceMm": 35.5
+    },
+    {
+     "id": "n26",
+     "structureId": "s01",
+     "center": [
+      73.86,
+      62.31,
+      -476.81
+     ],
+     "voxel": [
+      206,
+      171,
+      56
+     ],
+     "vertexCount": 25,
+     "triangleCount": 46,
+     "longestDiameterMm": 3.8,
+     "extentMm": [
+      2.7,
+      2.8,
+      3.6
+     ],
+     "volumeMm3": 12.0,
+     "voxelCount": 8,
+     "huMethod": "voxel-interior",
+     "meanHU": -742,
+     "medianHU": -747,
+     "minHU": -767,
+     "maxHU": -702,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.5,
+     "lobeId": "s17",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 6.3,
+     "distanceToAirwayMm": 27.6,
+     "planningSphereDistanceMm": 126.1
+    },
+    {
+     "id": "n28",
+     "structureId": "s01",
+     "center": [
+      93.2,
+      -46.06,
+      -488.38
+     ],
+     "voxel": [
+      224,
+      72,
+      50
+     ],
+     "vertexCount": 24,
+     "triangleCount": 44,
+     "longestDiameterMm": 3.5,
+     "extentMm": [
+      2.9,
+      3.0,
+      3.0
+     ],
+     "volumeMm3": 11.9,
+     "voxelCount": 6,
+     "huMethod": "voxel-interior",
+     "meanHU": -692,
+     "medianHU": -696,
+     "minHU": -721,
+     "maxHU": -640,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s17",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 3.1,
+     "distanceToAirwayMm": 40.3,
+     "planningSphereDistanceMm": 92.4
+    },
+    {
+     "id": "n29",
+     "structureId": "s01",
+     "center": [
+      -45.51,
+      49.6,
+      -345.47
+     ],
+     "voxel": [
+      97,
+      160,
+      121
+     ],
+     "vertexCount": 23,
+     "triangleCount": 42,
+     "longestDiameterMm": 3.7,
+     "extentMm": [
+      2.6,
+      3.5,
+      2.9
+     ],
+     "volumeMm3": 11.5,
+     "voxelCount": 5,
+     "huMethod": "voxel-interior",
+     "meanHU": -607,
+     "medianHU": -645,
+     "minHU": -692,
+     "maxHU": -501,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s18",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 6.5,
+     "distanceToAirwayMm": 28.8,
+     "planningSphereDistanceMm": 141.9
+    },
+    {
+     "id": "n32",
+     "structureId": "s01",
+     "center": [
+      -97.9,
+      67.75,
+      -485.18
+     ],
+     "voxel": [
+      49,
+      176,
+      51
+     ],
+     "vertexCount": 21,
+     "triangleCount": 38,
+     "longestDiameterMm": 3.7,
+     "extentMm": [
+      2.9,
+      2.3,
+      3.7
+     ],
+     "volumeMm3": 10.9,
+     "voxelCount": 5,
+     "huMethod": "voxel-interior",
+     "meanHU": -542,
+     "medianHU": -577,
+     "minHU": -625,
+     "maxHU": -351,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s20",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 3.3,
+     "distanceToAirwayMm": 29.2,
+     "planningSphereDistanceMm": 190.5
+    },
+    {
+     "id": "n33",
+     "structureId": "s01",
+     "center": [
+      48.89,
+      17.1,
+      -367.37
+     ],
+     "voxel": [
+      184,
+      130,
+      110
+     ],
+     "vertexCount": 21,
+     "triangleCount": 38,
+     "longestDiameterMm": 3.2,
+     "extentMm": [
+      3.0,
+      2.9,
+      2.8
+     ],
+     "volumeMm3": 10.3,
+     "voxelCount": 5,
+     "huMethod": "voxel-interior",
+     "meanHU": -742,
+     "medianHU": -733,
+     "minHU": -793,
+     "maxHU": -696,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.4,
+     "lobeId": "s16",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS1+2"
+     ],
+     "distanceToLobeSurfaceMm": 20.9,
+     "distanceToAirwayMm": 7.1,
+     "planningSphereDistanceMm": 74.1
+    },
+    {
+     "id": "n34",
+     "structureId": "s01",
+     "center": [
+      59.55,
+      66.04,
+      -386.68
+     ],
+     "voxel": [
+      193,
+      175,
+      101
+     ],
+     "vertexCount": 20,
+     "triangleCount": 36,
+     "longestDiameterMm": 3.4,
+     "extentMm": [
+      2.5,
+      2.6,
+      3.2
+     ],
+     "volumeMm3": 7.5,
+     "voxelCount": 2,
+     "huMethod": "centre-neighbourhood-3x3x3",
+     "meanHU": -746,
+     "medianHU": -774,
+     "minHU": -816,
+     "maxHU": -501,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.667,
+     "lobeId": "s17",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 4.4,
+     "distanceToAirwayMm": 17.6,
+     "planningSphereDistanceMm": 111.8
+    },
+    {
+     "id": "n37",
+     "structureId": "s01",
+     "center": [
+      -31.01,
+      27.82,
+      -405.39
+     ],
+     "voxel": [
+      110,
+      140,
+      91
+     ],
+     "vertexCount": 17,
+     "triangleCount": 30,
+     "longestDiameterMm": 3.0,
+     "extentMm": [
+      2.7,
+      2.5,
+      2.8
+     ],
+     "volumeMm3": 7.5,
+     "voxelCount": 4,
+     "huMethod": "voxel-interior",
+     "meanHU": -669,
+     "medianHU": -668,
+     "minHU": -690,
+     "maxHU": -651,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s18",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 0.3,
+     "distanceToAirwayMm": 12.7,
+     "planningSphereDistanceMm": 99.6
+    },
+    {
+     "id": "n35",
+     "structureId": "s01",
+     "center": [
+      -73.83,
+      79.72,
+      -449.82
+     ],
+     "voxel": [
+      71,
+      187,
+      69
+     ],
+     "vertexCount": 19,
+     "triangleCount": 34,
+     "longestDiameterMm": 3.3,
+     "extentMm": [
+      3.2,
+      2.1,
+      2.7
+     ],
+     "volumeMm3": 6.5,
+     "voxelCount": 4,
+     "huMethod": "voxel-interior",
+     "meanHU": -311,
+     "medianHU": -298,
+     "minHU": -480,
+     "maxHU": -168,
+     "solidFraction": 0.5,
+     "aeratedFraction": 0.0,
+     "lobeId": "s20",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 2.7,
+     "distanceToAirwayMm": 28.6,
+     "planningSphereDistanceMm": 170.4
+    },
+    {
+     "id": "n36",
+     "structureId": "s01",
+     "center": [
+      -85.89,
+      42.75,
+      -337.27
+     ],
+     "voxel": [
+      60,
+      153,
+      125
+     ],
+     "vertexCount": 18,
+     "triangleCount": 32,
+     "longestDiameterMm": 3.1,
+     "extentMm": [
+      2.4,
+      2.8,
+      2.2
+     ],
+     "volumeMm3": 6.5,
+     "voxelCount": 3,
+     "huMethod": "centre-neighbourhood-3x3x3",
+     "meanHU": -624,
+     "medianHU": -695,
+     "minHU": -793,
+     "maxHU": -139,
+     "solidFraction": 0.111,
+     "aeratedFraction": 0.444,
+     "lobeId": "s18",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 4.0,
+     "distanceToAirwayMm": 38.4,
+     "planningSphereDistanceMm": 169.4
+    },
+    {
+     "id": "n38",
+     "structureId": "s01",
+     "center": [
+      37.83,
+      58.11,
+      -338.13
+     ],
+     "voxel": [
+      173,
+      168,
+      125
+     ],
+     "vertexCount": 16,
+     "triangleCount": 28,
+     "longestDiameterMm": 2.9,
+     "extentMm": [
+      2.1,
+      2.8,
+      2.3
+     ],
+     "volumeMm3": 6.1,
+     "voxelCount": 4,
+     "huMethod": "voxel-interior",
+     "meanHU": -654,
+     "medianHU": -652,
+     "minHU": -672,
+     "maxHU": -639,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s16",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS1+2"
+     ],
+     "distanceToLobeSurfaceMm": 4.7,
+     "distanceToAirwayMm": 25.5,
+     "planningSphereDistanceMm": 124.0
+    },
+    {
+     "id": "n40",
+     "structureId": "s01",
+     "center": [
+      94.22,
+      -24.67,
+      -472.86
+     ],
+     "voxel": [
+      225,
+      92,
+      58
+     ],
+     "vertexCount": 16,
+     "triangleCount": 28,
+     "longestDiameterMm": 3.0,
+     "extentMm": [
+      2.4,
+      2.9,
+      2.8
+     ],
+     "volumeMm3": 5.9,
+     "voxelCount": 3,
+     "huMethod": "centre-neighbourhood-3x3x3",
+     "meanHU": -636,
+     "medianHU": -713,
+     "minHU": -817,
+     "maxHU": -211,
+     "solidFraction": 0.037,
+     "aeratedFraction": 0.222,
+     "lobeId": "s17",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 5.4,
+     "distanceToAirwayMm": 31.6,
+     "planningSphereDistanceMm": 82.3
+    },
+    {
+     "id": "n39",
+     "structureId": "s01",
+     "center": [
+      50.45,
+      75.5,
+      -409.32
+     ],
+     "voxel": [
+      185,
+      183,
+      89
+     ],
+     "vertexCount": 16,
+     "triangleCount": 28,
+     "longestDiameterMm": 2.9,
+     "extentMm": [
+      2.5,
+      2.3,
+      2.8
+     ],
+     "volumeMm3": 5.6,
+     "voxelCount": 2,
+     "huMethod": "centre-neighbourhood-3x3x3",
+     "meanHU": -768,
+     "medianHU": -774,
+     "minHU": -826,
+     "maxHU": -647,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.778,
+     "lobeId": "s17",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 4.5,
+     "distanceToAirwayMm": 27.1,
+     "planningSphereDistanceMm": 117.0
+    }
+   ],
+   "planning": [
+    {
+     "id": "s02",
+     "index": 1,
+     "name": "切缘球",
+     "center": [
+      40.6,
+      -41.0,
+      -412.6
+     ],
+     "radiusMm": 27.4,
+     "vertexCount": 399
+    }
+   ],
+   "annotations": [],
+   "clinicalRegistrationReview": "pending",
+   "secondsToCompute": 0.8
+  },
+  {
+   "id": "CT-003",
+   "title": "双肺结节",
+   "spacingMm": [
+    0.902,
+    0.902,
+    2.0
+   ],
+   "dimensions": [
+    299,
+    198,
+    130
+   ],
+   "ctSha256": "d129d9b299d875ab7e5f94a43f3ac434ee7e26a6ef11832a33d0113e7a8d1bb4",
+   "geometrySha256": "bc3266c99b3f174135019721c570dbb73d1ce60ccb5203f5ce2298fbcf8fc3a6",
+   "lobesPresent": [
+    "右上叶",
+    "右中叶",
+    "右下叶",
+    "左上叶",
+    "左下叶"
+   ],
+   "segmentCodesPresent": [
+    "RS6",
+    "RS7",
+    "RS8",
+    "RS9",
+    "RS10",
+    "LS1+2",
+    "LS3",
+    "LS4",
+    "LS5"
+   ],
+   "lesionCount": 4,
+   "lesions": [
+    {
+     "id": "n1",
+     "structureId": "s01",
+     "center": [
+      -60.05,
+      44.66,
+      -111.79
+     ],
+     "voxel": [
+      83,
+      131,
+      67
+     ],
+     "vertexCount": 72,
+     "triangleCount": 140,
+     "longestDiameterMm": 11.1,
+     "extentMm": [
+      9.2,
+      10.2,
+      8.2
+     ],
+     "volumeMm3": 398.0,
+     "voxelCount": 232,
+     "huMethod": "voxel-interior",
+     "meanHU": -448,
+     "medianHU": -468,
+     "minHU": -867,
+     "maxHU": 48,
+     "solidFraction": 0.349,
+     "aeratedFraction": 0.172,
+     "lobeId": "s27",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS6"
+     ],
+     "distanceToLobeSurfaceMm": 14.8,
+     "distanceToAirwayMm": 0.4,
+     "planningSphereDistanceMm": 1.5
+    },
+    {
+     "id": "n2",
+     "structureId": "s01",
+     "center": [
+      80.29,
+      -14.48,
+      -65.88
+     ],
+     "voxel": [
+      239,
+      66,
+      90
+     ],
+     "vertexCount": 52,
+     "triangleCount": 100,
+     "longestDiameterMm": 7.6,
+     "extentMm": [
+      7.4,
+      6.9,
+      5.9
+     ],
+     "volumeMm3": 171.6,
+     "voxelCount": 116,
+     "huMethod": "voxel-interior",
+     "meanHU": -772,
+     "medianHU": -788,
+     "minHU": -882,
+     "maxHU": -614,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.664,
+     "lobeId": "s28",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS3"
+     ],
+     "distanceToLobeSurfaceMm": 8.0,
+     "distanceToAirwayMm": 7.2,
+     "planningSphereDistanceMm": 4.9
+    },
+    {
+     "id": "n3",
+     "structureId": "s01",
+     "center": [
+      120.06,
+      19.84,
+      -170.36
+     ],
+     "voxel": [
+      283,
+      104,
+      38
+     ],
+     "vertexCount": 33,
+     "triangleCount": 62,
+     "longestDiameterMm": 5.2,
+     "extentMm": [
+      4.3,
+      4.0,
+      4.5
+     ],
+     "volumeMm3": 37.8,
+     "voxelCount": 22,
+     "huMethod": "voxel-interior",
+     "meanHU": -446,
+     "medianHU": -484,
+     "minHU": -778,
+     "maxHU": -31,
+     "solidFraction": 0.364,
+     "aeratedFraction": 0.182,
+     "lobeId": "s29",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 0.8,
+     "distanceToAirwayMm": 42.0,
+     "planningSphereDistanceMm": 114.3
+    },
+    {
+     "id": "n4",
+     "structureId": "s01",
+     "center": [
+      -91.11,
+      -3.34,
+      -59.87
+     ],
+     "voxel": [
+      49,
+      78,
+      93
+     ],
+     "vertexCount": 30,
+     "triangleCount": 56,
+     "longestDiameterMm": 4.4,
+     "extentMm": [
+      3.5,
+      3.2,
+      3.2
+     ],
+     "volumeMm3": 17.8,
+     "voxelCount": 9,
+     "huMethod": "voxel-interior",
+     "meanHU": -619,
+     "medianHU": -638,
+     "minHU": -816,
+     "maxHU": -498,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.111,
+     "lobeId": "s25",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 4.0,
+     "distanceToAirwayMm": 19.4,
+     "planningSphereDistanceMm": 76.0
+    }
+   ],
+   "planning": [
+    {
+     "id": "s02",
+     "index": 1,
+     "name": "切缘球",
+     "center": [
+      -60.9,
+      43.5,
+      -111.5
+     ],
+     "radiusMm": 25.0,
+     "vertexCount": 446
+    },
+    {
+     "id": "s02",
+     "index": 2,
+     "name": "切缘球",
+     "center": [
+      77.7,
+      -11.7,
+      -69.0
+     ],
+     "radiusMm": 23.6,
+     "vertexCount": 305
+    }
+   ],
+   "annotations": [],
+   "clinicalRegistrationReview": "pending",
+   "secondsToCompute": 0.5
+  },
+  {
+   "id": "CT-004",
+   "title": "右上叶结节",
+   "spacingMm": [
+    1.001,
+    1.001,
+    2.0
+   ],
+   "dimensions": [
+    299,
+    200,
+    157
+   ],
+   "ctSha256": "262c451d4cc900950ce7c9644569b3324d2b2afadd54ec3985e490e85d4181d5",
+   "geometrySha256": "c16f0bc5c85d3b5bfd6265d6ef384d51e5f47c84f5c2aa42bbab16d5359e72bd",
+   "lobesPresent": [
+    "右上叶",
+    "右中叶",
+    "右下叶",
+    "左上叶",
+    "左下叶"
+   ],
+   "segmentCodesPresent": [
+    "RS1",
+    "RS2",
+    "RS3"
+   ],
+   "lesionCount": 7,
+   "lesions": [
+    {
+     "id": "n1",
+     "structureId": "s01",
+     "center": [
+      -32.51,
+      -121.25,
+      -308.24
+     ],
+     "voxel": [
+      126,
+      112,
+      111
+     ],
+     "vertexCount": 94,
+     "triangleCount": 184,
+     "longestDiameterMm": 12.6,
+     "extentMm": [
+      12.1,
+      10.7,
+      12.5
+     ],
+     "volumeMm3": 686.2,
+     "voxelCount": 346,
+     "huMethod": "voxel-interior",
+     "meanHU": -162,
+     "medianHU": -84,
+     "minHU": -751,
+     "maxHU": 100,
+     "solidFraction": 0.694,
+     "aeratedFraction": 0.003,
+     "lobeId": "s12",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS1"
+     ],
+     "distanceToLobeSurfaceMm": 7.3,
+     "distanceToAirwayMm": 3.6,
+     "planningSphereDistanceMm": 2.6
+    },
+    {
+     "id": "n2",
+     "structureId": "s01",
+     "center": [
+      -41.88,
+      -212.35,
+      -400.94
+     ],
+     "voxel": [
+      117,
+      21,
+      65
+     ],
+     "vertexCount": 34,
+     "triangleCount": 64,
+     "longestDiameterMm": 5.3,
+     "extentMm": [
+      4.6,
+      2.8,
+      3.7
+     ],
+     "volumeMm3": 14.4,
+     "voxelCount": 7,
+     "huMethod": "voxel-interior",
+     "meanHU": -522,
+     "medianHU": -569,
+     "minHU": -621,
+     "maxHU": -302,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s13",
+     "lobe": "右中叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 10.7,
+     "distanceToAirwayMm": 31.7,
+     "planningSphereDistanceMm": 130.0
+    },
+    {
+     "id": "n5",
+     "structureId": "s01",
+     "center": [
+      -46.85,
+      -104.16,
+      -239.02
+     ],
+     "voxel": [
+      112,
+      129,
+      146
+     ],
+     "vertexCount": 16,
+     "triangleCount": 28,
+     "longestDiameterMm": 3.6,
+     "extentMm": [
+      3.1,
+      2.9,
+      2.8
+     ],
+     "volumeMm3": 11.8,
+     "voxelCount": 7,
+     "huMethod": "voxel-interior",
+     "meanHU": -304,
+     "medianHU": -277,
+     "minHU": -492,
+     "maxHU": -193,
+     "solidFraction": 0.714,
+     "aeratedFraction": 0.0,
+     "lobeId": "s12",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS1"
+     ],
+     "distanceToLobeSurfaceMm": 2.2,
+     "distanceToAirwayMm": 26.5,
+     "planningSphereDistanceMm": 71.9
+    },
+    {
+     "id": "n4",
+     "structureId": "s01",
+     "center": [
+      -111.81,
+      -195.72,
+      -447.68
+     ],
+     "voxel": [
+      47,
+      38,
+      42
+     ],
+     "vertexCount": 20,
+     "triangleCount": 36,
+     "longestDiameterMm": 4.3,
+     "extentMm": [
+      2.7,
+      3.1,
+      3.9
+     ],
+     "volumeMm3": 11.2,
+     "voxelCount": 6,
+     "huMethod": "voxel-interior",
+     "meanHU": -379,
+     "medianHU": -366,
+     "minHU": -599,
+     "maxHU": -190,
+     "solidFraction": 0.333,
+     "aeratedFraction": 0.0,
+     "lobeId": "s14",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 8.4,
+     "distanceToAirwayMm": 61.8,
+     "planningSphereDistanceMm": 177.5
+    },
+    {
+     "id": "n6",
+     "structureId": "s01",
+     "center": [
+      -119.63,
+      -124.24,
+      -468.54
+     ],
+     "voxel": [
+      39,
+      109,
+      31
+     ],
+     "vertexCount": 15,
+     "triangleCount": 26,
+     "longestDiameterMm": 3.2,
+     "extentMm": [
+      2.7,
+      2.6,
+      3.2
+     ],
+     "volumeMm3": 7.6,
+     "voxelCount": 4,
+     "huMethod": "voxel-interior",
+     "meanHU": -602,
+     "medianHU": -606,
+     "minHU": -722,
+     "maxHU": -473,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s14",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 4.8,
+     "distanceToAirwayMm": 58.2,
+     "planningSphereDistanceMm": 184.0
+    },
+    {
+     "id": "n3",
+     "structureId": "s01",
+     "center": [
+      118.82,
+      -151.81,
+      -458.14
+     ],
+     "voxel": [
+      277,
+      81,
+      36
+     ],
+     "vertexCount": 22,
+     "triangleCount": 40,
+     "longestDiameterMm": 3.3,
+     "extentMm": [
+      3.0,
+      2.1,
+      2.8
+     ],
+     "volumeMm3": 5.8,
+     "voxelCount": 3,
+     "huMethod": "centre-neighbourhood-3x3x3",
+     "meanHU": -774,
+     "medianHU": -782,
+     "minHU": -927,
+     "maxHU": -509,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.556,
+     "lobeId": "s16",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 11.9,
+     "distanceToAirwayMm": 53.0,
+     "planningSphereDistanceMm": 215.6
+    },
+    {
+     "id": "n7",
+     "structureId": "s01",
+     "center": [
+      -106.79,
+      -199.01,
+      -440.96
+     ],
+     "voxel": [
+      52,
+      34,
+      45
+     ],
+     "vertexCount": 12,
+     "triangleCount": 20,
+     "longestDiameterMm": 2.9,
+     "extentMm": [
+      2.1,
+      1.5,
+      2.5
+     ],
+     "volumeMm3": 2.6,
+     "voxelCount": 2,
+     "huMethod": "centre-neighbourhood-3x3x3",
+     "meanHU": -846,
+     "medianHU": -875,
+     "minHU": -933,
+     "maxHU": -697,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.852,
+     "lobeId": "s14",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 8.5,
+     "distanceToAirwayMm": 59.4,
+     "planningSphereDistanceMm": 171.3
+    }
+   ],
+   "planning": [
+    {
+     "id": "s02",
+     "index": 1,
+     "name": "切缘球",
+     "center": [
+      -32.0,
+      -123.3,
+      -306.7
+     ],
+     "radiusMm": 25.6,
+     "vertexCount": 495
+    }
+   ],
+   "annotations": [],
+   "clinicalRegistrationReview": "pending",
+   "secondsToCompute": 0.7
+  },
+  {
+   "id": "CT-005",
+   "title": "双肺结节",
+   "spacingMm": [
+    0.848,
+    0.848,
+    2.0
+   ],
+   "dimensions": [
+    292,
+    200,
+    128
+   ],
+   "ctSha256": "db5eb328f882f7b682dafc0252b6dbc4a90baeb07d72e9fe3c5274eec107691b",
+   "geometrySha256": "d116319f3f754387a2a130cb242c94fec010141736f76b5463e6709697420fa4",
+   "lobesPresent": [
+    "左上叶",
+    "左下叶",
+    "右上叶",
+    "右中叶",
+    "右下叶"
+   ],
+   "segmentCodesPresent": [
+    "RS1",
+    "RS2",
+    "RS3",
+    "LS1+2",
+    "LS3",
+    "LS4",
+    "LS5",
+    "LS6",
+    "LS8",
+    "LS9",
+    "LS10"
+   ],
+   "lesionCount": 15,
+   "lesions": [
+    {
+     "id": "n1",
+     "structureId": "s01",
+     "center": [
+      50.28,
+      -17.76,
+      -570.25
+     ],
+     "voxel": [
+      184,
+      71,
+      102
+     ],
+     "vertexCount": 138,
+     "triangleCount": 272,
+     "longestDiameterMm": 17.2,
+     "extentMm": [
+      12.7,
+      15.6,
+      13.5
+     ],
+     "volumeMm3": 973.6,
+     "voxelCount": 682,
+     "huMethod": "voxel-interior",
+     "meanHU": -553,
+     "medianHU": -570,
+     "minHU": -849,
+     "maxHU": -134,
+     "solidFraction": 0.087,
+     "aeratedFraction": 0.106,
+     "lobeId": "s27",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS3"
+     ],
+     "distanceToLobeSurfaceMm": 4.3,
+     "distanceToAirwayMm": 0.1,
+     "planningSphereDistanceMm": 2.3
+    },
+    {
+     "id": "n2",
+     "structureId": "s01",
+     "center": [
+      -23.82,
+      -53.94,
+      -648.07
+     ],
+     "voxel": [
+      97,
+      28,
+      63
+     ],
+     "vertexCount": 43,
+     "triangleCount": 82,
+     "longestDiameterMm": 6.0,
+     "extentMm": [
+      5.9,
+      5.2,
+      5.0
+     ],
+     "volumeMm3": 69.5,
+     "voxelCount": 47,
+     "huMethod": "voxel-interior",
+     "meanHU": -522,
+     "medianHU": -564,
+     "minHU": -759,
+     "maxHU": -194,
+     "solidFraction": 0.149,
+     "aeratedFraction": 0.043,
+     "lobeId": "s29",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS3"
+     ],
+     "distanceToLobeSurfaceMm": 1.3,
+     "distanceToAirwayMm": 21.2,
+     "planningSphereDistanceMm": 6.7
+    },
+    {
+     "id": "n4",
+     "structureId": "s01",
+     "center": [
+      -58.93,
+      20.93,
+      -555.75
+     ],
+     "voxel": [
+      55,
+      116,
+      109
+     ],
+     "vertexCount": 29,
+     "triangleCount": 54,
+     "longestDiameterMm": 4.8,
+     "extentMm": [
+      4.0,
+      4.5,
+      4.4
+     ],
+     "volumeMm3": 34.0,
+     "voxelCount": 25,
+     "huMethod": "voxel-interior",
+     "meanHU": -551,
+     "medianHU": -544,
+     "minHU": -759,
+     "maxHU": -366,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.04,
+     "lobeId": "s29",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS1"
+     ],
+     "distanceToLobeSurfaceMm": 7.0,
+     "distanceToAirwayMm": 23.7,
+     "planningSphereDistanceMm": 5.1
+    },
+    {
+     "id": "n3",
+     "structureId": "s01",
+     "center": [
+      59.02,
+      65.64,
+      -599.38
+     ],
+     "voxel": [
+      194,
+      169,
+      87
+     ],
+     "vertexCount": 31,
+     "triangleCount": 58,
+     "longestDiameterMm": 4.7,
+     "extentMm": [
+      4.2,
+      4.4,
+      4.1
+     ],
+     "volumeMm3": 33.7,
+     "voxelCount": 25,
+     "huMethod": "voxel-interior",
+     "meanHU": -722,
+     "medianHU": -723,
+     "minHU": -783,
+     "maxHU": -664,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.28,
+     "lobeId": "s27",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS1+2"
+     ],
+     "distanceToLobeSurfaceMm": 1.0,
+     "distanceToAirwayMm": 24.4,
+     "planningSphereDistanceMm": 87.4
+    },
+    {
+     "id": "n5",
+     "structureId": "s01",
+     "center": [
+      83.6,
+      67.56,
+      -707.14
+     ],
+     "voxel": [
+      223,
+      171,
+      33
+     ],
+     "vertexCount": 27,
+     "triangleCount": 50,
+     "longestDiameterMm": 4.6,
+     "extentMm": [
+      3.3,
+      4.3,
+      3.7
+     ],
+     "volumeMm3": 23.9,
+     "voxelCount": 18,
+     "huMethod": "voxel-interior",
+     "meanHU": -632,
+     "medianHU": -626,
+     "minHU": -724,
+     "maxHU": -559,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s28",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS10"
+     ],
+     "distanceToLobeSurfaceMm": 5.7,
+     "distanceToAirwayMm": 18.9,
+     "planningSphereDistanceMm": 164.3
+    },
+    {
+     "id": "n9",
+     "structureId": "s01",
+     "center": [
+      -67.84,
+      -26.44,
+      -685.66
+     ],
+     "voxel": [
+      45,
+      60,
+      44
+     ],
+     "vertexCount": 17,
+     "triangleCount": 30,
+     "longestDiameterMm": 3.9,
+     "extentMm": [
+      3.3,
+      2.9,
+      3.8
+     ],
+     "volumeMm3": 14.0,
+     "voxelCount": 9,
+     "huMethod": "voxel-interior",
+     "meanHU": -724,
+     "medianHU": -741,
+     "minHU": -811,
+     "maxHU": -631,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.333,
+     "lobeId": "s31",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 8.0,
+     "distanceToAirwayMm": 26.0,
+     "planningSphereDistanceMm": 67.3
+    },
+    {
+     "id": "n7",
+     "structureId": "s01",
+     "center": [
+      113.7,
+      54.26,
+      -689.56
+     ],
+     "voxel": [
+      259,
+      155,
+      42
+     ],
+     "vertexCount": 19,
+     "triangleCount": 34,
+     "longestDiameterMm": 3.6,
+     "extentMm": [
+      2.8,
+      3.2,
+      3.5
+     ],
+     "volumeMm3": 12.9,
+     "voxelCount": 9,
+     "huMethod": "voxel-interior",
+     "meanHU": -647,
+     "medianHU": -659,
+     "minHU": -732,
+     "maxHU": -546,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s28",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS9"
+     ],
+     "distanceToLobeSurfaceMm": 3.4,
+     "distanceToAirwayMm": 19.6,
+     "planningSphereDistanceMm": 152.4
+    },
+    {
+     "id": "n6",
+     "structureId": "s01",
+     "center": [
+      -39.23,
+      -14.61,
+      -556.38
+     ],
+     "voxel": [
+      78,
+      74,
+      109
+     ],
+     "vertexCount": 19,
+     "triangleCount": 34,
+     "longestDiameterMm": 4.0,
+     "extentMm": [
+      3.1,
+      3.1,
+      4.0
+     ],
+     "volumeMm3": 12.7,
+     "voxelCount": 8,
+     "huMethod": "voxel-interior",
+     "meanHU": -739,
+     "medianHU": -746,
+     "minHU": -769,
+     "maxHU": -683,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.5,
+     "lobeId": "s29",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS1"
+     ],
+     "distanceToLobeSurfaceMm": 5.0,
+     "distanceToAirwayMm": 24.3,
+     "planningSphereDistanceMm": 38.4
+    },
+    {
+     "id": "n8",
+     "structureId": "s01",
+     "center": [
+      -57.5,
+      37.08,
+      -552.48
+     ],
+     "voxel": [
+      57,
+      135,
+      111
+     ],
+     "vertexCount": 18,
+     "triangleCount": 32,
+     "longestDiameterMm": 3.6,
+     "extentMm": [
+      3.1,
+      2.9,
+      3.4
+     ],
+     "volumeMm3": 12.4,
+     "voxelCount": 10,
+     "huMethod": "voxel-interior",
+     "meanHU": -697,
+     "medianHU": -696,
+     "minHU": -759,
+     "maxHU": -627,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.1,
+     "lobeId": "s29",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS2"
+     ],
+     "distanceToLobeSurfaceMm": 2.3,
+     "distanceToAirwayMm": 26.8,
+     "planningSphereDistanceMm": 18.5
+    },
+    {
+     "id": "n12",
+     "structureId": "s01",
+     "center": [
+      100.41,
+      22.77,
+      -695.27
+     ],
+     "voxel": [
+      243,
+      118,
+      39
+     ],
+     "vertexCount": 16,
+     "triangleCount": 28,
+     "longestDiameterMm": 3.2,
+     "extentMm": [
+      2.6,
+      2.7,
+      3.0
+     ],
+     "volumeMm3": 8.3,
+     "voxelCount": 6,
+     "huMethod": "voxel-interior",
+     "meanHU": -752,
+     "medianHU": -735,
+     "minHU": -800,
+     "maxHU": -721,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.333,
+     "lobeId": "s28",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS9"
+     ],
+     "distanceToLobeSurfaceMm": 25.6,
+     "distanceToAirwayMm": 0.7,
+     "planningSphereDistanceMm": 140.5
+    },
+    {
+     "id": "n11",
+     "structureId": "s01",
+     "center": [
+      -27.22,
+      74.3,
+      -616.67
+     ],
+     "voxel": [
+      93,
+      179,
+      79
+     ],
+     "vertexCount": 16,
+     "triangleCount": 28,
+     "longestDiameterMm": 3.5,
+     "extentMm": [
+      2.8,
+      2.5,
+      3.5
+     ],
+     "volumeMm3": 8.2,
+     "voxelCount": 6,
+     "huMethod": "voxel-interior",
+     "meanHU": -598,
+     "medianHU": -583,
+     "minHU": -707,
+     "maxHU": -523,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s31",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 2.5,
+     "distanceToAirwayMm": 31.5,
+     "planningSphereDistanceMm": 83.8
+    },
+    {
+     "id": "n10",
+     "structureId": "s01",
+     "center": [
+      75.81,
+      57.52,
+      -727.86
+     ],
+     "voxel": [
+      214,
+      159,
+      23
+     ],
+     "vertexCount": 17,
+     "triangleCount": 30,
+     "longestDiameterMm": 3.4,
+     "extentMm": [
+      2.8,
+      2.7,
+      3.4
+     ],
+     "volumeMm3": 7.8,
+     "voxelCount": 6,
+     "huMethod": "voxel-interior",
+     "meanHU": -683,
+     "medianHU": -688,
+     "minHU": -704,
+     "maxHU": -653,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s28",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS10"
+     ],
+     "distanceToLobeSurfaceMm": 15.6,
+     "distanceToAirwayMm": 2.8,
+     "planningSphereDistanceMm": 166.7
+    },
+    {
+     "id": "n14",
+     "structureId": "s01",
+     "center": [
+      -83.93,
+      -14.01,
+      -633.11
+     ],
+     "voxel": [
+      26,
+      75,
+      70
+     ],
+     "vertexCount": 13,
+     "triangleCount": 22,
+     "longestDiameterMm": 2.9,
+     "extentMm": [
+      2.1,
+      2.6,
+      2.8
+     ],
+     "volumeMm3": 5.9,
+     "voxelCount": 3,
+     "huMethod": "centre-neighbourhood-3x3x3",
+     "meanHU": -756,
+     "medianHU": -764,
+     "minHU": -843,
+     "maxHU": -641,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.519,
+     "lobeId": "s29",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS2"
+     ],
+     "distanceToLobeSurfaceMm": 5.4,
+     "distanceToAirwayMm": 29.6,
+     "planningSphereDistanceMm": 73.7
+    },
+    {
+     "id": "n15",
+     "structureId": "s01",
+     "center": [
+      127.47,
+      1.35,
+      -695.23
+     ],
+     "voxel": [
+      275,
+      93,
+      39
+     ],
+     "vertexCount": 11,
+     "triangleCount": 18,
+     "longestDiameterMm": 2.9,
+     "extentMm": [
+      2.5,
+      2.5,
+      2.9
+     ],
+     "volumeMm3": 5.9,
+     "voxelCount": 6,
+     "huMethod": "voxel-interior",
+     "meanHU": -737,
+     "medianHU": -736,
+     "minHU": -774,
+     "maxHU": -703,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.333,
+     "lobeId": "s28",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS8"
+     ],
+     "distanceToLobeSurfaceMm": 4.1,
+     "distanceToAirwayMm": 17.2,
+     "planningSphereDistanceMm": 147.9
+    },
+    {
+     "id": "n13",
+     "structureId": "s01",
+     "center": [
+      -39.71,
+      -56.76,
+      -667.98
+     ],
+     "voxel": [
+      78,
+      25,
+      53
+     ],
+     "vertexCount": 15,
+     "triangleCount": 26,
+     "longestDiameterMm": 2.3,
+     "extentMm": [
+      2.3,
+      2.2,
+      2.3
+     ],
+     "volumeMm3": 3.1,
+     "voxelCount": 4,
+     "huMethod": "voxel-interior",
+     "meanHU": -660,
+     "medianHU": -704,
+     "minHU": -782,
+     "maxHU": -451,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.25,
+     "lobeId": "s30",
+     "lobe": "右中叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 2.2,
+     "distanceToAirwayMm": 31.3,
+     "planningSphereDistanceMm": 31.5
+    }
+   ],
+   "planning": [
+    {
+     "id": "s02",
+     "index": 1,
+     "name": "切缘球",
+     "center": [
+      -55.5,
+      20.0,
+      -559.4
+     ],
+     "radiusMm": 22.3,
+     "vertexCount": 319
+    },
+    {
+     "id": "s02",
+     "index": 2,
+     "name": "切缘球",
+     "center": [
+      -20.4,
+      -49.8,
+      -644.1
+     ],
+     "radiusMm": 22.6,
+     "vertexCount": 318
+    },
+    {
+     "id": "s02",
+     "index": 3,
+     "name": "切缘球",
+     "center": [
+      51.7,
+      -16.1,
+      -569.4
+     ],
+     "radiusMm": 27.7,
+     "vertexCount": 568
+    }
+   ],
+   "annotations": [],
+   "clinicalRegistrationReview": "pending",
+   "secondsToCompute": 0.6
+  },
+  {
+   "id": "CT-006",
+   "title": "右肺结节",
+   "spacingMm": [
+    1.23,
+    1.23,
+    2.0
+   ],
+   "dimensions": [
+    260,
+    165,
+    155
+   ],
+   "ctSha256": "a009d1d0123db81ca6e46af14e6da26dbc2abf32329cd321f62d6bdf2f307048",
+   "geometrySha256": "bac0b28d4367fdb69bf7f0b81408bcdf6c7beb19cbbaa3305925eb11c75f1057",
+   "lobesPresent": [
+    "右上叶",
+    "右中叶",
+    "右下叶",
+    "左上叶",
+    "左下叶"
+   ],
+   "segmentCodesPresent": [
+    "RS1",
+    "RS2",
+    "RS3",
+    "RS4",
+    "RS5"
+   ],
+   "lesionCount": 9,
+   "lesions": [
+    {
+     "id": "n1",
+     "structureId": "s01",
+     "center": [
+      -68.33,
+      62.15,
+      -130.83
+     ],
+     "voxel": [
+      71,
+      128,
+      108
+     ],
+     "vertexCount": 205,
+     "triangleCount": 406,
+     "longestDiameterMm": 22.7,
+     "extentMm": [
+      16.3,
+      22.2,
+      18.4
+     ],
+     "volumeMm3": 2345.5,
+     "voxelCount": 778,
+     "huMethod": "voxel-interior",
+     "meanHU": -612,
+     "medianHU": -650,
+     "minHU": -882,
+     "maxHU": 130,
+     "solidFraction": 0.066,
+     "aeratedFraction": 0.217,
+     "lobeId": "s14",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS2"
+     ],
+     "distanceToLobeSurfaceMm": 6.8,
+     "distanceToAirwayMm": 0.9,
+     "planningSphereDistanceMm": 5.9
+    },
+    {
+     "id": "n2",
+     "structureId": "s01",
+     "center": [
+      -82.22,
+      -47.15,
+      -203.3
+     ],
+     "voxel": [
+      60,
+      39,
+      71
+     ],
+     "vertexCount": 41,
+     "triangleCount": 78,
+     "longestDiameterMm": 7.1,
+     "extentMm": [
+      5.4,
+      6.3,
+      5.9
+     ],
+     "volumeMm3": 77.4,
+     "voxelCount": 23,
+     "huMethod": "voxel-interior",
+     "meanHU": -483,
+     "medianHU": -481,
+     "minHU": -751,
+     "maxHU": -181,
+     "solidFraction": 0.087,
+     "aeratedFraction": 0.043,
+     "lobeId": "s15",
+     "lobe": "右中叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS5"
+     ],
+     "distanceToLobeSurfaceMm": 15.8,
+     "distanceToAirwayMm": 15.4,
+     "planningSphereDistanceMm": 129.1
+    },
+    {
+     "id": "n3",
+     "structureId": "s01",
+     "center": [
+      114.22,
+      48.97,
+      -303.66
+     ],
+     "voxel": [
+      220,
+      117,
+      21
+     ],
+     "vertexCount": 28,
+     "triangleCount": 52,
+     "longestDiameterMm": 4.5,
+     "extentMm": [
+      3.3,
+      4.5,
+      3.7
+     ],
+     "volumeMm3": 24.0,
+     "voxelCount": 9,
+     "huMethod": "voxel-interior",
+     "meanHU": -266,
+     "medianHU": -181,
+     "minHU": -689,
+     "maxHU": -37,
+     "solidFraction": 0.778,
+     "aeratedFraction": 0.0,
+     "lobeId": "s18",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 4.1,
+     "distanceToAirwayMm": 58.8,
+     "planningSphereDistanceMm": 251.7
+    },
+    {
+     "id": "n6",
+     "structureId": "s01",
+     "center": [
+      67.97,
+      -8.08,
+      -174.47
+     ],
+     "voxel": [
+      182,
+      71,
+      86
+     ],
+     "vertexCount": 23,
+     "triangleCount": 42,
+     "longestDiameterMm": 4.2,
+     "extentMm": [
+      2.9,
+      3.3,
+      4.0
+     ],
+     "volumeMm3": 17.4,
+     "voxelCount": 5,
+     "huMethod": "voxel-interior",
+     "meanHU": -376,
+     "medianHU": -285,
+     "minHU": -651,
+     "maxHU": -229,
+     "solidFraction": 0.6,
+     "aeratedFraction": 0.0,
+     "lobeId": "s17",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 16.9,
+     "distanceToAirwayMm": 11.7,
+     "planningSphereDistanceMm": 156.2
+    },
+    {
+     "id": "n4",
+     "structureId": "s01",
+     "center": [
+      -44.72,
+      27.81,
+      -107.0
+     ],
+     "voxel": [
+      91,
+      100,
+      120
+     ],
+     "vertexCount": 27,
+     "triangleCount": 50,
+     "longestDiameterMm": 3.8,
+     "extentMm": [
+      3.5,
+      3.1,
+      3.4
+     ],
+     "volumeMm3": 15.6,
+     "voxelCount": 5,
+     "huMethod": "voxel-interior",
+     "meanHU": -774,
+     "medianHU": -781,
+     "minHU": -794,
+     "maxHU": -733,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.8,
+     "lobeId": "s14",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS1"
+     ],
+     "distanceToLobeSurfaceMm": 28.6,
+     "distanceToAirwayMm": 3.7,
+     "planningSphereDistanceMm": 42.3
+    },
+    {
+     "id": "n5",
+     "structureId": "s01",
+     "center": [
+      -88.11,
+      -34.49,
+      -197.07
+     ],
+     "voxel": [
+      55,
+      49,
+      75
+     ],
+     "vertexCount": 25,
+     "triangleCount": 46,
+     "longestDiameterMm": 3.9,
+     "extentMm": [
+      3.5,
+      3.0,
+      3.4
+     ],
+     "volumeMm3": 14.6,
+     "voxelCount": 7,
+     "huMethod": "voxel-interior",
+     "meanHU": -770,
+     "medianHU": -785,
+     "minHU": -808,
+     "maxHU": -725,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.714,
+     "lobeId": "s15",
+     "lobe": "右中叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS4"
+     ],
+     "distanceToLobeSurfaceMm": 21.1,
+     "distanceToAirwayMm": 11.5,
+     "planningSphereDistanceMm": 116.3
+    },
+    {
+     "id": "n8",
+     "structureId": "s01",
+     "center": [
+      122.73,
+      -5.06,
+      -226.65
+     ],
+     "voxel": [
+      227,
+      73,
+      60
+     ],
+     "vertexCount": 21,
+     "triangleCount": 38,
+     "longestDiameterMm": 3.7,
+     "extentMm": [
+      3.4,
+      2.4,
+      3.2
+     ],
+     "volumeMm3": 12.0,
+     "voxelCount": 5,
+     "huMethod": "voxel-interior",
+     "meanHU": -605,
+     "medianHU": -607,
+     "minHU": -650,
+     "maxHU": -537,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s18",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 6.5,
+     "distanceToAirwayMm": 33.6,
+     "planningSphereDistanceMm": 221.9
+    },
+    {
+     "id": "n7",
+     "structureId": "s01",
+     "center": [
+      110.39,
+      31.47,
+      -214.4
+     ],
+     "voxel": [
+      217,
+      103,
+      66
+     ],
+     "vertexCount": 21,
+     "triangleCount": 38,
+     "longestDiameterMm": 3.3,
+     "extentMm": [
+      2.9,
+      3.0,
+      2.8
+     ],
+     "volumeMm3": 10.2,
+     "voxelCount": 4,
+     "huMethod": "voxel-interior",
+     "meanHU": -738,
+     "medianHU": -744,
+     "minHU": -779,
+     "maxHU": -686,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.5,
+     "lobeId": "s18",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 13.4,
+     "distanceToAirwayMm": 21.2,
+     "planningSphereDistanceMm": 198.2
+    },
+    {
+     "id": "n9",
+     "structureId": "s01",
+     "center": [
+      -83.51,
+      79.18,
+      -220.92
+     ],
+     "voxel": [
+      59,
+      142,
+      63
+     ],
+     "vertexCount": 20,
+     "triangleCount": 36,
+     "longestDiameterMm": 3.4,
+     "extentMm": [
+      3.2,
+      2.4,
+      2.8
+     ],
+     "volumeMm3": 8.0,
+     "voxelCount": 2,
+     "huMethod": "centre-neighbourhood-3x3x3",
+     "meanHU": -470,
+     "medianHU": -512,
+     "minHU": -807,
+     "maxHU": 16,
+     "solidFraction": 0.296,
+     "aeratedFraction": 0.148,
+     "lobeId": "s16",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 3.1,
+     "distanceToAirwayMm": 42.9,
+     "planningSphereDistanceMm": 96.5
+    }
+   ],
+   "planning": [
+    {
+     "id": "s02",
+     "index": 1,
+     "name": "切缘球",
+     "center": [
+      -66.4,
+      57.0,
+      -128.6
+     ],
+     "radiusMm": 28.2,
+     "vertexCount": 478
+    }
+   ],
+   "annotations": [],
+   "clinicalRegistrationReview": "pending",
+   "secondsToCompute": 0.6
+  },
+  {
+   "id": "CT-007",
+   "title": "右下叶结节",
+   "spacingMm": [
+    0.774,
+    0.774,
+    2.0
+   ],
+   "dimensions": [
+    320,
+    210,
+    137
+   ],
+   "ctSha256": "2dc78a23cffa206c2a2010be5ab0ec3d2efab59be0568ed042ab943bd8074eea",
+   "geometrySha256": "599d0181b0df274ead37974af1c43c3e7694434d3cd688868c69d046ccd90b3a",
+   "lobesPresent": [
+    "右上叶",
+    "右中叶",
+    "右下叶",
+    "左上叶",
+    "左下叶"
+   ],
+   "segmentCodesPresent": [
+    "RS6",
+    "RS7",
+    "RS8",
+    "RS9",
+    "RS10"
+   ],
+   "lesionCount": 3,
+   "lesions": [
+    {
+     "id": "n1",
+     "structureId": "s01",
+     "center": [
+      -96.85,
+      86.84,
+      -492.44
+     ],
+     "voxel": [
+      57,
+      175,
+      69
+     ],
+     "vertexCount": 73,
+     "triangleCount": 142,
+     "longestDiameterMm": 11.4,
+     "extentMm": [
+      9.1,
+      10.5,
+      10.1
+     ],
+     "volumeMm3": 531.7,
+     "voxelCount": 440,
+     "huMethod": "voxel-interior",
+     "meanHU": -668,
+     "medianHU": -682,
+     "minHU": -808,
+     "maxHU": -467,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.195,
+     "lobeId": "s19",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS6"
+     ],
+     "distanceToLobeSurfaceMm": 6.3,
+     "distanceToAirwayMm": 19.8,
+     "planningSphereDistanceMm": 5.5
+    },
+    {
+     "id": "n2",
+     "structureId": "s01",
+     "center": [
+      50.52,
+      48.35,
+      -408.58
+     ],
+     "voxel": [
+      248,
+      126,
+      111
+     ],
+     "vertexCount": 27,
+     "triangleCount": 50,
+     "longestDiameterMm": 3.8,
+     "extentMm": [
+      3.4,
+      3.0,
+      3.8
+     ],
+     "volumeMm3": 16.9,
+     "voxelCount": 15,
+     "huMethod": "voxel-interior",
+     "meanHU": -387,
+     "medianHU": -425,
+     "minHU": -717,
+     "maxHU": 111,
+     "solidFraction": 0.267,
+     "aeratedFraction": 0.0,
+     "lobeId": "s20",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 18.4,
+     "distanceToAirwayMm": 16.8,
+     "planningSphereDistanceMm": 171.0
+    },
+    {
+     "id": "n3",
+     "structureId": "s01",
+     "center": [
+      60.67,
+      23.18,
+      -456.87
+     ],
+     "voxel": [
+      261,
+      93,
+      87
+     ],
+     "vertexCount": 17,
+     "triangleCount": 30,
+     "longestDiameterMm": 2.6,
+     "extentMm": [
+      2.2,
+      2.5,
+      2.6
+     ],
+     "volumeMm3": 4.5,
+     "voxelCount": 6,
+     "huMethod": "voxel-interior",
+     "meanHU": -755,
+     "medianHU": -737,
+     "minHU": -805,
+     "maxHU": -723,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.333,
+     "lobeId": "s20",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 29.0,
+     "distanceToAirwayMm": 10.8,
+     "planningSphereDistanceMm": 170.1
+    }
+   ],
+   "planning": [
+    {
+     "id": "s02",
+     "index": 1,
+     "name": "切缘球",
+     "center": [
+      -95.2,
+      81.7,
+      -491.6
+     ],
+     "radiusMm": 25.0,
+     "vertexCount": 368
+    }
+   ],
+   "annotations": [],
+   "clinicalRegistrationReview": "pending",
+   "secondsToCompute": 0.6
+  },
+  {
+   "id": "CT-008",
+   "title": "左上叶结节",
+   "spacingMm": [
+    1.036,
+    1.036,
+    2.0
+   ],
+   "dimensions": [
+    259,
+    179,
+    130
+   ],
+   "ctSha256": "97b9965c4943444c83c685bf0d09c21c2d028219450e8df8d829b55c9b0ef6a1",
+   "geometrySha256": "3aa3ad57379254404d33754d10bff5befe2a7af60593711b37dadb5d5cc07532",
+   "lobesPresent": [
+    "左上叶",
+    "左下叶",
+    "右上叶",
+    "右中叶",
+    "右下叶"
+   ],
+   "segmentCodesPresent": [
+    "LS1+2",
+    "LS3",
+    "LS4",
+    "LS5"
+   ],
+   "lesionCount": 4,
+   "lesions": [
+    {
+     "id": "n1",
+     "structureId": "s01",
+     "center": [
+      52.49,
+      10.46,
+      804.68
+     ],
+     "voxel": [
+      189,
+      87,
+      95
+     ],
+     "vertexCount": 114,
+     "triangleCount": 224,
+     "longestDiameterMm": 21.3,
+     "extentMm": [
+      14.9,
+      17.9,
+      16.3
+     ],
+     "volumeMm3": 1970.7,
+     "voxelCount": 909,
+     "huMethod": "voxel-interior",
+     "meanHU": -598,
+     "medianHU": -621,
+     "minHU": -802,
+     "maxHU": -23,
+     "solidFraction": 0.029,
+     "aeratedFraction": 0.058,
+     "lobeId": "s14",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS3"
+     ],
+     "distanceToLobeSurfaceMm": 8.3,
+     "distanceToAirwayMm": 0.9,
+     "planningSphereDistanceMm": 3.8
+    },
+    {
+     "id": "n2",
+     "structureId": "s01",
+     "center": [
+      63.51,
+      6.18,
+      784.74
+     ],
+     "voxel": [
+      199,
+      83,
+      85
+     ],
+     "vertexCount": 22,
+     "triangleCount": 40,
+     "longestDiameterMm": 3.8,
+     "extentMm": [
+      3.4,
+      3.2,
+      3.3
+     ],
+     "volumeMm3": 13.5,
+     "voxelCount": 6,
+     "huMethod": "voxel-interior",
+     "meanHU": -537,
+     "medianHU": -525,
+     "minHU": -615,
+     "maxHU": -466,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.0,
+     "lobeId": "s14",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS3"
+     ],
+     "distanceToLobeSurfaceMm": 16.2,
+     "distanceToAirwayMm": 12.7,
+     "planningSphereDistanceMm": 23.7
+    },
+    {
+     "id": "n4",
+     "structureId": "s01",
+     "center": [
+      51.21,
+      60.66,
+      734.78
+     ],
+     "voxel": [
+      187,
+      135,
+      60
+     ],
+     "vertexCount": 17,
+     "triangleCount": 30,
+     "longestDiameterMm": 3.3,
+     "extentMm": [
+      2.8,
+      2.4,
+      3.1
+     ],
+     "volumeMm3": 7.6,
+     "voxelCount": 3,
+     "huMethod": "centre-neighbourhood-3x3x3",
+     "meanHU": -551,
+     "medianHU": -553,
+     "minHU": -735,
+     "maxHU": -280,
+     "solidFraction": 0.037,
+     "aeratedFraction": 0.0,
+     "lobeId": "s15",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 22.2,
+     "distanceToAirwayMm": 7.8,
+     "planningSphereDistanceMm": 83.5
+    },
+    {
+     "id": "n3",
+     "structureId": "s01",
+     "center": [
+      39.85,
+      55.12,
+      834.95
+     ],
+     "voxel": [
+      176,
+      130,
+      110
+     ],
+     "vertexCount": 17,
+     "triangleCount": 30,
+     "longestDiameterMm": 3.3,
+     "extentMm": [
+      2.2,
+      2.4,
+      3.0
+     ],
+     "volumeMm3": 6.6,
+     "voxelCount": 2,
+     "huMethod": "centre-neighbourhood-3x3x3",
+     "meanHU": -674,
+     "medianHU": -678,
+     "minHU": -799,
+     "maxHU": -492,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.259,
+     "lobeId": "s14",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS1+2"
+     ],
+     "distanceToLobeSurfaceMm": 14.1,
+     "distanceToAirwayMm": 5.5,
+     "planningSphereDistanceMm": 54.1
+    }
+   ],
+   "planning": [
+    {
+     "id": "s02",
+     "index": 1,
+     "name": "切缘球",
+     "center": [
+      49.8,
+      12.6,
+      803.0
+     ],
+     "radiusMm": 28.9,
+     "vertexCount": 386
+    }
+   ],
+   "annotations": [],
+   "clinicalRegistrationReview": "pending",
+   "secondsToCompute": 0.3
+  },
+  {
+   "id": "CT-009",
+   "title": "右肺结节",
+   "spacingMm": [
+    0.968,
+    0.968,
+    2.0
+   ],
+   "dimensions": [
+    299,
+    234,
+    160
+   ],
+   "ctSha256": "bc4bdd4c47bacfe459195a9f2f52df8e05199d0e7ce0f635e7d78bc5bc2e8116",
+   "geometrySha256": "c2a20336af6b5abea01cf6419d7be3fccc02e5763a05f9f7e1010021438e9887",
+   "lobesPresent": [
+    "右上叶",
+    "右中叶",
+    "右下叶",
+    "左上叶",
+    "左下叶"
+   ],
+   "segmentCodesPresent": [
+    "RS1",
+    "RS2",
+    "RS3",
+    "RS6",
+    "RS7",
+    "RS8",
+    "RS9",
+    "RS10"
+   ],
+   "lesionCount": 2,
+   "lesions": [
+    {
+     "id": "n1",
+     "structureId": "s01",
+     "center": [
+      -51.75,
+      70.45,
+      -115.99
+     ],
+     "voxel": [
+      86,
+      181,
+      107
+     ],
+     "vertexCount": 262,
+     "triangleCount": 520,
+     "longestDiameterMm": 30.2,
+     "extentMm": [
+      30.0,
+      25.3,
+      26.9
+     ],
+     "volumeMm3": 7586.6,
+     "voxelCount": 4035,
+     "huMethod": "voxel-interior",
+     "meanHU": -338,
+     "medianHU": -359,
+     "minHU": -888,
+     "maxHU": 117,
+     "solidFraction": 0.459,
+     "aeratedFraction": 0.079,
+     "lobeId": "s22",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS2"
+     ],
+     "distanceToLobeSurfaceMm": 1.5,
+     "distanceToAirwayMm": 0.5,
+     "planningSphereDistanceMm": 11.7
+    },
+    {
+     "id": "n2",
+     "structureId": "s01",
+     "center": [
+      -52.88,
+      20.04,
+      -228.3
+     ],
+     "voxel": [
+      85,
+      129,
+      51
+     ],
+     "vertexCount": 50,
+     "triangleCount": 96,
+     "longestDiameterMm": 7.2,
+     "extentMm": [
+      5.5,
+      6.0,
+      6.6
+     ],
+     "volumeMm3": 106.8,
+     "voxelCount": 59,
+     "huMethod": "voxel-interior",
+     "meanHU": -499,
+     "medianHU": -520,
+     "minHU": -794,
+     "maxHU": -25,
+     "solidFraction": 0.153,
+     "aeratedFraction": 0.034,
+     "lobeId": "s24",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS9"
+     ],
+     "distanceToLobeSurfaceMm": 20.6,
+     "distanceToAirwayMm": 8.1,
+     "planningSphereDistanceMm": 0.4
+    }
+   ],
+   "planning": [
+    {
+     "id": "s02",
+     "index": 1,
+     "name": "切缘球",
+     "center": [
+      -52.8,
+      20.2,
+      -227.9
+     ],
+     "radiusMm": 24.0,
+     "vertexCount": 453
+    },
+    {
+     "id": "s02",
+     "index": 2,
+     "name": "切缘球",
+     "center": [
+      -54.2,
+      59.2,
+      -113.8
+     ],
+     "radiusMm": 34.7,
+     "vertexCount": 358
+    }
+   ],
+   "annotations": [],
+   "clinicalRegistrationReview": "pending",
+   "secondsToCompute": 0.7
+  },
+  {
+   "id": "CT-010",
+   "title": "右下叶结节",
+   "spacingMm": [
+    0.803,
+    0.803,
+    2.0
+   ],
+   "dimensions": [
+    326,
+    210,
+    130
+   ],
+   "ctSha256": "55a9ad1a7324a6af3e9bfdac707d6453fc1eb9401e5fdd92e33ba1c11d84ded1",
+   "geometrySha256": "f8b3c64131d242a5535fb82485b920f06e6b059a2a3e455ad5af11cb7c5ba968",
+   "lobesPresent": [
+    "右中叶",
+    "右下叶",
+    "左上叶",
+    "左下叶"
+   ],
+   "segmentCodesPresent": [
+    "RS6",
+    "RS7",
+    "RS8",
+    "RS9",
+    "RS10"
+   ],
+   "lesionCount": 5,
+   "lesions": [
+    {
+     "id": "n2",
+     "structureId": "s01",
+     "center": [
+      -53.54,
+      58.3,
+      -389.64
+     ],
+     "voxel": [
+      112,
+      160,
+      90
+     ],
+     "vertexCount": 192,
+     "triangleCount": 380,
+     "longestDiameterMm": 26.0,
+     "extentMm": [
+      23.0,
+      22.6,
+      20.7
+     ],
+     "volumeMm3": 5400.5,
+     "voxelCount": 4186,
+     "huMethod": "voxel-interior",
+     "meanHU": -543,
+     "medianHU": -648,
+     "minHU": -869,
+     "maxHU": 79,
+     "solidFraction": 0.206,
+     "aeratedFraction": 0.288,
+     "lobeId": "s19",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS6"
+     ],
+     "distanceToLobeSurfaceMm": 4.4,
+     "distanceToAirwayMm": 1.0,
+     "planningSphereDistanceMm": 28.3
+    },
+    {
+     "id": "n1",
+     "structureId": "s01",
+     "center": [
+      -77.1,
+      57.9,
+      -381.72
+     ],
+     "voxel": [
+      83,
+      159,
+      94
+     ],
+     "vertexCount": 197,
+     "triangleCount": 390,
+     "longestDiameterMm": 25.2,
+     "extentMm": [
+      21.5,
+      19.3,
+      24.5
+     ],
+     "volumeMm3": 4028.5,
+     "voxelCount": 3147,
+     "huMethod": "voxel-interior",
+     "meanHU": -486,
+     "medianHU": -587,
+     "minHU": -867,
+     "maxHU": 87,
+     "solidFraction": 0.282,
+     "aeratedFraction": 0.229,
+     "lobeId": "s19",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS6"
+     ],
+     "distanceToLobeSurfaceMm": 7.2,
+     "distanceToAirwayMm": 4.5,
+     "planningSphereDistanceMm": 18.4
+    },
+    {
+     "id": "n3",
+     "structureId": "s01",
+     "center": [
+      -83.92,
+      61.8,
+      -402.31
+     ],
+     "voxel": [
+      74,
+      164,
+      84
+     ],
+     "vertexCount": 89,
+     "triangleCount": 174,
+     "longestDiameterMm": 17.3,
+     "extentMm": [
+      11.1,
+      12.6,
+      16.4
+     ],
+     "volumeMm3": 1077.5,
+     "voxelCount": 835,
+     "huMethod": "voxel-interior",
+     "meanHU": -347,
+     "medianHU": -381,
+     "minHU": -832,
+     "maxHU": 78,
+     "solidFraction": 0.442,
+     "aeratedFraction": 0.056,
+     "lobeId": "s19",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS6"
+     ],
+     "distanceToLobeSurfaceMm": 10.3,
+     "distanceToAirwayMm": 11.2,
+     "planningSphereDistanceMm": 15.1
+    },
+    {
+     "id": "n4",
+     "structureId": "s01",
+     "center": [
+      -107.78,
+      42.74,
+      -411.92
+     ],
+     "voxel": [
+      45,
+      140,
+      79
+     ],
+     "vertexCount": 57,
+     "triangleCount": 110,
+     "longestDiameterMm": 8.4,
+     "extentMm": [
+      6.8,
+      6.0,
+      8.1
+     ],
+     "volumeMm3": 161.9,
+     "voxelCount": 127,
+     "huMethod": "voxel-interior",
+     "meanHU": -527,
+     "medianHU": -581,
+     "minHU": -854,
+     "maxHU": -6,
+     "solidFraction": 0.165,
+     "aeratedFraction": 0.087,
+     "lobeId": "s19",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS9"
+     ],
+     "distanceToLobeSurfaceMm": 7.3,
+     "distanceToAirwayMm": 18.3,
+     "planningSphereDistanceMm": 32.8
+    },
+    {
+     "id": "n5",
+     "structureId": "s01",
+     "center": [
+      22.1,
+      11.93,
+      -336.49
+     ],
+     "voxel": [
+      206,
+      102,
+      117
+     ],
+     "vertexCount": 24,
+     "triangleCount": 44,
+     "longestDiameterMm": 3.4,
+     "extentMm": [
+      3.3,
+      2.7,
+      3.3
+     ],
+     "volumeMm3": 12.3,
+     "voxelCount": 11,
+     "huMethod": "voxel-interior",
+     "meanHU": -518,
+     "medianHU": -475,
+     "minHU": -754,
+     "maxHU": -301,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.091,
+     "lobeId": "s20",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 5.2,
+     "distanceToAirwayMm": 27.5,
+     "planningSphereDistanceMm": 123.5
+    }
+   ],
+   "planning": [
+    {
+     "id": "s03",
+     "index": 1,
+     "name": "切缘球",
+     "center": [
+      -78.9,
+      48.4,
+      -397.4
+     ],
+     "radiusMm": 47.9,
+     "vertexCount": 946
+    }
+   ],
+   "annotations": [
+    {
+     "id": "s02",
+     "name": "异常"
+    }
+   ],
+   "clinicalRegistrationReview": "pending",
+   "secondsToCompute": 0.5
+  },
+  {
+   "id": "CT-011",
+   "title": "双肺结节",
+   "spacingMm": [
+    0.859,
+    0.859,
+    2.0
+   ],
+   "dimensions": [
+    299,
+    230,
+    150
+   ],
+   "ctSha256": "810b7c2268484eba8ee3f94ce61eeb950b8e667ba3768ff906b1b31bf1496863",
+   "geometrySha256": "825c054c69e5a7df59617f6f68fca6e1f7b55ce9f0651a3b843542e1d67e2fc8",
+   "lobesPresent": [
+    "右上叶",
+    "右中叶",
+    "右下叶",
+    "左上叶",
+    "左下叶"
+   ],
+   "segmentCodesPresent": [
+    "RS6",
+    "RS7",
+    "RS8",
+    "RS9",
+    "RS10",
+    "LS6",
+    "LS8",
+    "LS9",
+    "LS10"
+   ],
+   "lesionCount": 2,
+   "lesions": [
+    {
+     "id": "n1",
+     "structureId": "s01",
+     "center": [
+      -17.67,
+      31.64,
+      -1188.49
+     ],
+     "voxel": [
+      126,
+      137,
+      59
+     ],
+     "vertexCount": 53,
+     "triangleCount": 102,
+     "longestDiameterMm": 15.3,
+     "extentMm": [
+      13.2,
+      10.3,
+      15.0
+     ],
+     "volumeMm3": 1012.7,
+     "voxelCount": 683,
+     "huMethod": "voxel-interior",
+     "meanHU": -646,
+     "medianHU": -700,
+     "minHU": -889,
+     "maxHU": -105,
+     "solidFraction": 0.041,
+     "aeratedFraction": 0.382,
+     "lobeId": "s18",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS10"
+     ],
+     "distanceToLobeSurfaceMm": 4.3,
+     "distanceToAirwayMm": 12.1,
+     "planningSphereDistanceMm": 3.8
+    },
+    {
+     "id": "n2",
+     "structureId": "s01",
+     "center": [
+      102.82,
+      37.84,
+      -1128.83
+     ],
+     "voxel": [
+      267,
+      144,
+      89
+     ],
+     "vertexCount": 23,
+     "triangleCount": 42,
+     "longestDiameterMm": 6.1,
+     "extentMm": [
+      5.4,
+      5.1,
+      4.2
+     ],
+     "volumeMm3": 52.0,
+     "voxelCount": 42,
+     "huMethod": "voxel-interior",
+     "meanHU": -760,
+     "medianHU": -790,
+     "minHU": -892,
+     "maxHU": -483,
+     "solidFraction": 0.0,
+     "aeratedFraction": 0.714,
+     "lobeId": "s28",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS9"
+     ],
+     "distanceToLobeSurfaceMm": 2.7,
+     "distanceToAirwayMm": 25.6,
+     "planningSphereDistanceMm": 10.1
+    }
+   ],
+   "planning": [
+    {
+     "id": "s02",
+     "index": 1,
+     "name": "切缘球",
+     "center": [
+      -21.0,
+      30.1,
+      -1187.6
+     ],
+     "radiusMm": 26.8,
+     "vertexCount": 238
+    },
+    {
+     "id": "s02",
+     "index": 2,
+     "name": "切缘球",
+     "center": [
+      95.0,
+      42.1,
+      -1133.6
+     ],
+     "radiusMm": 21.0,
+     "vertexCount": 159
+    }
+   ],
+   "annotations": [],
+   "clinicalRegistrationReview": "pending",
+   "secondsToCompute": 0.5
+  },
+  {
+   "id": "CT-012",
+   "title": "左下叶结节",
+   "spacingMm": [
+    0.808,
+    0.808,
+    2.0
+   ],
+   "dimensions": [
+    319,
+    220,
+    140
+   ],
+   "ctSha256": "25fe7593d3fbd8cb2c747246d200b48a727bffb7e331e5f112cb517817e4aaf7",
+   "geometrySha256": "5f278b638c8420bb4d7f5bfec907388ebe1afccb658e91ea6cc5e116d875ddf8",
+   "lobesPresent": [
+    "左上叶",
+    "左下叶",
+    "右上叶",
+    "右中叶",
+    "右下叶"
+   ],
+   "segmentCodesPresent": [
+    "LS6",
+    "LS8",
+    "LS9",
+    "LS10"
+   ],
+   "lesionCount": 3,
+   "lesions": [
+    {
+     "id": "n1",
+     "structureId": "s01",
+     "center": [
+      49.95,
+      -53.93,
+      -393.36
+     ],
+     "voxel": [
+      236,
+      189,
+      69
+     ],
+     "vertexCount": 54,
+     "triangleCount": 104,
+     "longestDiameterMm": 9.9,
+     "extentMm": [
+      9.6,
+      7.7,
+      9.4
+     ],
+     "volumeMm3": 300.9,
+     "voxelCount": 228,
+     "huMethod": "voxel-interior",
+     "meanHU": -480,
+     "medianHU": -490,
+     "minHU": -689,
+     "maxHU": -139,
+     "solidFraction": 0.088,
+     "aeratedFraction": 0.0,
+     "lobeId": "s16",
+     "lobe": "左下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "LS6"
+     ],
+     "distanceToLobeSurfaceMm": 3.9,
+     "distanceToAirwayMm": 12.0,
+     "planningSphereDistanceMm": 5.8
+    },
+    {
+     "id": "n2",
+     "structureId": "s01",
+     "center": [
+      37.53,
+      -86.23,
+      -347.28
+     ],
+     "voxel": [
+      221,
+      149,
+      92
+     ],
+     "vertexCount": 34,
+     "triangleCount": 64,
+     "longestDiameterMm": 6.8,
+     "extentMm": [
+      3.8,
+      5.2,
+      4.9
+     ],
+     "volumeMm3": 29.6,
+     "voxelCount": 20,
+     "huMethod": "voxel-interior",
+     "meanHU": -99,
+     "medianHU": -132,
+     "minHU": -356,
+     "maxHU": 252,
+     "solidFraction": 0.85,
+     "aeratedFraction": 0.0,
+     "lobeId": "s15",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 1.1,
+     "distanceToAirwayMm": 15.5,
+     "planningSphereDistanceMm": 54.0
+    },
+    {
+     "id": "n3",
+     "structureId": "s01",
+     "center": [
+      35.55,
+      -77.49,
+      -322.77
+     ],
+     "voxel": [
+      219,
+      160,
+      104
+     ],
+     "vertexCount": 21,
+     "triangleCount": 38,
+     "longestDiameterMm": 3.3,
+     "extentMm": [
+      2.2,
+      2.9,
+      2.2
+     ],
+     "volumeMm3": 5.7,
+     "voxelCount": 6,
+     "huMethod": "voxel-interior",
+     "meanHU": -280,
+     "medianHU": -283,
+     "minHU": -462,
+     "maxHU": -75,
+     "solidFraction": 0.5,
+     "aeratedFraction": 0.0,
+     "lobeId": "s15",
+     "lobe": "左上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 11.0,
+     "distanceToAirwayMm": 17.6,
+     "planningSphereDistanceMm": 73.6
+    }
+   ],
+   "planning": [
+    {
+     "id": "s02",
+     "index": 1,
+     "name": "切缘球",
+     "center": [
+      49.9,
+      -59.7,
+      -392.7
+     ],
+     "radiusMm": 24.8,
+     "vertexCount": 309
+    }
+   ],
+   "annotations": [],
+   "clinicalRegistrationReview": "pending",
+   "secondsToCompute": 0.6
+  },
+  {
+   "id": "CT-013",
+   "title": "右下叶结节",
+   "spacingMm": [
+    0.713,
+    0.713,
+    2.0
+   ],
+   "dimensions": [
+    348,
+    228,
+    130
+   ],
+   "ctSha256": "ebba926bc89269cc2f488d2587aae19a93225dbd873ab864c2ce792f46627598",
+   "geometrySha256": "2fe16fa08b3c6e6809458445af1343cc09d5bf88ee04603af18ee7781ad064f2",
+   "lobesPresent": [
+    "右上叶",
+    "右中叶",
+    "右下叶",
+    "左上叶",
+    "左下叶"
+   ],
+   "segmentCodesPresent": [
+    "RS6",
+    "RS7",
+    "RS8",
+    "RS9",
+    "RS10"
+   ],
+   "lesionCount": 2,
+   "lesions": [
+    {
+     "id": "n1",
+     "structureId": "s01",
+     "center": [
+      -61.67,
+      58.72,
+      -182.96
+     ],
+     "voxel": [
+      71,
+      171,
+      66
+     ],
+     "vertexCount": 101,
+     "triangleCount": 198,
+     "longestDiameterMm": 16.0,
+     "extentMm": [
+      13.8,
+      11.8,
+      15.9
+     ],
+     "volumeMm3": 1174.0,
+     "voxelCount": 1154,
+     "huMethod": "voxel-interior",
+     "meanHU": -696,
+     "medianHU": -705,
+     "minHU": -904,
+     "maxHU": -137,
+     "solidFraction": 0.007,
+     "aeratedFraction": 0.292,
+     "lobeId": "s19",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS6"
+     ],
+     "distanceToLobeSurfaceMm": 15.0,
+     "distanceToAirwayMm": 4.9,
+     "planningSphereDistanceMm": 2.5
+    },
+    {
+     "id": "n2",
+     "structureId": "s01",
+     "center": [
+      -34.32,
+      61.42,
+      -232.72
+     ],
+     "voxel": [
+      109,
+      174,
+      41
+     ],
+     "vertexCount": 63,
+     "triangleCount": 122,
+     "longestDiameterMm": 8.6,
+     "extentMm": [
+      8.1,
+      7.2,
+      8.6
+     ],
+     "volumeMm3": 201.8,
+     "voxelCount": 197,
+     "huMethod": "voxel-interior",
+     "meanHU": -588,
+     "medianHU": -626,
+     "minHU": -788,
+     "maxHU": -1,
+     "solidFraction": 0.061,
+     "aeratedFraction": 0.056,
+     "lobeId": "s19",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS10"
+     ],
+     "distanceToLobeSurfaceMm": 20.4,
+     "distanceToAirwayMm": 1.5,
+     "planningSphereDistanceMm": 55.3
+    }
+   ],
+   "planning": [
+    {
+     "id": "s02",
+     "index": 1,
+     "name": "切缘球",
+     "center": [
+      -59.8,
+      57.2,
+      -183.8
+     ],
+     "radiusMm": 27.9,
+     "vertexCount": 392
+    }
+   ],
+   "annotations": [],
+   "clinicalRegistrationReview": "pending",
+   "secondsToCompute": 0.5
+  },
+  {
+   "id": "CT-014",
+   "title": "左上叶结节",
+   "spacingMm": [
+    0.874,
+    0.874,
+    2.0
+   ],
+   "dimensions": [
+    275,
+    195,
+    125
+   ],
+   "ctSha256": "78d58729e9772fac37a3733f65cbd818108b5ffe657a8c57e01763703aa1f2f6",
+   "geometrySha256": "2f5d386a84babf1c16aa3b0627cfb21ff7ffad1f8626b432efd76b82ad837b98",
+   "lobesPresent": [
+    "左上叶",
+    "左下叶",
+    "右上叶",
+    "右中叶"
+   ],
+   "segmentCodesPresent": [
+    "LS1+2",
+    "LS3",
+    "LS4",
+    "LS5"
+   ],
+   "lesionCount": 1,
+   "lesions": [
+    {
+     "id": "n1",
+     "structureId": "s01",
+     "center": [
+      22.19,
+      -1.38,
+      -364.51
+     ],
+     "voxel": [
+      156,
+      90,
+      101
+     ],
+     "vertexCount": 355,
+     "triangleCount": 706,
+     "longestDiameterMm": 40.4,
+     "extentMm": [
+      27.5,
+      28.7,
+      33.2
+     ],
+     "volumeMm3": 6889.6,
+     "voxelCount": 4552,
+     "huMethod": "voxel-interior",
+     "meanHU": -104,
+     "medianHU": -15,
+     "minHU": -763,
+     "maxHU": 170,
+     "solidFraction": 0.813,
+     "aeratedFraction": 0.001,
+     "lobeId": "s14",
+     "lobe": "左上叶",
+     "lobeMethod": "nearest-surface",
+     "segmentCodes": [],
+     "distanceToLobeSurfaceMm": 0.5,
+     "distanceToAirwayMm": 1.7,
+     "planningSphereDistanceMm": 6.6
+    }
+   ],
+   "planning": [
+    {
+     "id": "s02",
+     "index": 1,
+     "name": "切缘球",
+     "center": [
+      26.8,
+      -0.1,
+      -369.1
+     ],
+     "radiusMm": 36.1,
+     "vertexCount": 854
+    }
+   ],
+   "annotations": [],
+   "clinicalRegistrationReview": "pending",
+   "secondsToCompute": 0.4
+  },
+  {
+   "id": "CT-015",
+   "title": "右肺结节",
+   "spacingMm": [
+    0.725,
+    0.725,
+    2.0
+   ],
+   "dimensions": [
+    362,
+    210,
+    115
+   ],
+   "ctSha256": "a7d755f4baf544805d463cd65bc8e40239a3457e80402bb595c028c990375fc5",
+   "geometrySha256": "c342853eb1883ffc14df9f5ac36ea7c52f2c3db2a9cfd39b3e7a00488ca87b31",
+   "lobesPresent": [
+    "右上叶",
+    "右中叶",
+    "右下叶",
+    "左上叶",
+    "左下叶"
+   ],
+   "segmentCodesPresent": [
+    "RS1",
+    "RS2",
+    "RS3",
+    "RS6",
+    "RS7",
+    "RS8",
+    "RS9",
+    "RS10"
+   ],
+   "lesionCount": 2,
+   "lesions": [
+    {
+     "id": "n1",
+     "structureId": "s01",
+     "center": [
+      -34.82,
+      40.6,
+      -334.4
+     ],
+     "voxel": [
+      149,
+      142,
+      83
+     ],
+     "vertexCount": 117,
+     "triangleCount": 230,
+     "longestDiameterMm": 19.4,
+     "extentMm": [
+      14.6,
+      15.3,
+      16.1
+     ],
+     "volumeMm3": 1091.6,
+     "voxelCount": 1043,
+     "huMethod": "voxel-interior",
+     "meanHU": -464,
+     "medianHU": -480,
+     "minHU": -753,
+     "maxHU": -135,
+     "solidFraction": 0.14,
+     "aeratedFraction": 0.001,
+     "lobeId": "s23",
+     "lobe": "右上叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS2"
+     ],
+     "distanceToLobeSurfaceMm": 1.1,
+     "distanceToAirwayMm": 4.5,
+     "planningSphereDistanceMm": 6.7
+    },
+    {
+     "id": "n2",
+     "structureId": "s01",
+     "center": [
+      -77.74,
+      67.65,
+      -427.4
+     ],
+     "voxel": [
+      89,
+      180,
+      37
+     ],
+     "vertexCount": 70,
+     "triangleCount": 136,
+     "longestDiameterMm": 10.6,
+     "extentMm": [
+      7.2,
+      8.7,
+      10.2
+     ],
+     "volumeMm3": 307.8,
+     "voxelCount": 295,
+     "huMethod": "voxel-interior",
+     "meanHU": -287,
+     "medianHU": -276,
+     "minHU": -624,
+     "maxHU": -23,
+     "solidFraction": 0.566,
+     "aeratedFraction": 0.0,
+     "lobeId": "s25",
+     "lobe": "右下叶",
+     "lobeMethod": "voxel-inside",
+     "segmentCodes": [
+      "RS10"
+     ],
+     "distanceToLobeSurfaceMm": 3.7,
+     "distanceToAirwayMm": 23.7,
+     "planningSphereDistanceMm": 5.2
+    }
+   ],
+   "planning": [
+    {
+     "id": "s02",
+     "index": 1,
+     "name": "切缘球",
+     "center": [
+      -77.2,
+      62.5,
+      -427.6
+     ],
+     "radiusMm": 25.1,
+     "vertexCount": 317
+    },
+    {
+     "id": "s02",
+     "index": 2,
+     "name": "切缘球",
+     "center": [
+      -37.1,
+      35.0,
+      -331.5
+     ],
+     "radiusMm": 26.3,
+     "vertexCount": 473
+    }
+   ],
+   "annotations": [],
+   "clinicalRegistrationReview": "pending",
+   "secondsToCompute": 0.4
+  }
+ ]
+}

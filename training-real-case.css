@@ -1,0 +1,25 @@
+.real-ct-panel,.real-ct-panel .canvas-wrap{background:#000;border-radius:0}
+.real-ct-stage,.real-model-stage,.real-detail-stage{background:#000}
+.ct-case-chip{font:11px/1 ui-monospace,monospace;color:#9aa4b2;border:1px solid #2a313b;padding:3px 7px;margin-left:auto;margin-right:8px}
+.plane-tabs,.camera-presets{display:flex;gap:4px;padding:6px 10px 0;background:#12151a}
+.plane-tabs button,.camera-presets button{flex:1;font-size:12px;padding:5px 8px;color:#9aa4b2;background:#1a1f27;border:1px solid #2a313b;border-radius:4px}
+.plane-tabs [aria-pressed=true],.camera-presets [aria-pressed=true]{color:#e6eaf0;border-color:#4c8dff;background:#182033}
+.window-controls{display:grid;grid-template-columns:1.1fr .9fr .9fr auto;gap:8px;padding:8px 12px;border-top:1px solid #2a313b;background:#12151a;align-items:end}
+.window-controls label{font-size:10px;color:#9aa4b2}
+.window-controls input,.window-controls select{display:block;width:100%;margin-top:3px;background:#0b0e12;color:#e6eaf0;border:1px solid #2a313b;border-radius:4px;padding:4px 6px;font:12px ui-monospace,monospace}
+.ct-value,.ct-plane-label{position:absolute;pointer-events:none;font:11px/1.4 ui-monospace,monospace;color:#e6eaf0}
+.ct-plane-label{left:10px;top:8px;letter-spacing:.12em}
+.ct-value{left:10px;bottom:28px;background:#000000c8;padding:2px 6px}
+.real-ct-panel .canvas-caption{left:auto;right:10px;background:#000000c8;color:#9aa4b2;font:11px ui-monospace,monospace}
+.case-switch{display:flex;flex-direction:column;gap:4px;font-size:11px;color:#9aa4b2;white-space:nowrap}
+.case-switch select{background:#12151a;color:#e6eaf0;border:1px solid #2a313b;border-radius:4px;padding:6px 8px;min-width:160px}
+.or-field-link{display:inline-flex;align-items:center;padding:7px 12px;border:1px solid #2a313b;color:#e6eaf0;text-decoration:none;border-radius:4px}
+.or-field-link:hover{border-color:#4c8dff;text-decoration:none}
+.real-detail-stage .scope-mode{top:8px;right:10px;background:#000000c8;color:#9aa4b2;border-radius:0}
+.scope-view-controls{flex-wrap:wrap;justify-content:space-between;gap:8px}
+.scope-view-controls #scope-fit{font-size:.875rem;min-height:38px;padding:6px 12px;background:#173e43;border-color:#558a87;color:#b9efe3}
+.scope-view-controls #scope-fit:hover{background:#245059}
+.scope-view-controls a{font-size:.875rem;padding:6px 8px}
+.view-panel.real-ct-panel{border-radius:6px;overflow:hidden}
+body.real-training .scope-vignette,body.real-training .scope-reticle,body.real-training #bleeding-veil{display:none!important}
+@media(max-width:850px){.window-controls{grid-template-columns:1fr 1fr;}.case-switch{width:100%}}

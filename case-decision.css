@@ -1,0 +1,156 @@
+/* 病例决策训练 · 样式。沿用 styles.css 的色板与 .case-layout/.case-card/.panel 等基础类。 */
+.cd-host .tag.good{border-color:#4e9a7a;color:#c6ead8;background:#16352e}
+.cd-host .tag+.tag{margin-left:6px}
+.cd-principles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:0 0 18px}
+.cd-principle{border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:12px 14px}
+.cd-principle strong{display:block;font-size:.8rem;color:var(--accent);margin-bottom:4px;letter-spacing:.02em}
+.cd-principle p{margin:0;font-size:.8rem;line-height:1.5;color:var(--muted)}
+.cd-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.cd-tab{border:1px solid #365260;background:#122b39;border-radius:9px;padding:9px 14px;text-align:left;display:grid;gap:2px;color:var(--text);font:inherit;cursor:pointer;text-decoration:none}
+.cd-tab strong{font-size:.9rem}
+.cd-tab small{color:var(--muted);font-size:.72rem}
+.cd-tab.active{border-color:var(--accent);background:var(--accent-deep)}
+.cd-tab:hover{border-color:#5c8a86}
+.cd-tab-link{border-style:dashed}
+.cd-stage{margin-top:24px;padding-top:18px;border-top:1px solid var(--line)}
+.cd-stage-head{display:flex;align-items:center;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.cd-stage-head h3{margin:0;font-size:1.05rem}
+.cd-stage-head .tag{margin-left:auto}
+.cd-stage-num{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:#142b39;border:1px solid #365260;font-size:.85rem;font-weight:650;color:var(--accent);flex-shrink:0}
+.cd-record{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px 20px;margin:0 0 14px}
+.cd-record div{display:grid;grid-template-columns:104px 1fr;gap:8px;padding:6px 0;border-bottom:1px dashed #26414f;font-size:.88rem}
+.cd-record dt{color:var(--muted)}
+.cd-record dd{margin:0}
+.cd-imaging{display:flex;gap:14px;align-items:center;border:1px solid #365260;border-radius:10px;padding:10px 12px;background:#0f2431;margin-bottom:12px}
+.cd-imaging img{width:96px;height:72px;object-fit:cover;border-radius:6px;background:#000;flex-shrink:0}
+.cd-imaging strong{display:block;font-size:.9rem}
+.cd-imaging p{margin:2px 0 4px;font-size:.8rem;color:var(--muted)}
+.cd-imaging a{color:var(--accent);font-size:.85rem}
+.cd-host .case-tile{cursor:pointer;color:var(--text);font:inherit}
+.cd-host .case-tile strong{display:block;margin-bottom:4px}
+.cd-host .case-tile span{font-size:.8rem;color:var(--muted)}
+.cd-host .case-tile.open{border-color:var(--accent);background:var(--accent-deep)}
+.cd-host .case-tile:hover{border-color:#5c8a86}
+.cd-tests{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:10px 0 4px}
+.cd-test{text-align:left;border:1px solid #365260;background:#122b39;border-radius:9px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;font:inherit;font-size:.9rem;color:var(--text);cursor:pointer}
+.cd-test .box{width:16px;height:16px;border:1px solid #6c8a98;border-radius:4px;flex-shrink:0;margin-top:3px}
+.cd-test[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-deep)}
+.cd-test[aria-pressed="true"] .box{background:var(--accent);border-color:var(--accent)}
+.cd-test:hover{border-color:#5c8a86}
+.cd-review{margin-top:14px}
+.cd-results{display:grid;gap:8px;margin-top:12px}
+.cd-result{display:grid;grid-template-columns:104px 1fr;gap:10px;border:1px solid var(--line);border-radius:9px;padding:10px 12px;background:#0f2431;font-size:.88rem}
+.cd-result.skipped{opacity:.72}
+.cd-result strong{display:block}
+.cd-result p{margin:2px 0 0;color:var(--muted)}
+.cd-result .cd-value{color:var(--text)}
+.cd-verdict{font-size:.72rem;padding:3px 8px;border-radius:5px;border:1px solid;align-self:start;text-align:center;white-space:nowrap}
+.cd-verdict.necessary{color:#a7ecdb;border-color:#3f7f74;background:#143b38}
+.cd-verdict.optional{color:#f1d59a;border-color:#8a7340;background:#3a3220}
+.cd-verdict.unnecessary{color:#f3b8c0;border-color:#8a4d5a;background:#352028}
+.cd-host .decision-options button{border:1px solid #365260;background:#122b39;border-radius:9px;padding:9px 13px;color:var(--text);font:inherit;text-align:left;cursor:pointer}
+.cd-host .decision-options button.selected{border-color:var(--accent);background:var(--accent-deep)}
+.cd-host .decision-options button:hover{border-color:#5c8a86}
+.cd-host .checklist label{display:flex;gap:10px;align-items:flex-start;font-size:.9rem;line-height:1.5}
+.cd-host .checklist input{margin-top:5px;flex-shrink:0}
+.cd-debrief h4{margin:16px 0 6px;font-size:.9rem;color:var(--accent)}
+.cd-debrief ol,.cd-debrief ul{margin:0;padding-left:22px;font-size:.9rem;line-height:1.65}
+.cd-debrief li{margin-bottom:4px}
+.cd-evidence{display:grid;gap:10px;margin-top:4px}
+.cd-evidence article{border:1px solid var(--line);border-radius:9px;padding:12px 14px;background:#0f2431;font-size:.86rem}
+.cd-evidence a{color:var(--accent)}
+.cd-evidence dl{display:grid;grid-template-columns:44px 1fr;gap:4px 10px;margin:8px 0 0}
+.cd-evidence dt{color:var(--muted)}
+.cd-evidence dd{margin:0}
+.cd-reflection{width:100%;min-height:90px;background:#0f2431;border:1px solid #365260;border-radius:8px;color:var(--text);padding:10px;font:inherit;font-size:.9rem;margin-top:6px;resize:vertical}
+.cd-progress{display:grid;gap:9px;margin-top:12px}
+.cd-progress>div{display:flex;align-items:flex-start;gap:10px;font-size:.88rem}
+.cd-progress strong{display:block;font-weight:600}
+.cd-progress small{color:var(--muted);font-size:.78rem}
+.cd-dot{width:10px;height:10px;border-radius:50%;background:#365260;flex-shrink:0;margin-top:6px}
+.cd-dot.done{background:var(--accent)}
+.cd-dot.partial{background:var(--gold)}
+.cd-matrix{font-size:.78rem}
+.cd-matrix th,.cd-matrix td{vertical-align:top}
+@media(max-width:1200px){.cd-principles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:850px){.cd-principles{grid-template-columns:1fr 1fr}.cd-record{grid-template-columns:1fr}.cd-tests{grid-template-columns:1fr}.cd-result{grid-template-columns:1fr}.cd-stage-head .tag{margin-left:0}}
+@media(max-width:480px){.cd-principles{grid-template-columns:1fr}.cd-record div{grid-template-columns:1fr;gap:2px}.cd-imaging{flex-direction:column;align-items:flex-start}.cd-tab{width:100%}}
+@media print{.cd-tabs,.cd-test,.actions{display:none!important}}
+/* 真实病例版：病例选择网格与未记录标记 */
+.cd-cases-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap;margin:6px 0 8px}
+.cd-cases-head p{margin:0}
+.cd-cases{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:0 0 18px}
+.cd-case{border:1px solid #365260;background:#122b39;border-radius:9px;padding:8px 10px 9px;text-align:left;display:grid;gap:3px;color:var(--text);font:inherit;cursor:pointer}
+.cd-case img{width:100%;height:58px;object-fit:cover;border-radius:5px;background:#000;margin-bottom:2px}
+.cd-case strong{font-size:.86rem}
+.cd-case small{color:var(--muted);font-size:.7rem;line-height:1.35}
+.cd-case em{font-style:normal;font-size:.7rem;color:var(--accent)}
+.cd-case.active{border-color:var(--accent);background:var(--accent-deep)}
+.cd-case:hover{border-color:#5c8a86}
+.cd-np{color:var(--gold)}
+.cd-progress-compact>div{font-size:.8rem;gap:8px}
+.cd-progress-compact small{font-size:.72rem}
+@media(max-width:480px){.cd-cases{grid-template-columns:1fr 1fr}.cd-case img{height:48px}}
+/* 分层课程版：关卡地图、第 1 关判读、题组、考核 */
+.cd-levels{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:0 0 14px}
+.cd-level{border:1px solid #365260;background:#122b39;border-radius:10px;padding:12px 14px;text-align:left;display:grid;grid-template-columns:34px 1fr;gap:2px 10px;color:var(--text);font:inherit;cursor:pointer;align-items:center}
+.cd-level .cd-level-num{grid-row:1/4;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:#142b39;border:1px solid #365260;font-weight:650;color:var(--accent)}
+.cd-level strong{font-size:.92rem}
+.cd-level small{color:var(--muted);font-size:.72rem}
+.cd-level em{font-style:normal;font-size:.72rem;color:var(--accent);line-height:1.35}
+.cd-level:hover{border-color:#5c8a86}
+.cd-level.active{border-color:var(--accent);background:var(--accent-deep)}
+.cd-level.passed .cd-level-num{background:var(--accent);color:#06221f;border-color:var(--accent)}
+.cd-level.locked{opacity:.75}
+.cd-level.locked .cd-level-num{color:var(--gold);border-color:#765e39}
+.cd-level-exam{border-style:dashed}
+.cd-level-intro{display:grid;grid-template-columns:1.2fr 1fr;gap:18px;border:1px solid var(--line);background:var(--panel);border-radius:10px;padding:14px 18px;margin:0 0 18px}
+.cd-level-intro h2{margin:2px 0 6px;font-size:1.15rem}
+.cd-level-intro p{margin:0;font-size:.9rem}
+.cd-level-intro dl{margin:0;display:grid;gap:8px;align-content:start}
+.cd-level-intro dl div{display:grid;grid-template-columns:72px 1fr;gap:8px;font-size:.85rem}
+.cd-level-intro dt{color:var(--muted)}
+.cd-level-intro dd{margin:0}
+.cd-cases-screen{grid-template-columns:repeat(auto-fill,minmax(112px,1fr))}
+.cd-case-mini img{height:44px}
+.cd-case.done{border-color:#4e9a7a}
+.cd-case.done em{color:#c6ead8}
+.cd-case.wrong em{color:var(--gold)}
+.cd-screen-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:14px;align-items:start;margin-bottom:6px}
+.cd-imaging-tall{flex-direction:column;align-items:stretch;margin-bottom:0}
+.cd-imaging-tall img{width:100%;height:150px}
+.cd-record-one{grid-template-columns:1fr}
+.cd-record-one div{grid-template-columns:140px 1fr}
+.cd-picks{display:flex;flex-wrap:wrap;gap:8px;margin:4px 0}
+.cd-picks-col{flex-direction:column;align-items:stretch}
+.cd-pick{border:1px solid #365260;background:#122b39;border-radius:9px;padding:9px 13px;color:var(--text);font:inherit;font-size:.9rem;text-align:left;cursor:pointer;display:flex;gap:8px;align-items:flex-start;line-height:1.45}
+.cd-pick:hover{border-color:#5c8a86}
+.cd-pick.selected{border-color:var(--accent);background:var(--accent-deep)}
+.cd-pick.right{border-color:#4e9a7a;background:#16352e}
+.cd-pick.wrong{border-color:#8a4d5a;background:#352028}
+.cd-pick:disabled{cursor:default;color:var(--text);opacity:1}
+.cd-pick.right{color:#c6ead8}
+.cd-pick.wrong{color:#f3b8c0}
+.cd-order-num{width:20px;height:20px;border-radius:50%;background:var(--accent);color:#06221f;font-size:.75rem;font-weight:700;display:grid;place-items:center;flex-shrink:0;margin-top:1px}
+.cd-item{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:#0f2431;margin-top:12px}
+.cd-item.answered{border-color:#4d8d81}
+.cd-item.graded-right{border-color:#4e9a7a}
+.cd-item.graded-wrong{border-color:#8a4d5a}
+.cd-item-stem{margin:0 0 2px;font-size:.95rem;line-height:1.55;display:flex;gap:8px;align-items:flex-start;flex-wrap:wrap}
+.cd-item-index{width:22px;height:22px;border-radius:50%;background:#142b39;border:1px solid #365260;font-size:.75rem;display:grid;place-items:center;flex-shrink:0;color:var(--accent);margin-top:2px}
+.cd-item .small.muted{margin:0 0 6px}
+.cd-item .actions{margin-top:8px;align-items:center;gap:10px}
+.cd-item .feedback{margin-top:10px}
+.cd-number{display:flex;gap:8px;align-items:center;margin:4px 0}
+.cd-number input{width:120px;background:#122b39;border:1px solid #365260;border-radius:8px;color:var(--text);padding:8px 10px;font:inherit;font-size:1rem}
+.cd-principles-side{display:grid;gap:8px;margin-top:16px}
+.cd-principles-side .eyebrow{margin:0 0 2px}
+.cd-exam-metrics{grid-template-columns:repeat(5,1fr);margin:16px 0 8px}
+.cd-exam-metrics .metric{padding:12px 14px}
+.cd-exam-metrics .metric .value{font-size:1.5rem}
+.cd-host .tag.warn{border-color:#765e39;color:#edc779}
+.cd-report .report-table td{vertical-align:top}
+@media(max-width:1200px){.cd-levels{grid-template-columns:repeat(3,minmax(0,1fr))}.cd-exam-metrics{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:850px){.cd-levels{grid-template-columns:1fr 1fr}.cd-level-intro{grid-template-columns:1fr}.cd-screen-grid{grid-template-columns:1fr}.cd-record-one div{grid-template-columns:110px 1fr}.cd-exam-metrics{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.cd-levels{grid-template-columns:1fr}.cd-cases-screen{grid-template-columns:1fr 1fr 1fr}.cd-level-intro dl div{grid-template-columns:1fr}.cd-exam-metrics{grid-template-columns:1fr}}
+@media print{.cd-levels,.cd-pick:not(.selected){display:none!important}}

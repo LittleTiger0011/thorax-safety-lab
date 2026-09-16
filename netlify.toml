@@ -1,0 +1,6 @@
+[[headers]]
+  for = "/*.gz"
+  [headers.values]
+    Content-Type = "application/octet-stream"
+    Content-Encoding = "identity"
+    X-Content-Type-Options = "nosniff"

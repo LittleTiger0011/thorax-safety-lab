@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+ <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+ <meta name="theme-color" content="#091521">
+ <meta name="description" content="本科胸外科安全实训：15 例真实 CT、术野辨识、六个安全检查点、独立测评、定向复练与学习报告。">
+ <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self'; worker-src 'self' blob:; media-src 'self' blob:; object-src 'none'; base-uri 'self'">
+ <title>安全训练与学习测评｜胸外科安全实训</title>
+ <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml"><link rel="stylesheet" href="./styles.css">
+ <link rel="stylesheet" href="./case-library-entry.css">
+ <link rel="stylesheet" href="./assessment-lab.css">
+ <link rel="stylesheet" href="./training-footage.css">
+ <link rel="stylesheet" href="./training-real-case.css">
+ <link rel="stylesheet" href="./explore-lab.css">
+ <link rel="stylesheet" href="./case-decision.css">
+ <link rel="stylesheet" href="./knowledge-atlas.css">
+ <link rel="stylesheet" href="./knowledge-library.css">
+ <link rel="stylesheet" href="./course-qa.css">
+</head>
+<body>
+ <a class="skip-link" href="#training-assessment">跳到当前任务</a>
+ <div id="app">
+  <header class="topbar">
+   <a class="brand" href="./index.html" aria-label="返回真实影像与肺段学习首页"><span class="brand-mark" aria-hidden="true">三</span><span><strong>胸外科安全实训</strong><small>CT · ANATOMY · SAFETY</small></span></a>
+   <nav id="main-nav" aria-label="课程导航"><a class="real-case-nav" href="./index.html">影像与肺段解剖</a><a class="real-case-nav" href="./or-field.html">术野辨识</a><button data-nav="explore">三屏探索</button><button data-nav="cases">病例决策</button><button data-nav="training" class="active">安全训练</button><button data-nav="knowledge">知识图谱</button><button data-nav="report">学习报告<span class="qa-nav-badge">AI答疑</span></button></nav>
+   <div class="header-actions"><button id="lesson-btn" class="quiet">课程导览</button><button id="demo-btn" class="outline">教师演示</button></div>
+  </header>
+  <div class="session-strip"><span id="session-kind">匿名学习</span><span id="session-id"></span><span class="strip-divider"></span><span id="save-status">记录仅保存在本机</span><button id="sessions-btn">管理记录</button></div>
+  <main>
+   <section id="training-center" hidden aria-label="安全训练中心">
+    <figure class="lab-scene-banner" aria-hidden="true"><img src="./assets/scene/simulator.webp" alt="" width="1600" height="901" decoding="async"></figure>
+    <header class="training-center-heading"><div><p>SAFETY TRAINING</p><h1>安全训练</h1><span>从解剖辨识，到有依据的安全判断。</span></div><div class="training-center-tabs" role="tablist" aria-label="安全训练模块"><button id="training-explore-tab" data-training-tab="explore" role="tab" aria-controls="workspace" aria-selected="false">三屏探索</button><button id="training-checkpoints-tab" data-training-tab="checkpoints" role="tab" aria-controls="workspace" aria-selected="true">六个安全检查点</button><button id="training-assessment-tab" data-training-tab="assessment" role="tab" aria-controls="training-assessment" aria-selected="false">独立测评与定向复练</button></div></header>
+    <div id="training-assessment" role="tabpanel" aria-labelledby="training-assessment-tab" tabindex="-1"></div>
+   </section>
+   <section id="workspace">
+    <aside class="real-case-banner" aria-label="当前阅片病例"><img src="./real-cases/CT-004/preview.webp" alt="匿名病例 CT-004 的真实 CT"><div><strong id="case-banner-title">CT-004 · 右上叶结节 · 真实 HU CT</strong><p>同源源重建网格 · 肺窗 / 纵隔窗 / 骨窗 · 与检查点文字情境不是同一份病历</p></div><label class="case-switch">换病例<select id="training-case-select" aria-label="选择真实病例"></select></label></aside>
+    <div id="checkpoint-footage" hidden></div>
+    <div class="workspace-heading"><div><p class="eyebrow" id="phase-label">真实 CT / 源三维</p><h1 id="workspace-title">真实影像 · 解剖对照</h1></div><div class="mode-controls"><button id="reset-view" class="outline">恢复总览</button><a class="outline or-field-link" href="./or-field.html">真实术野训练 →</a></div></div>
+    <div id="exam-guard" class="exam-guard" hidden>独立测验进行中 · 关闭答案联动、结构名称和助教 · 整套提交后查看解析</div>
+    <div class="mobile-tabs" role="tablist" aria-label="切换观察屏"><button data-screen="ct" class="active" role="tab" aria-selected="true">真实 CT</button><button data-screen="anatomy" role="tab" aria-selected="false">源三维</button><button data-screen="scope" role="tab" aria-selected="false">局部三维</button></div>
+    <div class="viewport-grid" data-mobile-screen="ct">
+     <article class="view-panel ct-panel real-ct-panel" data-view="ct"><header><div><span class="view-num">01</span><h2>真实 CT</h2></div><span class="ct-case-chip" id="ct-case-chip">CT-004</span><button data-expand="ct" title="放大 CT" aria-label="放大真实 CT">⤢</button></header>
+      <div class="plane-tabs" role="group" aria-label="CT 平面"><button type="button" data-real-plane="axial" aria-pressed="true">轴位</button><button type="button" data-real-plane="coronal" aria-pressed="false">冠状位</button><button type="button" data-real-plane="sagittal" aria-pressed="false">矢状位</button></div>
+      <div class="canvas-wrap real-ct-stage"><canvas id="ct-canvas" aria-label="真实 CT，滚轮逐层，点击读 HU" tabindex="0"></canvas><span class="ct-plane-label" id="ct-plane-label">AXIAL</span><span class="ct-value" id="ct-hu"></span><span class="canvas-caption" id="ct-caption">载入真实 CT…</span></div>
+      <div class="view-controls ct-controls"><button type="button" id="slice-prev" aria-label="上一层">‹</button><input id="slice" type="range" min="0" max="1" step="1" value="0" aria-label="CT 层面"><button type="button" id="slice-next" aria-label="下一层">›</button><output id="slice-value">— / —</output><button type="button" id="locate-slice">定位病灶</button></div>
+      <div class="window-controls"><label>窗型<select id="window-preset" aria-label="窗宽窗位预设"><option value="lung">肺窗</option><option value="mediastinum">纵隔窗</option><option value="bone">骨窗</option></select></label><label>WW<input id="window-width" type="number" value="1500" min="2" max="12000" step="50"></label><label>WL<input id="window-center" type="number" value="-600" min="-1500" max="4000" step="50"></label><button type="button" id="measure-btn" class="quiet" aria-pressed="false">测距</button></div>
+      <p class="view-note" id="ct-status">匿名真实 CT · 数值为 HU</p></article>
+     <article class="view-panel anatomy-panel" data-view="anatomy"><header><div><span class="view-num">02</span><h2>三维解剖重建</h2></div><button data-expand="anatomy" title="放大三维" aria-label="放大真实三维">⤢</button></header>
+      <div class="camera-presets" role="group" aria-label="三维观察方向"><button type="button" data-camera="anterior" aria-pressed="true">前方</button><button type="button" data-camera="posterior" aria-pressed="false">后方</button><button type="button" data-camera="right" aria-pressed="false">右侧</button><button type="button" data-camera="left" aria-pressed="false">左侧</button></div>
+      <div class="canvas-wrap real-model-stage"><canvas id="anatomy-canvas" aria-label="本例真实三维重建，拖动旋转" tabindex="0"></canvas><span class="canvas-caption">源网格 · DICOM LPS / mm</span></div>
+      <div class="view-controls"><label for="opacity">肺叶透明度</label><input id="opacity" type="range" min="4" max="50" step="1" value="9"><button type="button" id="layers-btn">图层</button></div>
+      <p class="view-note">肺动脉 <i class="key artery"></i> 肺静脉 <i class="key vein"></i> 支气管 <i class="key airway"></i> 颜色为结构编码</p></article>
+     <article class="view-panel scope-panel" data-view="scope"><header><div><span class="view-num">03</span><h2>局部三维观察</h2></div><button data-expand="scope" title="放大局部三维" aria-label="放大局部三维">⤢</button></header>
+      <div class="canvas-wrap real-detail-stage"><canvas id="scope-canvas" aria-label="本例局部真实三维，不是术中腔镜" tabindex="0"></canvas><span class="canvas-caption" id="detail-hint">局部真实三维 · 不是术中腔镜</span><span class="scope-mode" id="detail-focus-label">CT-004</span></div>
+      <div class="view-controls scope-view-controls"><select id="scope-view" hidden aria-hidden="true"><option value="anterior">前方</option><option value="superior">前方</option><option value="posterior">后方</option></select><button type="button" id="scope-fit" class="outline" title="将当前可见模型居中，并缩放至完整显示">居中显示全貌</button><a class="outline" href="./or-field.html">打开真实术野 →</a></div>
+      <p class="view-note" id="scope-status">第三屏是同一病例的局部重建。真实腔镜录像在术野页，不是本例患者。</p></article>
+    </div>
+    <div class="selection-bar"><div><strong id="selection-name">点击真实 CT 或三维结构</strong></div><p id="selection-detail">阅片为 CT-004 真实 CT 与源重建。检查点选项是安全原则，不是对该例每根分支的自动标定。</p><button id="clear-selection" class="quiet">清除选择</button></div>
+    <div id="structure-strip" class="structure-strip" aria-label="结构目录"></div>
+    <section id="task-panel" tabindex="-1" aria-live="polite"></section>
+   </section>
+   <section id="knowledge-center" hidden aria-label="胸外科知识图谱"></section>
+   <section id="content-page" hidden></section>
+  </main>
+  <footer class="app-footer"><span>《外科学》 · 本科安全认知</span><span>真实 CT · 术野阅片 · 安全检查 · 定向复练</span><span id="release-label">v1.0.0-rc2</span></footer>
+ </div>
+ <button id="tutor-button" class="tutor-button"><span>✦</span> 学习助教</button>
+ <aside id="tutor" hidden aria-label="规则学习助教"><header><div><p class="eyebrow">依据本次学习记录</p><h2>下一步学习建议</h2></div><button id="close-tutor" aria-label="关闭助教">×</button></header><div id="tutor-content"></div><p class="small muted">规则与本课知识库 · 不使用生成模型评分</p></aside>
+ <dialog id="modal"><div id="modal-content"></div></dialog>
+ <div id="toast" role="status" hidden></div>
+ <div id="loading"><img class="loading-scene" src="./assets/scene/corridor.webp" alt="" width="1600" height="901" decoding="async"><div class="loading-orbit"></div><strong>正在打开安全训练</strong><span>加载课程与本机学习记录</span></div>
+ <script type="module" src="./app.js"></script>
+</body>
+</html>
