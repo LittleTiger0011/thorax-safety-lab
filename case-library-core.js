@@ -77,20 +77,47 @@ export function trianglePlaneSegments(positions,indices,axis,index) {
 export async function fetchJSON(url,signal) {
   const r=await fetch(url,{signal});if(!r.ok)throw new Error(`资料读取失败 (${r.status})`);return r.json();
 }
+export function isGzipMagic(bytes) {
+  return Boolean(bytes&&bytes.byteLength>=2&&bytes[0]===0x1f&&bytes[1]===0x8b);
+}
+async function sha256Hex(bytes) {
+  if(!globalThis.crypto?.subtle)return '';
+  const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',bytes)),b=>b.toString(16).padStart(2,'0')).join('');
+  return hash;
+}
+function asArrayBuffer(bytes) {
+  return bytes.buffer.slice(bytes.byteOffset,bytes.byteOffset+bytes.byteLength);
+}
+async function inflateGzip(bytes) {
+  if(globalThis.DecompressionStream) {
+    return await new Response(new Blob([bytes]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();
+  }
+  const {gunzipSync}=await import('./vendor/fflate.js');
+  return asArrayBuffer(gunzipSync(bytes));
+}
+/** Accept packed gzip, or a payload already inflated by Safari/GitHub Pages. */
+export async function materializeGzip(raw,meta={}) {
+  const bytes=raw instanceof Uint8Array?raw:new Uint8Array(raw);
+  if(isGzipMagic(bytes)) {
+    if(meta.compressedBytes&&bytes.byteLength!==meta.compressedBytes)throw new Error('下载长度校验失败，请重新加载');
+    if(meta.sha256) {
+      const hash=await sha256Hex(bytes);
+      if(hash&&hash!==meta.sha256)throw new Error('影像完整性校验失败，请重新加载');
+    }
+    const result=await inflateGzip(bytes);
+    if(meta.rawBytes&&result.byteLength!==meta.rawBytes)throw new Error('解压长度校验失败');
+    return result;
+  }
+  if(meta.rawBytes&&bytes.byteLength===meta.rawBytes)return asArrayBuffer(bytes);
+  throw new Error('下载长度校验失败，请重新加载');
+}
 export async function fetchGzip(url,meta,signal,onProgress=()=>{}) {
   const r=await fetch(url,{signal});if(!r.ok)throw new Error(`影像资源读取失败 (${r.status})`);
   let raw;
   if(r.body) {
     const reader=r.body.getReader(),chunks=[];let size=0;
-    for(;;){const {done,value}=await reader.read();if(done)break;chunks.push(value);size+=value.length;onProgress(size,meta.compressedBytes);}
+    for(;;){const {done,value}=await reader.read();if(done)break;chunks.push(value);size+=value.length;onProgress(size,meta.compressedBytes||size);}
     raw=new Uint8Array(size);let offset=0;for(const chunk of chunks){raw.set(chunk,offset);offset+=chunk.length;}
   } else raw=new Uint8Array(await r.arrayBuffer());
-  if(raw.byteLength!==meta.compressedBytes)throw new Error('下载长度校验失败，请重新加载');
-  if(globalThis.crypto?.subtle) {
-    const hash=Array.from(new Uint8Array(await crypto.subtle.digest('SHA-256',raw)),b=>b.toString(16).padStart(2,'0')).join('');
-    if(hash!==meta.sha256)throw new Error('影像完整性校验失败，请重新加载');
-  }
-  if(!globalThis.DecompressionStream)throw new Error('此浏览器不支持离线影像解压，请使用新版 Chrome、Edge 或 Safari');
-  const result=await new Response(new Blob([raw]).stream().pipeThrough(new DecompressionStream('gzip'))).arrayBuffer();
-  if(result.byteLength!==meta.rawBytes)throw new Error('解压长度校验失败');return result;
+  return materializeGzip(raw,meta);
 }

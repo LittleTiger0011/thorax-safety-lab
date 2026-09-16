@@ -35,7 +35,7 @@ planeGeometry.setAttribute('uv',new THREE.BufferAttribute(new Float32Array([0,1,
 const imagePlane=new THREE.Mesh(planeGeometry,new THREE.MeshBasicMaterial({map:ctTexture,transparent:true,opacity:.46,side:THREE.DoubleSide,depthWrite:false}));
 // The CT slab belongs to panel 02; it must not cover the local anatomy in 03.
 imagePlane.layers.set(1);imagePlane.visible=false;imagePlane.renderOrder=3;scene.add(imagePlane);
-let view3D,viewDetail,detailCamera;
+let view3D,viewDetail,detailCamera,viewsReady=false;
 function createView(canvas,fov){
   const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true,powerPreference:'high-performance'});
   renderer.setPixelRatio(Math.min(devicePixelRatio||1,2));renderer.setClearColor(0x000000,0);
@@ -47,11 +47,20 @@ function createView(canvas,fov){
   canvas.addEventListener('webglcontextrestored',()=>loadCase(activeId));
   return {renderer,camera,controls,canvas};
 }
-try {view3D=createView($('real-model'),34);viewDetail=createView($('real-detail'),40);}
-catch(error){webglError=error;$('model-empty').textContent='此设备无法启用三维显示；真实 CT 可继续浏览。';}
-view3D?.camera.layers.enable(1);
-if(viewDetail)detailCamera=new DetailCamera(viewDetail,updateDetailUI);
-else updateDetailUI();
+function ensureViews(){
+  if(viewsReady)return Boolean(view3D||viewDetail);
+  viewsReady=true;
+  try {
+    view3D=createView($('real-model'),34);viewDetail=createView($('real-detail'),40);
+    view3D?.camera.layers.enable(1);
+    if(viewDetail)detailCamera=new DetailCamera(viewDetail,updateDetailUI);
+    else updateDetailUI();
+  } catch(error) {
+    webglError=error;$('model-empty').textContent='此设备无法启用三维显示；真实 CT 可继续浏览。';
+    updateDetailUI();
+  }
+  return Boolean(view3D||viewDetail);
+}
 
 function updateDetailUI(controller=detailCamera){
   const ready=Boolean(controller?.ready),rawPercent=controller?.percent||100,percent=rawPercent<10?Number(rawPercent.toFixed(1)):Math.round(rawPercent),mode=controller?.mode||'rotate';
@@ -69,6 +78,7 @@ function updateDetailUI(controller=detailCamera){
   renderDetailLayers();
   dirty=true;
 }
+updateDetailUI();
 
 function renderDetailLayers(){
   for(const control of document.querySelectorAll('[data-detail-group]')){
@@ -130,14 +140,14 @@ async function loadCase(id){
   renderCatalog();$('structure-groups').replaceChildren();$('target-select').replaceChildren();$('structure-count').textContent='';
   if(!$('case-list').querySelector(`[data-id="${id}"]`)){$('case-filter').value='all';renderCatalog();}
   $('selection-title').textContent='正在载入';$('selection-position').textContent='';$('selection-dot').style.background='#617a87';
-  $('ct-empty').hidden=false;$('ct-empty').textContent='正在载入真实 CT';$('model-empty').hidden=false;
+  $('ct-empty').hidden=false;$('ct-empty').textContent='正在载入真实 CT…';$('model-empty').hidden=false;
   $('model-empty').textContent=webglError?'此设备无法启用三维显示；真实 CT 可继续浏览。':'正在载入重建模型';
   const entry=catalog.cases.find(c=>c.id===id);$('case-title').textContent=`${id} · ${entry.title}`;
   $('case-kicker').textContent='REAL CT / PATIENT-SPECIFIC RECONSTRUCTION';
   $('case-metadata').textContent=`${entry.slices} 层真实 CT · ${entry.structures} 个源重建结构 · 按需载入 ${(entry.downloadBytes/1e6).toFixed(1)} MB`;
   $('ct-preview').dataset.lesionMarked=`./real-cases/${entry.preview}`;$('ct-preview').dataset.lesionUnmarked=`./real-cases/${entry.preview.replace(/\.webp$/,'-unmarked.webp')}`;
   syncLesionVisibility();$('ct-preview').hidden=false;
-  showStatus('读取病例资料与空间坐标…');renderCT();
+  showStatus(`正在读取 ${id} 病例资料…`);renderCT();
   try {
     const m=await fetchJSON(`./real-cases/${entry.manifest}`,signal);if(epoch!==loadEpoch)return;
     if(m.schemaVersion!==1||m.id!==id||m.coordinateSystem!=='DICOM LPS millimeters')throw new Error('病例格式或空间定义不受支持');
@@ -145,23 +155,44 @@ async function loadCase(id){
     setPlaneButtons();setWindow('lung');$('ct-resolution').textContent=`${m.ct.dimensions[0]} × ${m.ct.dimensions[1]} · 像素 ${m.ct.spacing[0].toFixed(2)} mm · 层间距 ${m.ct.spacing[2].toFixed(2)} mm`;
     $('case-metadata').textContent=`${entry.slices} 层真实 CT · ${entry.structures} 个源重建结构 · ${fmt(m.geometry.triangles)} 个三角面`;
     let ctProgress=0,modelProgress=0;
-    const progress=()=>{if(epoch===loadEpoch)showStatus(`载入真实资料：CT ${Math.round(ctProgress*100)}% · 三维重建 ${Math.round(modelProgress*100)}%`);};
+    const progress=()=>{
+      if(epoch!==loadEpoch)return;
+      showStatus(`载入真实资料：CT ${Math.round(ctProgress*100)}% · 三维重建 ${Math.round(modelProgress*100)}%`);
+      if(!volume)$('ct-empty').textContent=`正在载入真实 CT ${Math.round(ctProgress*100)}%`;
+    };
     const base=`./real-cases/${id}/`;
-    await Promise.all([
-      fetchGzip(base+m.geometry.asset,m.geometry,signal,(n,total)=>{modelProgress=n/total;progress();}).then(buffer=>{
-        if(epoch!==loadEpoch)return;buildGeometry(buffer,m);reconstruction?.bind(id,meshes);setupTargets();setDefaultLayers(false);fitOverview('anterior');
+    let geomBuffer=null,geometryApplied=false;
+    const applyGeometry=buffer=>{
+      if(epoch!==loadEpoch||geometryApplied)return;
+      geometryApplied=true;
+      buildGeometry(buffer,m);reconstruction?.bind(id,meshes);setupTargets();setDefaultLayers(false);
+      ensureViews();
+      if(!webglError){
+        fitOverview('anterior');
         if(m.targets.length)focusTarget(0,false);else selectStructure(m.structures.find(s=>s.group==='airway')?.id,false);
         fitDetailOverview(true);
-        $('model-empty').hidden=!webglError;renderLayers();dirty=true;
-      }),
-      fetchGzip(base+m.ct.asset,m.ct,signal,(n,total)=>{ctProgress=n/total;progress();}).then(buffer=>{
-        if(epoch!==loadEpoch)return;volume=decodeVolume(buffer,m.ct);$('ct-empty').hidden=true;$('ct-preview').hidden=true;invalidateCT();
-      })
-    ]);
+      } else if(m.targets.length)focusTarget(0,false);
+      else selectStructure(m.structures.find(s=>s.group==='airway')?.id,false);
+      $('model-empty').hidden=!webglError;renderLayers();dirty=true;
+    };
+    const ctTask=fetchGzip(base+m.ct.asset,m.ct,signal,(n,total)=>{ctProgress=n/total;progress();}).then(buffer=>{
+      if(epoch!==loadEpoch)return;volume=decodeVolume(buffer,m.ct);$('ct-empty').hidden=true;$('ct-preview').hidden=true;invalidateCT();
+      if(geomBuffer)applyGeometry(geomBuffer);
+    });
+    const modelTask=fetchGzip(base+m.geometry.asset,m.geometry,signal,(n,total)=>{modelProgress=n/total;progress();}).then(buffer=>{
+      if(epoch!==loadEpoch)return;geomBuffer=buffer;if(volume)applyGeometry(buffer);
+    }).catch(error=>{
+      if(epoch!==loadEpoch||error.name==='AbortError')return;
+      $('model-empty').hidden=false;$('model-empty').textContent='三维重建暂不可用，CT 仍可阅片。';
+    });
+    await ctTask;
+    if(epoch!==loadEpoch)return;
+    showStatus(volume?'真实 CT 已载入，正在准备三维重建…':'CT 载入未完成，请重试',!volume);
+    await modelTask;
     if(epoch!==loadEpoch)return;
     const ratio=m.validation.verticesWithinCTExtentFraction;
     $('alignment-note').textContent=`已核对 CT 序列引用与源模型坐标；${(ratio*100).toFixed(2)}% 网格顶点落在 CT 范围内。肺段标注的作者审核已记录。`;
-    showStatus(webglError?'真实 CT 已载入；此设备三维显示不可用。':'真实 CT 与三维重建已载入 · 点击模型可定位 CT · 细小分支几何已保留',Boolean(webglError));
+    showStatus(webglError||!geometryApplied?'真实 CT 已载入；此设备三维显示不可用。':'真实 CT 与三维重建已载入 · 点击模型可定位 CT · 细小分支几何已保留',Boolean(webglError||!geometryApplied));
     $('selection-title').textContent=meshes.get(selectedId)?.meta.name||'尚未选择';
     updatePointDisplay();resize();
     await study?.loadCase(m,signal);
@@ -170,7 +201,7 @@ async function loadCase(id){
     if(detailFraming==='overview'&&m.targets.length)focusTarget(0,false);
     if(detailFraming==='overview'&&detailCamera?.ready&&Math.abs(detailCamera.percent-100)<.1&&detailCamera.view.controls.target.distanceTo(detailCamera.anchor)<.01)fitDetailOverview();
     try{history.replaceState(null,'',`#${id}`);}catch{}
-  }catch(error){if(epoch!==loadEpoch||error.name==='AbortError')return;loadingDetail=false;showStatus(error.message||'病例载入失败',true);$('ct-empty').textContent=volume?'':'CT 载入未完成，请重试';$('ct-empty').hidden=Boolean(volume);}
+  }catch(error){if(epoch!==loadEpoch||error.name==='AbortError')return;loadingDetail=false;showStatus(error.message||'病例载入失败',true);$('ct-empty').textContent=volume?'':'CT 载入未完成，请点「重新载入」或换 Safari / Chrome 打开';$('ct-empty').hidden=Boolean(volume);}
 }
 
 function buildGeometry(buffer,m){

@@ -89,12 +89,18 @@ export class TrainingRealCase{
   this.voxel=meta.ct.dimensions.map(n=>(n-1)/2);this.voxel[2]=meta.ct.initialSlice;this.plane='axial';this.zoom=1;this.pan=[0,0];
   this.setWindow('lung',false);
   const base=`./real-cases/${caseId}/`;
-  const [geom,raw]=await Promise.all([
-   fetchGzip(base+meta.geometry.asset,meta.geometry,signal),
-   fetchGzip(base+meta.ct.asset,meta.ct,signal)
-  ]);
+  const ctTask=fetchGzip(base+meta.ct.asset,meta.ct,signal);
+  const geomTask=fetchGzip(base+meta.geometry.asset,meta.geometry,signal);
+  const raw=await ctTask;
   if(signal.aborted)return;
-  this.volume=decodeVolume(raw,meta.ct);this.buildGeometry(geom,meta);this.setDefaultLayers();
+  this.volume=decodeVolume(raw,meta.ct);this.drawCT();this.hooks.onStatus?.('真实 CT 已载入，正在准备三维…');
+  try {
+    const geom=await geomTask;
+    if(signal.aborted)return;
+    this.buildGeometry(geom,meta);this.setDefaultLayers();
+  } catch {
+    this.hooks.onStatus?.('真实 CT 已载入；三维重建暂不可用');
+  }
   if(meta.targets.length)this.setPoint(meta.targets[0].center);else this.setPoint(voxelToLPS(this.voxel,meta.ct));
   this.fitOverview('anterior');this.ready=true;this.resize();this.drawCT();
   this.hooks.onStatus?.(null);

@@ -31,6 +31,7 @@
    <section class="home-intro"><img class="lab-scene-photo" src="./assets/scene/briefing.webp" alt="" width="1600" height="901" decoding="async"><div><p class="eyebrow">REAL CT · SEGMENTAL ANATOMY</p><h1>读懂真实 CT，<br class="mobile-break">看清肺段空间解剖。</h1><p>影像对照 · 解剖辨识 · 安全判断</p></div><div class="intro-data"><strong>15<span>真实病例</span></strong><strong>2,043<span>CT 层面</span></strong><a href="#segment-course">开始肺段学习 ↗</a></div></section>
    <div class="case-heading" id="imaging-anchor"><div><p class="eyebrow" id="case-kicker">REAL CT / RECONSTRUCTED ANATOMY</p><h2 id="case-title">打开一个真实病例</h2><p id="case-metadata">CT、三维结构与局部视角共用该病例的空间坐标</p></div><div class="heading-actions"><button id="reset-all" class="outline">恢复总览</button><button id="case-info" class="outline">病例资料 <span aria-hidden="true">ⓘ</span></button></div></div>
    <div id="case-message" class="case-message" role="status" aria-live="polite"><span class="status-dot"></span><span id="load-status">正在准备病例库</span><button id="retry-load" hidden>重新载入</button></div>
+   <p id="browser-tip" class="browser-tip" hidden>若 CT 一直空白：请用 Safari 或 Chrome 打开。微信请点右上角 ··· → 在浏览器中打开。</p>
    <section class="segment-workbench" aria-label="动态肺段对照">
     <div class="segment-toolbar"><div class="segment-picker"><label for="segment-select">选择要学习的肺段</label><select id="segment-select" aria-label="按肺叶选择肺段"></select><button id="segment-focus" class="accent-button">定位此段</button></div><a href="#segment-course" class="tutorial-shortcut">打开逐段讲解 ↓</a></div>
     <div class="overlay-controls" role="group" aria-label="独立控制肺段、段名与病灶红圈">
@@ -47,7 +48,7 @@
     <section class="image-panel ct-panel" aria-labelledby="ct-title">
      <header class="panel-header"><div><span class="panel-number">01</span><h3 id="ct-title">真实 CT</h3></div><button class="expand-btn" data-expand="ct-panel" aria-label="放大真实 CT">⤢</button></header>
      <div class="plane-tabs" role="group" aria-label="CT 观察平面"><button data-plane="axial" aria-pressed="true">轴位</button><button data-plane="coronal" aria-pressed="false">冠状位</button><button data-plane="sagittal" aria-pressed="false">矢状位</button></div>
-     <div class="ct-view-tools"><button id="ct-pan-mode" aria-pressed="false">✥ 移动</button><button id="ct-zoom-out" aria-label="缩小 CT">−</button><output id="ct-zoom-value">100%</output><button id="ct-zoom-in" aria-label="放大 CT">＋</button><span>滚轮逐层 · 拖动可移动</span></div><div class="ct-stage"><canvas id="real-ct" tabindex="0" aria-label="真实CT，滚轮或方向键逐层浏览，点击设置三维定位点"></canvas><img id="ct-preview" alt="当前匿名病例的真实CT预览" hidden><div class="canvas-empty" id="ct-empty">选择病例后载入真实 CT</div><span class="ct-plane-label" id="ct-plane-label">AXIAL</span><span class="ct-value" id="ct-value"></span></div>
+     <div class="ct-view-tools"><button id="ct-pan-mode" aria-pressed="false">✥ 移动</button><button id="ct-zoom-out" aria-label="缩小 CT">−</button><output id="ct-zoom-value">100%</output><button id="ct-zoom-in" aria-label="放大 CT">＋</button><span>滚轮逐层 · 拖动可移动</span></div><div class="ct-stage"><canvas id="real-ct" tabindex="0" aria-label="真实CT，滚轮或方向键逐层浏览，点击设置三维定位点"></canvas><img id="ct-preview" alt="当前匿名病例的真实CT预览" hidden><div class="canvas-empty" id="ct-empty">正在载入真实 CT…</div><span class="ct-plane-label" id="ct-plane-label">AXIAL</span><span class="ct-value" id="ct-value"></span></div>
      <div class="slice-control"><button id="slice-prev" aria-label="上一层">‹</button><input id="real-slice" type="range" min="0" max="1" value="0" aria-label="CT 层面"><button id="slice-next" aria-label="下一层">›</button><output id="real-slice-label">— / —</output></div>
      <div class="cine-controls"><button id="segment-cine" aria-pressed="false">▶ 连续播放</button><select id="cine-speed" aria-label="播放速度"><option value="2">2 层/秒</option><option value="4" selected>4 层/秒</option><option value="8">8 层/秒</option><option value="12">12 层/秒</option></select><select id="cine-direction" aria-label="播放方向"><option value="backward">层号递减</option><option value="forward">层号递增</option></select><label><input id="segment-range-only" type="checkbox" checked>所选段范围</label></div>
      <div class="slice-segment-summary"><div><strong>本层肺段</strong><span id="current-segment-count">—</span></div><p id="slice-label-status" class="slice-label-status"></p><div id="current-segments"></div><p id="segment-point">点击 CT 查看定位点所属的源标注</p></div>
@@ -124,6 +125,6 @@
  </div>
  <dialog id="case-dialog"><button id="close-dialog" class="dialog-close" aria-label="关闭说明">×</button><div id="dialog-content"></div></dialog>
  <dialog id="segment-source-dialog"><button id="segment-source-close" class="dialog-close" aria-label="关闭参考资料">×</button><div id="segment-source-content"></div></dialog>
- <script type="module" src="./case-library.js"></script>
+ <script type="module" src="./boot.js"></script>
 </body>
 </html>
